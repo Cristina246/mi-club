@@ -19,13 +19,13 @@
         nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
         nav a:hover { color: #00f2fe; }
 
-        /* FONDO DINÁMICO */
+        /* FONDO DINÁMICO (Cambia según la música) */
         .fondo-pantalla {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -2; object-fit: cover; opacity: 0.4; transition: all 1s ease;
         }
 
-        /* 2. SECCIÓN DE IMPACTO */
+        /* 2. SECCIÓN DE IMPACTO (HERO) */
         .seccion-hero {
             padding-top: 120px; text-align: center; max-width: 800px; margin: 0 auto 40px auto;
         }
@@ -51,11 +51,12 @@
         }
         .columna:hover { flex: 1.4; border-color: #00f2fe; box-shadow: 0 0 25px rgba(0,242,254,0.3); }
         
+        /* Contenidos decorativos dentro de columnas */
         .columna-capa { position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); z-index: 1; }
-        .columna h2 { font-size: 1.4rem; margin-bottom: 10px; z-index: 2; text-transform: uppercase; letter-spacing: 1px; color: white; }
-        .columna p { font-size: 0.9rem; opacity: 0.8; z-index: 2; line-height: 1.4; }
+        .columna h3 { font-size: 1.4rem; margin-bottom: 10px; z-index: 2; text-transform: uppercase; letter-spacing: 1px; }
+        .columna p { font-size: 0.9rem; opacity: 0.8; z-index: 2; }
 
-        /* Elementos animados columna 1 */
+        /* Elementos flotantes especiales para la columna 1 */
         .avatar-mini { width: 100px; height: auto; border-radius: 50%; margin: 0 auto 10px auto; z-index: 2; display: none; border: 2px solid #00f2fe; }
         .colibri-flotante { width: 60px; position: absolute; top: 10%; right: 10%; z-index: 2; animation: volar 3s ease-in-out infinite; display: none; }
         
@@ -64,8 +65,10 @@
             50% { transform: translateY(-10px) rotate(5deg); }
         }
 
+        /* Indicador de reproduciendo */
         .columna.activo { border-color: #ff416c; box-shadow: 0 0 35px rgba(255, 65, 108, 0.6); }
-        .columna.activo h2 { color: #ff416c; }
+        .columna.activo h3 { color: #ff416c; }
+
     </style>
 </head>
 <body>
@@ -91,37 +94,37 @@
 
     <div class="contenedor-columnas">
         
-        <div class="columna" id="col1" onclick="reproducirCanal('frecuencia', 'solfon.jpg', 'col1')" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('solfon.jpg');">
+        <div class="columna" id="col1" onclick="reproducirCanal('frecuencia', 'solfon.jpg', 'col1')" style="background-image: url('solfon.jpg');">
             <div class="columna-capa"></div>
             <img class="colibri-flotante" id="colibriAnim" src="colibri (1).png" alt="Colibrí">
             <video class="avatar-mini" id="avatarVideo" loop muted playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
-            <h2>EL AVATAR (Frecuencia de Poder)</h2>
-            <p>El Avatar del anciano tocando y cantando su canción, cobrando vida frente al majestuoso árbol de nuestras raíces ancestrales.</p>
+            <h3>Frecuencia de Poder</h3>
+            <p>El Avatar cantando y el colibrí volando al pasado hacia el centro de las raíces ancestrales.</p>
         </div>
 
-        <div class="columna" id="col2" onclick="reproducirCanal('alas', 'sello.png', 'col2')" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('sello.png');">
+        <div class="columna" id="col2" onclick="reproducirCanal('alas', 'sello.png', 'col2')" style="background-image: url('sello.png');">
             <div class="columna-capa"></div>
-            <h2>ALAS Y RAÍCES</h2>
-            <p>Imágenes de la letra de la canción que narran nuestro viaje hacia el origen, fusionando la identidad y el arte en cada estrofa.</p>
+            <h3>Alas y Raíces</h3>
+            <p>Escucha la canción rodeado de las imágenes y la iconografía que le dan vida.</p>
         </div>
 
-        <div class="columna" id="col3" onclick="reproducirCanal('rock', 'solfon.jpg', 'col3')" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('solfon.jpg');">
+        <div class="columna" id="col3" onclick="reproducirCanal('rock', 'solfon.jpg', 'col3')" style="background-image: url('solfon.jpg');">
             <div class="columna-capa"></div>
-            <h2>FUSIÓN ROCK & BLUES</h2>
-            <p>Imágenes de la letra de la canción acompañadas por una potente fusión de rock, blues y percusión prehispánica que despierta el pasado.</p>
+            <h3>Fusión Rock & Blues</h3>
+            <p>Imágenes del texto de la canción con toda la potencia de la percusión prehispánica y guitarras.</p>
         </div>
 
     </div>
 
     <audio id="audioFrecuencia" loop src="FRECUENCIA DE PODER (2).mp3"></audio>
     <audio id="audioAlas" loop src="Alas y Raíces (5) (1).mp3"></audio>
-    <audio id="audioRock" loop src="aleteo_de_zafiro.mp3"></audio>
-
-    <script>
+    <audio id="audioRock" loop src="aleteo_de_zafiro.mp3"></audio> <script>
+        // Elementos de Control
         const fondo = document.getElementById('fondoDinamico');
         const colibri = document.getElementById('colibriAnim');
         const avatar = document.getElementById('avatarVideo');
 
+        // Diccionario de audios
         const audios = {
             frecuencia: document.getElementById('audioFrecuencia'),
             alas: document.getElementById('audioAlas'),
@@ -129,22 +132,26 @@
         };
 
         function reproducirCanal(canalSeleccionado, imagenFondo, idColumna) {
+            // 1. Apagar todas las canciones y quitar clases activas
             Object.values(audios).forEach(audio => audio.pause());
             document.querySelectorAll('.columna').forEach(col => col.classList.remove('activo'));
             
+            // Ocultar elementos especiales de la columna 1 por defecto
             colibri.style.display = "none";
             avatar.style.display = "none";
             avatar.pause();
 
+            // 2. Encender la canción seleccionada y activar columna
             const audioActivo = audios[canalSeleccionado];
-            if(audioActivo) {
-                audioActivo.currentTime = 0;
-                audioActivo.play().catch(e => console.log("Interacción requerida"));
-            }
+            audioActivo.currentTime = 0;
+            audioActivo.play();
             
             document.getElementById(idColumna).classList.add('activo');
+            
+            // 3. Cambiar el fondo general de la web dramáticamente
             fondo.src = imagenFondo;
 
+            // 4. Si es la columna 1, hacer aparecer al colibrí flotando y activar al Avatar
             if (canalSeleccionado === 'frecuencia') {
                 colibri.style.display = "block";
                 avatar.style.display = "block";
