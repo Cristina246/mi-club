@@ -1,26 +1,156 @@
-<div class="container-cards">
-    
-    <div class="card" id="cuadro-1" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('imagenes/letras-alas.jpg');">
-        <div class="card-content">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Colibrí - Arte e Identidad</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; min-height: 100vh; overflow-x: hidden; }
+        
+        /* 1. EL CABEZAL (HEADER) */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 40px; background: rgba(0, 0, 0, 0.8);
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo-nav { height: 50px; cursor: pointer; }
+        nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: #00f2fe; }
+
+        /* FONDO DINÁMICO */
+        .fondo-pantalla {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2; object-fit: cover; opacity: 0.4; transition: all 1s ease;
+        }
+
+        /* 2. SECCIÓN DE IMPACTO */
+        .seccion-hero {
+            padding-top: 120px; text-align: center; max-width: 800px; margin: 0 auto 40px auto;
+        }
+        .seccion-hero h1 { font-size: 2.8rem; margin-bottom: 15px; text-shadow: 0 4px 10px rgba(0,0,0,0.7); }
+        .seccion-hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px; line-height: 1.6; }
+        .btn-principal {
+            padding: 12px 30px; font-weight: bold; color: white;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            border: none; border-radius: 25px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,242,254,0.4);
+        }
+
+        /* 3. EL CORAZÓN DEL PROYECTO (3 COLUMNAS) */
+        .contenedor-columnas {
+            display: flex; width: 90%; max-width: 1200px; margin: 0 auto 50px auto; gap: 20px;
+            height: 400px;
+        }
+        .columna {
+            flex: 1; border-radius: 15px; overflow: hidden; position: relative;
+            cursor: pointer; border: 2px solid rgba(255,255,255,0.1);
+            transition: all 0.5s ease; display: flex; flex-direction: column;
+            justify-content: flex-end; padding: 20px; text-align: center;
+            background-size: cover; background-position: center;
+        }
+        .columna:hover { flex: 1.4; border-color: #00f2fe; box-shadow: 0 0 25px rgba(0,242,254,0.3); }
+        
+        .columna-capa { position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); z-index: 1; }
+        .columna h2 { font-size: 1.4rem; margin-bottom: 10px; z-index: 2; text-transform: uppercase; letter-spacing: 1px; color: white; }
+        .columna p { font-size: 0.9rem; opacity: 0.8; z-index: 2; line-height: 1.4; }
+
+        /* Elementos animados columna 1 */
+        .avatar-mini { width: 100px; height: auto; border-radius: 50%; margin: 0 auto 10px auto; z-index: 2; display: none; border: 2px solid #00f2fe; }
+        .colibri-flotante { width: 60px; position: absolute; top: 10%; right: 10%; z-index: 2; animation: volar 3s ease-in-out infinite; display: none; }
+        
+        @keyframes volar {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .columna.activo { border-color: #ff416c; box-shadow: 0 0 35px rgba(255, 65, 108, 0.6); }
+        .columna.activo h2 { color: #ff416c; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img class="logo-nav" src="imageLOGO (1).png" alt="Logo Club Colibrí">
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#club">El Club (Filosofía)</a>
+            <a href="#museo">Museo Digital</a>
+            <a href="#tienda">Tienda</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <img id="fondoDinamico" class="fondo-pantalla" src="solfon.jpg" alt="Fondo Prehispánico">
+
+    <div class="seccion-hero">
+        <h1>Club Colibrí: Arte, Identidad y Comunidad</h1>
+        <p>"No somos solo un taller, somos un club que es un espacio donde todos venimos a aportar".</p>
+        <button class="btn-principal">Únete al Club</button>
+    </div>
+
+    <div class="contenedor-columnas">
+        
+        <div class="columna" id="col1" onclick="reproducirCanal('frecuencia', 'solfon.jpg', 'col1')" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('solfon.jpg');">
+            <div class="columna-capa"></div>
+            <img class="colibri-flotante" id="colibriAnim" src="colibri (1).png" alt="Colibrí">
+            <video class="avatar-mini" id="avatarVideo" loop muted playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
+            <h2>EL AVATAR (Frecuencia de Poder)</h2>
+            <p>El Avatar del anciano tocando y cantando su canción, cobrando vida frente al majestuoso árbol de nuestras raíces ancestrales.</p>
+        </div>
+
+        <div class="columna" id="col2" onclick="reproducirCanal('alas', 'sello.png', 'col2')" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('sello.png');">
+            <div class="columna-capa"></div>
             <h2>ALAS Y RAÍCES</h2>
             <p>Imágenes de la letra de la canción que narran nuestro viaje hacia el origen, fusionando la identidad y el arte en cada estrofa.</p>
         </div>
-    </div>
 
-    <div class="card" id="cuadro-2" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('imagenes/fondo-arbol-anciano.jpg'); background-position: right; position: relative;">
-        <img src="imagenes/logo-colibri.png" alt="Logo Club Colibrí" style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); width: 120px; opacity: 0.9; z-index: 1;">
-        
-        <div class="card-content" style="z-index: 2;">
-            <h2>EL AVATAR</h2>
-            <p>El Avatar del anciano tocando y cantando su canción, cobrando vida frente al majestuoso árbol de nuestras raíces.</p>
-        </div>
-    </div>
-
-    <div class="card" id="cuadro-3" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('imagenes/letras-frecuencia.jpg');">
-        <div class="card-content">
-            <h2>FRECUENCIA DE PODER</h2>
+        <div class="columna" id="col3" onclick="reproducirCanal('rock', 'solfon.jpg', 'col3')" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('solfon.jpg');">
+            <div class="columna-capa"></div>
+            <h2>FUSIÓN ROCK & BLUES</h2>
             <p>Imágenes de la letra de la canción acompañadas por una potente fusión de rock, blues y percusión prehispánica que despierta el pasado.</p>
         </div>
+
     </div>
 
-</div>
+    <audio id="audioFrecuencia" loop src="FRECUENCIA DE PODER (2).mp3"></audio>
+    <audio id="audioAlas" loop src="Alas y Raíces (5) (1).mp3"></audio>
+    <audio id="audioRock" loop src="aleteo_de_zafiro.mp3"></audio>
+
+    <script>
+        const fondo = document.getElementById('fondoDinamico');
+        const colibri = document.getElementById('colibriAnim');
+        const avatar = document.getElementById('avatarVideo');
+
+        const audios = {
+            frecuencia: document.getElementById('audioFrecuencia'),
+            alas: document.getElementById('audioAlas'),
+            rock: document.getElementById('audioRock')
+        };
+
+        function reproducirCanal(canalSeleccionado, imagenFondo, idColumna) {
+            Object.values(audios).forEach(audio => audio.pause());
+            document.querySelectorAll('.columna').forEach(col => col.classList.remove('activo'));
+            
+            colibri.style.display = "none";
+            avatar.style.display = "none";
+            avatar.pause();
+
+            const audioActivo = audios[canalSeleccionado];
+            if(audioActivo) {
+                audioActivo.currentTime = 0;
+                audioActivo.play().catch(e => console.log("Interacción requerida"));
+            }
+            
+            document.getElementById(idColumna).classList.add('activo');
+            fondo.src = imagenFondo;
+
+            if (canalSeleccionado === 'frecuencia') {
+                colibri.style.display = "block";
+                avatar.style.display = "block";
+                avatar.play();
+            }
+        }
+    </script>
+</body>
+</html>
