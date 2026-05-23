@@ -1,25 +1,20 @@
-<div class="bloque-central" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-    <img class="logo-central" src="imageLOGO (1).png" style="width: 200px; height: auto;">
-    <button class="btn-reproducir" onclick="reproducirAlas()" style="position: relative; padding: 12px 25px; cursor: pointer; background: #ff416c; color: white; border: none; border-radius: 20px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-        ▶ Alas y Raíces
-    </button>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Club Colibrí - Arte e Identidad</title>
     <style>
-        body { background: #000; color: white; text-align: center; font-family: sans-serif; }
-        .bloque-central { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; gap: 20px; }
+        body { background: #000; color: white; text-align: center; font-family: sans-serif; margin: 0; }
+        .bloque-central { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 20px; }
         .logo-central { width: 250px; height: auto; }
-        .btn-reproducir { padding: 15px 30px; cursor: pointer; background: #ff416c; color: white; border: none; border-radius: 25px; font-weight: bold; font-size: 1.2rem; }
+        .btn-reproducir { padding: 15px 30px; cursor: pointer; background: #ff416c; color: white; border: none; border-radius: 25px; font-weight: bold; font-size: 1.2rem; transition: transform 0.2s; }
+        .btn-reproducir:hover { transform: scale(1.05); }
     </style>
 </head>
 <body>
 
     <div class="bloque-central">
-        <img class="logo-central" src="imageLOGO (1).png">
+        <img class="logo-central" src="imageLOGO (1).png" alt="Logo Club Colibrí">
         <button class="btn-reproducir" onclick="reproducirAlas()">▶ Alas y Raíces</button>
     </div>
 
@@ -29,7 +24,7 @@
         const audioAlas = document.getElementById('audioAlas');
         function reproducirAlas() { 
             if (audioAlas.paused) {
-                audioAlas.play().catch(e => alert("Haz clic primero en la pantalla para activar el audio"));
+                audioAlas.play().catch(e => console.log("Esperando interacción..."));
             } else {
                 audioAlas.pause();
             }
