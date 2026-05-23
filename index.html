@@ -22,7 +22,7 @@
         nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: color 0.3s; padding: 5px 8px; }
         nav a:hover { color: #00f2fe; }
 
-        /* 2. SECCIÓN DE IMPACTO */
+        /* 2. SECCIÓN DE IMPACTO (Aquí está el cambio del botón) */
         .seccion-impacto {
             position: relative; min-height: 100vh; display: flex; flex-direction: column;
             align-items: center; justify-content: center; padding: 120px 20px 60px 20px;
@@ -32,12 +32,32 @@
         .contenedor-presentacion { max-width: 850px; margin: 0 auto; }
         .titulo-club { font-size: 3.2rem; color: #00f2fe; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,242,254,0.4); }
         
-        .bloque-central { position: relative; margin: 30px auto; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; }
-        .logo-central { width: 100%; height: auto; z-index: 2; }
+        /* BLOQUE CENTRAL: Contiene logotipo y botón uno debajo del otro */
+        .bloque-central {
+            position: relative;
+            margin: 30px auto;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-central {
+            width: 100%;
+            height: auto;
+            z-index: 2; /* El logo está debajo */
+        }
         .btn-reproducir {
-            position: absolute; z-index: 3; padding: 10px 20px; font-weight: bold;
-            background: linear-gradient(45deg, #ff416c, #ff4b2b); color: white;
-            border: none; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 15px rgba(255,65,108,0.5);
+            position: absolute;
+            z-index: 3; /* El botón está encima */
+            padding: 10px 20px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,65,108,0.5);
         }
 
         /* 3. SECCIÓN INICIO (AVATAR COMPLETO) */
@@ -113,10 +133,12 @@
         <div class="contenedor-presentacion">
             <h1 class="titulo-club">Club Colibrí</h1>
             <p>Somos un grupo de personas que nos reunimos in este espacio para compartir experiencias, intereses de unión familiar, no perder identidad y fortalecer la autoestima de nuestros hijos y conocer de arte, cultura y educación. Nos dedicamos a fortalecer la identidad y la integración familiar con inteligencia emocional e inteligencia creativa.</p>
+            
             <div class="bloque-central">
                 <img class="logo-central" src="imageLOGO (1).png">
                 <button class="btn-reproducir" onclick="reproducirAlas()">▶ Alas y Raíces</button>
             </div>
+            
             <p>“Es algo más que arte”</p>
         </div>
     </main>
@@ -199,15 +221,12 @@
             }
         }
 
-      function reproducirAlas() { 
+        // FUNCIÓN MEJORADA: Enciende la música de Alas y Raíces con un solo clic y cambia el botón
+        function reproducirAlas() { 
             if (audioAlas.paused) {
                 apagarTodo(); 
-                audioAlas.play().then(() => {
-                    btnAlas.innerHTML = "⏸ Pausar Música";
-                }).catch(e => {
-                    console.log("Error, intenta hacer clic en otro lado primero:", e);
-                    alert("Por favor, haz clic primero en cualquier parte de la página y luego intenta reproducir.");
-                });
+                audioAlas.play().catch(e => console.log("Error de audio:", e)); 
+                btnAlas.innerHTML = "⏸ Pausar Música";
             } else {
                 audioAlas.pause();
                 btnAlas.innerHTML = "▶ Alas y Raíces";
@@ -217,3 +236,20 @@
     </script>
 </body>
 </html>
+Paso 2: Pasos para Guardar en GitHub
+Abre tu index.html en GitHub y presiona el lápiz ✏️ para editar.
+
+Como siempre, asegúrate de que el traductor de Google esté apagado (debe decir Code arriba de la pestaña).
+
+Selecciona todo el código, bórralo y pega este nuevo código completo.
+
+Haz clic en el botón verde "Commit changes..." arriba a la derecha y guarda.
+
+Paso 3: Forzar actualización y probar
+Chrome a veces "recuerda" el código viejo. Para forzar el cambio:
+
+Abre tu portal de internet cristina246.github.io/mi-club/.
+
+Presiona en tu teclado las teclas Ctrl + F5 para recargar la página limpiando los datos viejos.
+
+¡Dale al botón dorado centrado y me cuentas si ya empieza a sonar la música de Alas y Raíces!
