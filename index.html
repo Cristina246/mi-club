@@ -40,14 +40,23 @@
             border: none; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 15px rgba(255,65,108,0.5);
         }
 
-        /* 3. SECCIÓN INICIO (AVATAR MEJORADO Y MÁS GRANDE) */
+        /* 3. SECCIÓN INICIO (AVATAR CORREGIDO Y COMPLETO) */
         .seccion-inicio { padding: 80px 20px; background: #0a0a0a; text-align: center; border-top: 1px solid #333; }
+        .contenedor-inicio { max-width: 800px; margin: 0 auto; }
+        .frase-hijos { font-size: 1.6rem; color: #ffb13b; font-style: italic; margin-bottom: 30px; font-weight: 600; }
+        
+        /* Caja del Avatar Sin el círculo: Ahora es un cuadro completo y amplio */
         .box-avatar { 
-            width: 380px; height: 380px; margin: 0 auto 25px auto; 
-            border-radius: 50%; overflow: hidden; border: 5px solid #ffb13b; 
-            box-shadow: 0 0 35px rgba(255,177,59,0.6); background: #000;
+            width: 100%; 
+            max-width: 500px; /* Aumentamos el ancho máximo para que luzca */
+            height: auto; /* La altura se ajusta sola al video */
+            margin: 0 auto 25px auto; 
+            border-radius: 10px; /* Unos bordes suaves, pero NO redondos */
+            overflow: hidden; 
+            border: 3px solid #ffb13b; /* Borde dorado suave pero recto */
+            box-shadow: 0 0 25px rgba(255,177,59,0.3); background: #000;
         }
-        .video-avatar { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .video-avatar { width: 100%; height: auto; display: block; }
 
         .btn-activar-avatar {
             background: linear-gradient(45deg, #ffb13b, #f39c12); color: black;
@@ -64,13 +73,6 @@
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('solfon.jpg');
             background-size: cover; border: 3px solid #00f2fe; border-radius: 20px;
         }
-        .menu-categorias { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
-        .btn-cat { padding: 12px 25px; font-weight: bold; background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); border-radius: 8px; cursor: pointer; }
-        .btn-cat.activo { background: #ff416c; border-color: #ff416c; }
-        .visor-catalogo { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 30px; max-width: 600px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.1); }
-        .control-galeria { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; }
-        .btn-flecha { background: #222; color: white; border: 1px solid #00f2fe; width: 45px; height: 45px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; }
-        .foto-cuadro { font-size: 4rem; background: rgba(0,0,0,0.5); width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px dashed rgba(255,255,255,0.3); }
 
         /* 5. SECCIÓN CLASES */
         .seccion-clases { padding: 80px 20px; background: #050505; text-align: center; border-top: 1px solid #333; }
@@ -119,16 +121,18 @@
     </main>
 
     <section class="seccion-inicio" id="inicio">
-        <p style="color:#ffb13b; font-size: 1.6rem; margin-bottom:20px; font-style: italic; font-weight: 600;">“Queremos que nuestros hijos nacidos aquí en USA. conozcan su herencia cultural de una forma mágica y tangible”.</p>
-        
-        <div class="box-avatar">
-            <video class="video-avatar" id="avatarVideo" loop playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
+        <div class="contenedor-inicio">
+            <p class="frase-hijos">“Queremos que nuestros hijos nacidos aquí en USA. conozcan su herencia cultural de una forma mágica y tangible”.</p>
+            
+            <div class="box-avatar">
+                <video class="video-avatar" id="avatarVideo" loop playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
+            </div>
+            
+            <button class="btn-activar-avatar" onclick="controlarAvatar()">▶ Ver y Escuchar Avatar</button>
+            
+            <p>La historia, mitología, dicotomía, conceptos místicos, religiosos de nuestras culturas americanas.</p>
+            <p style="color: #00f2fe; font-weight: bold; margin-top: 15px; font-size: 1.3rem;">¡¡Tendrás una experiencia única que te conectará con tu esencia y raíces!!</p>
         </div>
-        
-        <button class="btn-activar-avatar" onclick="controlarAvatar()">▶ Ver y Escuchar Avatar</button>
-        
-        <p style="font-size: 1.15rem; line-height: 1.8; opacity: 0.9;">La historia, mitología, dicotomía, conceptos místicos, religiosos de nuestras culturas americanas.</p>
-        <p style="color: #00f2fe; font-weight: bold; margin-top: 15px; font-size: 1.3rem;">¡¡Tendrás una experience única que te conectará con tu esencia y raíces!!</p>
     </section>
 
     <section class="seccion-museo" id="museo">
@@ -136,42 +140,18 @@
             <h2>Museo Digital</h2>
             <p style="opacity: 0.9; margin-bottom: 10px;">Imágenes de artesanías prehispánicas y legados culturales</p>
             <button onclick="reproducirZafiro()" style="padding:10px 25px; margin:20px; border:none; background:#00f2fe; color:black; font-weight:bold; border-radius:20px; cursor:pointer; box-shadow:0 4px 15px rgba(0,242,254,0.4);">🎵 Oír: Aleteo de Zafiro</button>
-            
-            <div class="menu-categorias">
-                <button class="btn-cat activo" id="btnChicas" onclick="cambiarCategoria('chicas')">Artesanías Chicas</button>
-                <button class="btn-cat" id="btnMedianas" onclick="cambiarCategoria('medianas')">Artesanías Medianas</button>
-                <button class="btn-cat" id="btnGrandes" onclick="cambiarCategoria('grandes')">Artesanías Grandes</button>
-            </div>
-
-            <div class="visor-catalogo">
-                <h3 id="nombreCategoria" style="color:#ffb13b; margin-bottom:15px; text-transform:uppercase;">Artesanías Chicas</h3>
-                <div class="foto-cuadro" id="cuadroImagen">
-                    🖼️ Pieza <span id="numeroPieza" style="margin-left: 10px; font-weight: bold; color: #00f2fe;">1</span>
-                </div>
-                <div class="control-galeria">
-                    <button class="btn-flecha" onclick="fotoAnterior()">◀</button>
-                    <img src="colibri (1).png" style="width: 35px; height: auto;" alt="Icono">
-                    <button class="btn-flecha" onclick="fotoSiguiente()">▶</button>
-                </div>
-            </div>
         </div>
     </section>
 
     <section class="seccion-clases" id="clases">
         <h2 style="color:#00f2fe; font-size: 2.5rem;">Clases</h2>
         <p style="font-size: 1.4rem; margin-bottom: 20px;">“Vive la historia en tus manos”</p>
-        
         <div class="cuadro-clase">
-            <button onclick="reproducirEstafeta()" style="background:#ffb13b; border:none; padding:10px 20px; border-radius:20px; font-weight:bold; cursor:pointer; box-shadow:0 4px 15px rgba(255,177,59,0.4);">🎵 La estafeta vuela hoy</button>
+            <button onclick="reproducirEstafeta()" style="background:#ffb13b; border:none; padding:10px 20px; border-radius:20px; font-weight:bold; cursor:pointer;">🎵 La estafeta vuela hoy</button>
             <p style="margin-top:20px;">Video de arte: Técnica de aplicación pátina</p>
             <div style="background:#222; height:250px; display:flex; align-items:center; justify-content:center; border:1px solid #444; margin-top:15px; border-radius:8px;">
                 Anuncio: [Espacio para Video de Técnica]
             </div>
-        </div>
-
-        <div style="margin-top:40px;">
-            <h3>Formas de aprendizaje</h3>
-            <p style="opacity:0.8; margin-top:10px;">Inteligencia emocional e Inteligencia creativa aplicada al arte prehispánico.</p>
         </div>
     </section>
 
@@ -180,7 +160,7 @@
         <div class="tarjeta-maraton">
             <h3>Maratón por la identidad</h3>
             <p class="meta-ciudades">Meta: Distribuir 1,000 piezas en Roy, Ogden, Layton, Clearfield y Salt Lake, UT.</p>
-            <p style="line-height:1.6; opacity:0.9;">Clase de 20 minutos en casa con la familia a la hora que más te convenga. ¡Cada participante se lleva su obra artesanal, técnica y su aprendizaje histórico, plática y convivencia familiar!</p>
+            <p>Clase de 20 minutos en casa con la familia a la hora que más te convenga.</p>
             <div class="kit-destacado">
                 <h4>Solo Kits Pequeños</h4>
                 <p>Obtén tu colección: <strong>"Me reconozco"</strong></p>
@@ -198,27 +178,6 @@
         const audioEstafeta = document.getElementById('audioEstafeta');
         const videoAvatar = document.getElementById('avatarVideo');
         const btnAvatar = document.querySelector('.btn-activar-avatar');
-
-        let fotoActual = 1;
-
-        function cambiarCategoria(cat) {
-            fotoActual = 1;
-            document.querySelectorAll('.btn-cat').forEach(b => b.classList.remove('activo'));
-            if(cat === 'chicas') {
-                document.getElementById('btnChicas').classList.add('activo');
-                document.getElementById('nombreCategoria').innerText = 'Artesanías Chicas';
-            } else if(cat === 'medianas') {
-                document.getElementById('btnMedianas').classList.add('activo');
-                document.getElementById('nombreCategoria').innerText = 'Artesanías Medianas';
-            } else {
-                document.getElementById('btnGrandes').classList.add('activo');
-                document.getElementById('nombreCategoria').innerText = 'Artesanías Grandes';
-            }
-            document.getElementById('numeroPieza').innerText = fotoActual;
-        }
-
-        function fotoAnterior() { if(fotoActual > 1) { fotoActual--; } else { fotoActual = 10; } document.getElementById('numeroPieza').innerText = fotoActual; }
-        function fotoSiguiente() { if(fotoActual < 10) { fotoActual++; } else { fotoActual = 1; } document.getElementById('numeroPieza').innerText = fotoActual; }
 
         function apagarTodo() {
             audioAlas.pause(); audioZafiro.pause(); audioEstafeta.pause();
