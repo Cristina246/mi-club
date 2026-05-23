@@ -119,7 +119,7 @@
     </main>
 
     <section class="seccion-inicio" id="inicio">
-        <p style="color:#ffb13b; font-size: 1.6rem; margin-bottom:20px; font-style: italic; font-weight: 600;">“Queremos que nuestros hijos nacidos aquí en USA. Conozcan su herencia cultural de una forma mágica y tangible”.</p>
+        <p style="color:#ffb13b; font-size: 1.6rem; margin-bottom:20px; font-style: italic; font-weight: 600;">“Queremos que nuestros hijos nacidos aquí en USA. conozcan su herencia cultural de una forma mágica y tangible”.</p>
         
         <div class="box-avatar">
             <video class="video-avatar" id="avatarVideo" loop playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
@@ -128,7 +128,7 @@
         <button class="btn-activar-avatar" onclick="controlarAvatar()">▶ Ver y Escuchar Avatar</button>
         
         <p style="font-size: 1.15rem; line-height: 1.8; opacity: 0.9;">La historia, mitología, dicotomía, conceptos místicos, religiosos de nuestras culturas americanas.</p>
-        <p style="color: #00f2fe; font-weight: bold; margin-top: 15px; font-size: 1.3rem;">¡¡Tendrás una experiencia única que te conectará con tu esencia y raíces!!</p>
+        <p style="color: #00f2fe; font-weight: bold; margin-top: 15px; font-size: 1.3rem;">¡¡Tendrás una experience única que te conectará con tu esencia y raíces!!</p>
     </section>
 
     <section class="seccion-museo" id="museo">
@@ -229,8 +229,8 @@
         function controlarAvatar() {
             if (videoAvatar.paused) {
                 apagarTodo();
-                videoAvatar.muted = false; // Encendemos el audio propio que tiene tu video
-                videoAvatar.play().catch(e => console.log("Bloqueado:", e));
+                videoAvatar.muted = false; // Desmutear el video para oír su voz propia
+                videoAvatar.play().catch(e => console.log("Bloqueado por navegador:", e));
                 btnAvatar.innerHTML = "⏸ Pausar Avatar";
             } else {
                 videoAvatar.pause();
