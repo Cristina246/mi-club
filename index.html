@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Club Colibrí - Arte e Identidad</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; font-family: sans-serif; color: white; }
-        
-        /* Estilos del bloque central con logo y botón */
-        .bloque-central { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; gap: 20px; }
-        .logo-central { width: 250px; height: auto; }
-        .btn-reproducir { padding: 15px 30px; cursor: pointer; background: #ff416c; color: white; border: none; border-radius: 25px; font-weight: bold; font-size: 1.2rem; }
-        
-        /* Estilos de las secciones */
-        section { padding: 50px 20px; border-top: 1px solid #333; }
-        nav { padding: 20px; background: #111; display: flex; justify-content: center; gap: 15px; }
+        body { background: #000; color: white; font-family: sans-serif; margin: 0; text-align: center; }
+        nav { padding: 20px; background: #111; display: flex; justify-content: center; gap: 20px; border-bottom: 1px solid #333; }
         nav a { color: #00f2fe; text-decoration: none; font-weight: bold; }
+        .seccion-principal { padding: 60px 20px; }
+        .logo-central { width: 250px; display: block; margin: 0 auto; }
+        .btn-reproducir { margin-top: 20px; padding: 15px 30px; cursor: pointer; background: #ff416c; color: white; border: none; border-radius: 25px; font-weight: bold; font-size: 1.2rem; }
+        section { padding: 80px 20px; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
@@ -27,19 +22,19 @@
         <a href="#clases">Clases</a>
     </nav>
 
-    <div class="bloque-central" id="inicio">
+    <div class="seccion-principal" id="inicio">
         <img class="logo-central" src="imageLOGO (1).png" alt="Logo">
         <button class="btn-reproducir" onclick="reproducirAlas()">▶ Alas y Raíces</button>
     </div>
 
     <section id="museo">
         <h2>Museo Digital</h2>
-        <p>Aquí verás nuestras piezas.</p>
+        <p>Imágenes de nuestras raíces y legados culturales.</p>
     </section>
 
     <section id="clases">
         <h2>Clases</h2>
-        <p>Técnicas de arte y mucho más.</p>
+        <p>Vive la historia en tus manos.</p>
     </section>
 
     <audio id="audioAlas" src="alas.mp3"></audio>
@@ -48,7 +43,7 @@
         const audioAlas = document.getElementById('audioAlas');
         function reproducirAlas() { 
             if (audioAlas.paused) {
-                audioAlas.play().catch(e => console.log("Error:", e));
+                audioAlas.play().catch(e => alert("Haz clic en el fondo de la página primero para activar el sonido."));
             } else {
                 audioAlas.pause();
             }
