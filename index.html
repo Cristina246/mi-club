@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,6 @@
         .sello-izq { height: 55px; cursor: pointer; transition: transform 0.3s; }
         .sello-izq:hover { transform: scale(1.05); }
         
-        /* Menú con scroll si es necesario en pantallas chicas */
         nav { display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-end; }
         nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: color 0.3s; padding: 5px 10px; }
         nav a:hover { color: #00f2fe; }
@@ -33,15 +32,12 @@
         .seccion-impacto {
             position: relative; min-height: 100vh; display: flex; flex-direction: column;
             align-items: center; justify-content: center; padding: 120px 20px 60px 20px;
-            text-align: center; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+            text-align: center; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
         }
-
         .contenedor-presentacion { max-width: 850px; margin: 0 auto; }
-        
         .titulo-club { font-size: 3.2rem; color: #00f2fe; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,242,254,0.4); letter-spacing: 1px; }
         .descripcion-club { font-size: 1.15rem; line-height: 1.7; opacity: 0.95; margin-bottom: 25px; }
         
-        /* Contenedor del Logo Central y Botón */
         .bloque-central { position: relative; margin: 30px auto; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; }
         .logo-central { width: 100%; height: auto; z-index: 2; filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.7)); }
         
@@ -51,17 +47,38 @@
             border: none; border-radius: 20px; cursor: pointer; font-size: 0.85rem;
             box-shadow: 0 4px 15px rgba(255,65,108,0.5); transition: transform 0.2s;
         }
-        .btn-reproducir:hover { transform: scale(1.1); background: linear-gradient(45deg, #ff4b2b, #ff416c); }
+        .btn-reproducir:hover { transform: scale(1.1); }
 
         .frase-resaltada { font-size: 1.5rem; font-style: italic; color: #4facfe; margin: 20px 0; font-weight: bold; }
         .frase-mision { font-size: 1.05rem; line-height: 1.6; opacity: 0.85; max-width: 750px; margin: 0 auto; }
+
+        /* 3. SECCIÓN INICIO (AVATAR) */
+        .seccion-inicio {
+            padding: 80px 20px; background: #0a0a0a; text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .contenedor-inicio { max-width: 800px; margin: 0 auto; }
+        .frase-hijos { font-size: 1.6rem; color: #ffb13b; font-style: italic; margin-bottom: 30px; line-height: 1.5; font-weight: 600; }
+        
+        /* Estilos del Video del Avatar */
+        .box-avatar { position: relative; width: 280px; height: 280px; margin: 0 auto 25px auto; border-radius: 50%; overflow: hidden; border: 4px solid #ffb13b; box-shadow: 0 0 25px rgba(255,177,59,0.3); }
+        .video-avatar { width: 100%; height: 100%; object-fit: cover; }
+        
+        .btn-avatar {
+            padding: 12px 25px; font-weight: bold; background: #ffb13b; color: black;
+            border: none; border-radius: 25px; cursor: pointer; font-size: 0.95rem; margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(255,177,59,0.4); transition: transform 0.2s;
+        }
+        .btn-avatar:hover { transform: scale(1.05); }
+        
+        .texto-historia { font-size: 1.15rem; line-height: 1.8; opacity: 0.9; margin-bottom: 20px; }
+        .frase-conexion { font-size: 1.3rem; color: #00f2fe; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
 
     <header>
         <img class="sello-izq" src="sello.png" alt="Sello Club Colibrí" title="Cambiar Idioma">
-        
         <nav>
             <a href="#quienes-somos">¿Quiénes somos?</a>
             <a href="#inicio">Inicio</a>
@@ -77,10 +94,10 @@
         </nav>
     </header>
 
-    <main class="seccion-impacto">
+    <main class="seccion-impacto" id="quienes-somos">
         <img class="fondo-letras" src="solfon.jpg" alt="Fondo Letra Canción">
 
-        <div class="contenedor-presentacion" id="quienes-somos">
+        <div class="contenedor-presentacion">
             <h1 class="titulo-club">Club Colibrí</h1>
             <p class="descripcion-club">
                 Somos un grupo de personas que nos reunimos en este espacio para compartir experiencias, intereses de unión familiar, no perder identidad y fortalecer la autoestima de nuestros hijos y conocer de arte, cultura y educación. Nos dedicamos a fortalecer la identidad y la integración familiar con inteligencia emocional e inteligencia creativa.
@@ -98,17 +115,61 @@
         </div>
     </main>
 
+    <section class="seccion-inicio" id="inicio">
+        <div class="contenedor-inicio">
+            <p class="frase-hijos">“Queremos que nuestros hijos nacidos aquí en USA. conozcan su herencia cultural de una forma mágica y tangible”.</p>
+            
+            <div class="box-avatar">
+                <video class="video-avatar" id="avatarVideo" loop muted playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
+            </div>
+            
+            <button class="btn-avatar" onclick="activarAvatar()">🎵 Escuchar Avatar</button>
+
+            <p class="texto-historia">
+                La historia, mitología, dicotomía, conceptos místicos, religiosos de nuestras culturas americanas.
+            </p>
+            <p class="frase-conexion">
+                ¡¡Tendrás una experiencia única que te conectará con tu esencia y raíces!!
+            </p>
+        </div>
+    </section>
+
     <audio id="audioAlas" src="Alas y Raíces (5) (1).mp3"></audio>
+    <audio id="audioFrecuencia" loop src="FRECUENCIA DE PODER (2).mp3"></audio>
 
     <script>
-        const audio = document.getElementById('audioAlas');
+        const audioAlas = document.getElementById('audioAlas');
+        const audioFrecuencia = document.getElementById('audioFrecuencia');
+        const videoAvatar = document.getElementById('avatarVideo');
+
         function reproducirAlas() {
-            if (audio.paused) {
-                audio.play().catch(e => console.log("Se requiere interacción"));
+            // Pausar el otro audio si está activo
+            audioFrecuencia.pause();
+            videoAvatar.pause();
+            document.querySelector('.btn-avatar').innerText = "🎵 Escuchar Avatar";
+
+            if (audioAlas.paused) {
+                audioAlas.play().catch(e => console.log("Clic requerido"));
                 document.querySelector('.btn-reproducir').innerText = "⏸ Pausar";
             } else {
-                audio.pause();
+                audioAlas.pause();
                 document.querySelector('.btn-reproducir').innerText = "▶ Alas y Raíces";
+            }
+        }
+
+        function activarAvatar() {
+            // Pausar el otro audio si está activo
+            audioAlas.pause();
+            document.querySelector('.btn-reproducir').innerText = "▶ Alas y Raíces";
+
+            if (audioFrecuencia.paused) {
+                audioFrecuencia.play().catch(e => console.log("Clic requerido"));
+                videoAvatar.play();
+                document.querySelector('.btn-avatar').innerText = "⏸ Pausar Avatar";
+            } else {
+                audioFrecuencia.pause();
+                videoAvatar.pause();
+                document.querySelector('.btn-avatar').innerText = "🎵 Escuchar Avatar";
             }
         }
     </script>
