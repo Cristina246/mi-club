@@ -125,7 +125,7 @@
         <div class="contenedor-inicio">
             <p class="frase-hijos">“Queremos que nuestros hijos nacidos aquí en USA. conozcan su herencia cultural de una forma mágica y tangible”.</p>
             <div class="box-avatar">
-                <video class="video-avatar" id="avatarVideo" loop playsinline src="Avatar_IV_Video%20(1)%20(1).mp4"></video>
+                <video class="video-avatar" id="avatarVideo" loop playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
             </div>
             <button class="btn-activar-avatar" onclick="controlarAvatar()">▶ Ver y Escuchar Avatar</button>
             <p>La historia, mitología, dicotomía, conceptos misticos, religiosos de nuestras culturas americanas.</p>
@@ -145,11 +145,8 @@
         <h2 style="color:#00f2fe; font-size: 2.5rem;">Clases</h2>
         <p style="font-size: 1.4rem; margin-bottom: 20px;">“Vive la historia en tus manos”</p>
         <div class="cuadro-clase">
-            <button onclick="reproducirEstafeta()" style="background:#ffb13b; border:none; padding:10px 20px; border-radius:20px; font-weight:bold; cursor:pointer;">🎵 La estafeta vuela hoy</button>
+            <p style="color:#666;">(Próximamente: La estafeta vuela hoy)</p>
             <p style="margin-top:20px;">Video de arte: Técnica de aplicación pátina</p>
-            <div style="background:#222; height:250px; display:flex; align-items:center; justify-content:center; border:1px solid #444; margin-top:15px; border-radius:8px;">
-                Anuncio: [Espacio para Video de Técnica]
-            </div>
         </div>
     </section>
 
@@ -158,7 +155,6 @@
         <div class="tarjeta-maraton">
             <h3>Maratón por la identidad</h3>
             <p class="meta-ciudades">Meta: Distribuir 1,000 piezas en Roy, Ogden, Layton, Clearfield y Salt Lake, UT.</p>
-            <p>Clase de 20 minutos en casa con la familia a la hora que más te convenga. ¡Cada participante se lleva su obra artesanal, técnica y su aprendizaje histórico!</p>
             <div class="kit-destacado">
                 <h4>Solo Kits Pequeños</h4>
                 <p>Obtén tu colección: <strong>"Me reconozco"</strong></p>
@@ -168,37 +164,24 @@
 
     <section class="seccion-especiales" id="especiales">
         <h2 style="color:#ffb13b; font-size: 2.5rem; margin-bottom:20px;">Próximos Kits y Especiales</h2>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-            <div style="background: #111; padding: 25px; border-radius: 8px; border: 1px solid #333; width: 280px;">
-                <h3 style="color: #ffb13b; margin-bottom: 10px;">Espejo</h3>
-                <p style="opacity: 0.85;">Colección especial: "Me reconozco"</p>
-            </div>
-            <div style="background: #111; padding: 25px; border-radius: 8px; border: 1px solid #333; width: 280px;">
-                <h3 style="color: #ffb13b; margin-bottom: 10px;">Máscaras</h3>
-                <p style="opacity: 0.85; margin-bottom: 10px;">Conoce su significado ancestral.</p>
-                <span style="color: #00f2fe; font-size: 0.9rem; font-weight: bold;">Crea tu propia máscara (Avatar)</span>
-            </div>
-        </div>
         <div class="bloque-cuentos">
             <p class="frase-cuentame">“Déjame que te cuente”</p>
-            <p style="font-size: 1.15rem; line-height: 1.7; opacity: 0.9;">Explora maravillosos cuentos prehispánicos y relatos de la tradición oral latinoamericana. Un viaje mágico repleto de refranes, modismos, cantos y juegos tradicionales para disfrutar en familia.</p>
+            <p style="font-size: 1.15rem; line-height: 1.7; opacity: 0.9;">Explora maravillosos cuentos prehispánicos y relatos de la tradición oral latinoamericana.</p>
         </div>
     </section>
 
-    <audio id="audioAlas" src="Alas%20y%20Raíces%20(5)%20(1).mp3"></audio>
+    <audio id="audioAlas" src="alas.mp3"></audio>
     <audio id="audioZafiro" src="aleteo_de_zafiro.mp3"></audio>
-    <audio id="audioEstafeta" src="LA%20ESTAFETA%20VUELA%20HOY%20(1).mp3"></audio>
 
     <script>
         const audioAlas = document.getElementById('audioAlas');
         const audioZafiro = document.getElementById('audioZafiro');
-        const audioEstafeta = document.getElementById('audioEstafeta');
         const videoAvatar = document.getElementById('avatarVideo');
         const btnAvatar = document.querySelector('.btn-activar-avatar');
         const btnAlas = document.querySelector('.btn-reproducir');
 
         function apagarTodo() {
-            audioAlas.pause(); audioZafiro.pause(); audioEstafeta.pause();
+            audioAlas.pause(); audioZafiro.pause();
             videoAvatar.pause();
             btnAvatar.innerHTML = "▶ Ver y Escuchar Avatar";
             btnAlas.innerHTML = "▶ Alas y Raíces";
@@ -227,7 +210,6 @@
             }
         }
         function reproducirZafiro() { apagarTodo(); audioZafiro.play(); }
-        function reproducirEstafeta() { apagarTodo(); audioEstafeta.play(); }
     </script>
 </body>
 </html>
