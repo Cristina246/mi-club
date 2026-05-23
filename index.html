@@ -110,10 +110,9 @@
     </header>
 
     <main class="seccion-impacto" id="quienes-somos">
-        <img class="fondo-letras" src="solfon.jpg" alt="Fondo Letra Canción" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; object-fit: cover; opacity: 0.25;">
         <div class="contenedor-presentacion">
             <h1 class="titulo-club">Club Colibrí</h1>
-            <p>Somos un grupo de personas que nos reunimos in este espacio para compartir experiencias, intereses de unión familiar, no perder identidad and fortalecer la autoestima de nuestros hijos y conocer de arte, cultura y educación. Nos dedicamos a fortalecer la identidad y la integración familiar con inteligencia emocional e inteligencia creativa.</p>
+            <p>Somos un grupo de personas que nos reunimos in este espacio para compartir experiencias, intereses de unión familiar, no perder identidad y fortalecer la autoestima de nuestros hijos y conocer de arte, cultura y educación. Nos dedicamos a fortalecer la identidad y la integración familiar con inteligencia emocional e inteligencia creativa.</p>
             <div class="bloque-central">
                 <img class="logo-central" src="imageLOGO (1).png">
                 <button class="btn-reproducir" onclick="reproducirAlas()">▶ Alas y Raíces</button>
@@ -186,49 +185,6 @@
         </div>
     </section>
 
-    <audio id="audioAlas" src="Alas y Raíces (5) (1).mp3"></audio>
+    <audio id="audioAlas" src="Alas y Raíces (5) (1).mp3"></audio>
     <audio id="audioZafiro" src="aleteo_de_zafiro.mp3"></audio>
-    <audio id="audioEstafeta" src="LA ESTAFETA VUELA HOY (1).mp3"></audio>
-
-    <script>
-        const audioAlas = document.getElementById('audioAlas');
-        const audioZafiro = document.getElementById('audioZafiro');
-        const audioEstafeta = document.getElementById('audioEstafeta');
-        const videoAvatar = document.getElementById('avatarVideo');
-        const btnAvatar = document.querySelector('.btn-activar-avatar');
-        const btnAlas = document.querySelector('.btn-reproducir');
-
-        function apagarTodo() {
-            audioAlas.pause(); audioZafiro.pause(); audioEstafeta.pause();
-            videoAvatar.pause();
-            btnAvatar.innerHTML = "▶ Ver y Escuchar Avatar";
-            btnAlas.innerHTML = "▶ Alas y Raíces";
-        }
-
-        function controlarAvatar() {
-            if (videoAvatar.paused) {
-                apagarTodo();
-                videoAvatar.muted = false;
-                videoAvatar.play().catch(e => console.log("Bloqueado:", e));
-                btnAvatar.innerHTML = "⏸ Pausar Avatar";
-            } else {
-                videoAvatar.pause();
-                btnAvatar.innerHTML = "▶ Ver y Escuchar Avatar";
-            }
-        }
-
-        function reproducirAlas() { 
-            if (audioAlas.paused) {
-                apagarTodo(); 
-                audioAlas.play().catch(e => console.log("Error de audio:", e)); 
-                btnAlas.innerHTML = "⏸ Pausar Música";
-            } else {
-                audioAlas.pause();
-                btnAlas.innerHTML = "▶ Alas y Raíces";
-            }
-        }
-        function reproducirZafiro() { apagarTodo(); audioZafiro.play(); }
-        function reproducirEstafeta() { apagarTodo(); audioEstafeta.play(); }
-    </script>
-</body>
-</html>
+    <audio id="audioEstafeta"
