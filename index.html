@@ -187,4 +187,47 @@
 
     <audio id="audioAlas" src="Alas y Raíces (5) (1).mp3"></audio>
     <audio id="audioZafiro" src="aleteo_de_zafiro.mp3"></audio>
-    <audio id="audioEstafeta"
+    <audio id="audioEstafeta" src="LA ESTAFETA VUELA HOY (1).mp3"></audio>
+
+    <script>
+        const audioAlas = document.getElementById('audioAlas');
+        const audioZafiro = document.getElementById('audioZafiro');
+        const audioEstafeta = document.getElementById('audioEstafeta');
+        const videoAvatar = document.getElementById('avatarVideo');
+        const btnAvatar = document.querySelector('.btn-activar-avatar');
+        const btnAlas = document.querySelector('.btn-reproducir');
+
+        function apagarTodo() {
+            audioAlas.pause(); audioZafiro.pause(); audioEstafeta.pause();
+            videoAvatar.pause();
+            btnAvatar.innerHTML = "▶ Ver y Escuchar Avatar";
+            btnAlas.innerHTML = "▶ Alas y Raíces";
+        }
+
+        function controlarAvatar() {
+            if (videoAvatar.paused) {
+                apagarTodo();
+                videoAvatar.muted = false;
+                videoAvatar.play().catch(e => console.log("Bloqueado:", e));
+                btnAvatar.innerHTML = "⏸ Pausar Avatar";
+            } else {
+                videoAvatar.pause();
+                btnAvatar.innerHTML = "▶ Ver y Escuchar Avatar";
+            }
+        }
+
+        function reproducirAlas() { 
+            if (audioAlas.paused) {
+                apagarTodo(); 
+                audioAlas.play().catch(e => console.log("Error de audio:", e)); 
+                btnAlas.innerHTML = "⏸ Pausar Música";
+            } else {
+                audioAlas.pause();
+                btnAlas.innerHTML = "▶ Alas y Raíces";
+            }
+        }
+        function reproducirZafiro() { apagarTodo(); audioZafiro.play(); }
+        function reproducirEstafeta() { apagarTodo(); audioEstafeta.play(); }
+    </script>
+</body>
+</html>
