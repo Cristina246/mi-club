@@ -199,11 +199,15 @@
             }
         }
 
-        function reproducirAlas() { 
+      function reproducirAlas() { 
             if (audioAlas.paused) {
                 apagarTodo(); 
-                audioAlas.play().catch(e => console.log("Error de audio:", e)); 
-                btnAlas.innerHTML = "⏸ Pausar Música";
+                audioAlas.play().then(() => {
+                    btnAlas.innerHTML = "⏸ Pausar Música";
+                }).catch(e => {
+                    console.log("Error, intenta hacer clic en otro lado primero:", e);
+                    alert("Por favor, haz clic primero en cualquier parte de la página y luego intenta reproducir.");
+                });
             } else {
                 audioAlas.pause();
                 btnAlas.innerHTML = "▶ Alas y Raíces";
