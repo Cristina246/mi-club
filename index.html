@@ -18,114 +18,69 @@
         .sello-izq { height: 55px; cursor: pointer; transition: transform 0.3s; }
         .sello-izq:hover { transform: scale(1.05); }
         
-        nav { display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-end; }
-        nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: color 0.3s; padding: 5px 10px; }
+        nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+        nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: color 0.3s; padding: 5px 8px; }
         nav a:hover { color: #00f2fe; }
-
-        /* FONDO DE LA SECCIÓN */
-        .fondo-letras {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -2; object-fit: cover; opacity: 0.25;
-        }
 
         /* 2. SECCIÓN DE IMPACTO */
         .seccion-impacto {
             position: relative; min-height: 100vh; display: flex; flex-direction: column;
             align-items: center; justify-content: center; padding: 120px 20px 60px 20px;
-            text-align: center; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+            text-align: center; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9)), url('solfon.jpg');
+            background-size: cover; background-position: center;
         }
         .contenedor-presentacion { max-width: 850px; margin: 0 auto; }
-        .titulo-club { font-size: 3.2rem; color: #00f2fe; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,242,254,0.4); letter-spacing: 1px; }
-        .descripcion-club { font-size: 1.15rem; line-height: 1.7; opacity: 0.95; margin-bottom: 25px; }
+        .titulo-club { font-size: 3.2rem; color: #00f2fe; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,242,254,0.4); }
         
-        .bloque-central { position: relative; margin: 30px auto; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; }
-        .logo-central { width: 100%; height: auto; z-index: 2; filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.7)); }
-        
+        .bloque-central { position: relative; margin: 30px auto; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; }
+        .logo-central { width: 100%; height: auto; z-index: 2; }
         .btn-reproducir {
             position: absolute; z-index: 3; padding: 10px 20px; font-weight: bold;
             background: linear-gradient(45deg, #ff416c, #ff4b2b); color: white;
-            border: none; border-radius: 20px; cursor: pointer; font-size: 0.85rem;
-            box-shadow: 0 4px 15px rgba(255,65,108,0.5); transition: transform 0.2s;
+            border: none; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 15px rgba(255,65,108,0.5);
         }
-        .btn-reproducir:hover { transform: scale(1.1); }
 
-        .frase-resaltada { font-size: 1.5rem; font-style: italic; color: #4facfe; margin: 20px 0; font-weight: bold; }
-        .frase-mision { font-size: 1.05rem; line-height: 1.6; opacity: 0.85; max-width: 750px; margin: 0 auto; }
-
-        /* 3. SECCIÓN INICIO (AVATAR MODIFICADA) */
-        .seccion-inicio {
-            padding: 80px 20px; background: #0a0a0a; text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .contenedor-inicio { max-width: 800px; margin: 0 auto; }
-        .frase-hijos { font-size: 1.6rem; color: #ffb13b; font-style: italic; margin-bottom: 30px; line-height: 1.5; font-weight: 600; }
-        
-        /* Estilos del Video del Avatar Corregidos para lucir más */
+        /* 3. SECCIÓN INICIO (AVATAR) */
+        .seccion-inicio { padding: 80px 20px; background: #0a0a0a; text-align: center; }
         .box-avatar { 
-            position: relative; 
-            width: 350px; /* Aumentado de 280px */
-            height: 350px; /* Aumentado de 280px */
-            margin: 0 auto 25px auto; 
-            border-radius: 50%; 
-            overflow: hidden; 
-            border: 4px solid #ffb13b; 
-            box-shadow: 0 0 35px rgba(255,177,59,0.5); /* Sombra más pronunciada */
+            width: 350px; height: 350px; margin: 0 auto 25px auto; 
+            border-radius: 50%; overflow: hidden; border: 4px solid #ffb13b; 
+            box-shadow: 0 0 35px rgba(255,177,59,0.5); 
         }
         .video-avatar { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* Botón de reproducción de audio eliminado en inicio según indicaciones */
-        
-        .texto-historia { font-size: 1.15rem; line-height: 1.8; opacity: 0.9; margin-bottom: 20px; }
-        .frase-conexion { font-size: 1.3rem; color: #00f2fe; font-weight: bold; margin-top: 15px; }
 
-        /* 4. SECCIÓN MUSEO DIGITAL */
-        .seccion-museo {
-            padding: 80px 20px; background: #000; text-align: center; position: relative;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
+        /* 4. MUSEO DIGITAL */
+        .seccion-museo { padding: 80px 20px; background: #000; text-align: center; }
         .marco-museo {
             max-width: 950px; margin: 0 auto; padding: 40px 20px;
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('solfon.jpg');
-            background-size: cover; background-position: center;
-            border: 3px solid #00f2fe; border-radius: 20px; box-shadow: 0 0 30px rgba(0,242,254,0.2);
+            background-size: cover; border: 3px solid #00f2fe; border-radius: 20px;
         }
-        .titulo-museo { font-size: 2.5rem; color: #00f2fe; margin-bottom: 15px; text-transform: uppercase; }
-        
-        .bloque-musica-museo { display: flex; align-items: center; justify-content: center; gap: 20px; margin: 25px 0; }
-        .gif-colibri { width: 70px; height: auto; }
-        .btn-museo-musica {
-            padding: 10px 25px; font-weight: bold; background: #00f2fe; color: black;
-            border: none; border-radius: 20px; cursor: pointer; font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(0,242,254,0.4);
-        }
+        .btn-cat.activo { background: #ff416c; border-color: #ff416c; }
 
-        .menu-categorias { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
-        .btn-cat {
-            padding: 12px 25px; font-weight: bold; background: transparent; color: white;
-            border: 2px solid rgba(255,255,255,0.4); border-radius: 8px; cursor: pointer;
-            transition: all 0.3s; font-size: 0.95rem;
+        /* 5. SECCIÓN CLASES (NUEVA) */
+        .seccion-clases { padding: 80px 20px; background: #050505; text-align: center; border-top: 1px solid #333; }
+        .cuadro-clase { 
+            max-width: 800px; margin: 30px auto; padding: 30px; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('sello.png');
+            background-size: contain; border-radius: 15px; border: 2px solid #ffb13b;
         }
-        .btn-cat:hover, .btn-cat.activo { background: #ff416c; border-color: #ff416c; box-shadow: 0 4px 15px rgba(255,65,108,0.4); }
+        .video-tecnica { width: 100%; max-width: 600px; border-radius: 10px; margin-top: 20px; border: 2px solid #fff; }
 
-        .visor-catalogo {
-            background: rgba(255,255,255,0.05); border-radius: 12px; padding: 30px;
-            max-width: 600px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.1);
+        /* 6. SECCIÓN EVENTOS (NUEVA) */
+        .seccion-eventos { padding: 80px 20px; background: #000; text-align: center; }
+        .tarjeta-maraton {
+            max-width: 900px; margin: 0 auto; padding: 40px;
+            background: #111; border-left: 5px solid #00f2fe; border-radius: 10px; text-align: left;
         }
-        .subtitulo-cat { font-size: 1.4rem; color: #ffb13b; margin-bottom: 15px; text-transform: uppercase; }
-        
-        .control-galeria { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; }
-        .btn-flecha {
-            background: #222; color: white; border: 1px solid #00f2fe; width: 45px; height: 45px;
-            border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
-        }
-        .btn-flecha:hover { background: #00f2fe; color: black; }
-        .foto-cuadro { font-size: 4rem; background: rgba(0,0,0,0.5); width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px dashed rgba(255,255,255,0.3); }
+        .meta-ciudades { color: #00f2fe; font-weight: bold; margin: 15px 0; }
+        .kit-destacado { background: #222; padding: 20px; border-radius: 8px; margin-top: 20px; border: 1px dashed #ffb13b; }
     </style>
 </head>
 <body>
 
     <header>
-        <img class="sello-izq" src="sello.png" alt="Sello Club Colibrí" title="Cambiar Idioma">
+        <img class="sello-izq" src="sello.png" alt="Sello">
         <nav>
             <a href="#quienes-somos">¿Quiénes somos?</a>
             <a href="#inicio">Inicio</a>
@@ -133,147 +88,86 @@
             <a href="#clases">Clases</a>
             <a href="#tienda">Tienda</a>
             <a href="#contacto">Contacto</a>
-            <a href="#presentacion">Presentación</a>
             <a href="#eventos">Eventos</a>
-            <a href="#proximas-clases">Próximas clases</a>
             <a href="#videos">Videos y Vivencias</a>
-            <a href="#donaciones">Donaciones</a>
         </nav>
     </header>
 
     <main class="seccion-impacto" id="quienes-somos">
-        <img class="fondo-letras" src="solfon.jpg" alt="Fondo Letra Canción">
         <div class="contenedor-presentacion">
             <h1 class="titulo-club">Club Colibrí</h1>
-            <p class="descripcion-club">
-                Somos un grupo de personas que nos reunimos in este espacio para compartir experiencias, intereses de unión familiar, no perder identidad y fortalecer la autoestima de nuestros hijos y conocer de arte, cultura y educación. Nos dedicamos a fortalecer la identidad y la integración familiar con inteligencia emocional e inteligencia creativa.
-            </p>
+            <p>Somos un grupo de personas que nos reunimos para fortalecer la identidad y la integración familiar.</p>
             <div class="bloque-central">
-                <img class="logo-central" src="imageLOGO (1).png" alt="Logo Oficial">
+                <img class="logo-central" src="imageLOGO (1).png">
                 <button class="btn-reproducir" onclick="reproducirAlas()">▶ Alas y Raíces</button>
             </div>
-            <p class="frase-resaltada">“Es algo más que arte”</p>
-            <p class="frase-mision">
-                Empoderamos a la comunidad migrante en Estados Unidos y sensibilizamos al público general sobre la riqueza del arte prehispánico a través de iniciativas artísticas que preservan y difunden nuestro legado cultural.
-            </p>
+            <p>“Es algo más que arte”</p>
         </div>
     </main>
 
     <section class="seccion-inicio" id="inicio">
-        <div class="contenedor-inicio">
-            <p class="frase-hijos">“Queremos que nuestros hijos nacidos aquí en USA. conozcan su herencia cultural de una forma mágica y tangible”.</p>
-            
-            <div class="box-avatar">
-                <video class="video-avatar" id="avatarVideo" loop autoplay muted playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
-            </div>
-            
-            <p class="texto-historia">
-                La historia, mitología, dicotomía, conceptos místicos, religiosos de nuestras culturas americanas.
-            </p>
-            <p class="frase-conexion">
-                ¡¡Tendrás una experiencia única que te conectará con tu esencia y raíces!!
-            </p>
+        <p style="color:#ffb13b; font-size: 1.5rem; margin-bottom:20px;">“Queremos que nuestros hijos nacidos aquí conozcan su herencia cultural de forma mágica”.</p>
+        <div class="box-avatar">
+            <video class="video-avatar" id="avatarVideo" loop autoplay muted playsinline src="Avatar_IV_Video (1) (1).mp4"></video>
         </div>
+        <p>¡Una experiencia única que te conectará con tu esencia!</p>
     </section>
 
     <section class="seccion-museo" id="museo">
         <div class="marco-museo">
-            <h2 class="titulo-museo">Museo Digital</h2>
-            <p style="opacity: 0.9;">Imágenes de artesanías prehispánicas y legados culturales</p>
+            <h2>Museo Digital</h2>
+            <button onclick="reproducirZafiro()" style="padding:10px; margin:20px; border-radius:10px; cursor:pointer;">🎵 Aleteo de Zafiro</button>
+            <div id="numeroPieza">Pieza 1</div>
+        </div>
+    </section>
 
-            <div class="bloque-musica-museo">
-                <img class="gif-colibri" src="colibri (1).png" alt="Colibrí Volando">
-                <button class="btn-museo-musica" onclick="reproducirZafiro()">🎵 Oír: Aleteo de Zafiro</button>
+    <section class="seccion-clases" id="clases">
+        <h2 style="color:#00f2fe; font-size: 2.5rem;">Clases</h2>
+        <p style="font-size: 1.4rem; margin-bottom: 20px;">“Vive la historia en tus manos”</p>
+        
+        <div class="cuadro-clase">
+            <button onclick="reproducirEstafeta()" style="background:#ffb13b; border:none; padding:10px 20px; border-radius:20px; font-weight:bold; cursor:pointer;">🎵 La estafeta vuela hoy</button>
+            <p style="margin-top:20px;">Video de arte: Técnica de aplicación pátina</p>
+            <div style="background:#222; height:250px; display:flex; align-items:center; justify-content:center; border:1px solid #444; margin-top:15px;">
+                📹 [Espacio para Video de Técnica]
             </div>
+        </div>
 
-            <div class="menu-categorias">
-                <button class="btn-cat activo" id="btnChicas" onclick="cambiarCategoria('chicas')">Artesanías Chicas</button>
-                <button class="btn-cat" id="btnMedianas" onclick="cambiarCategoria('medianas')">Artesanías Medianas</button>
-                <button class="btn-cat" id="btnGrandes" onclick="cambiarCategoria('grandes')">Artesanías Grandes</button>
-            </div>
+        <div id="presentacion" style="margin-top:40px;">
+            <h3>Formas de aprendizaje</h3>
+            <p>Inteligencia emocional e Inteligencia creativa aplicada al arte prehispánico.</p>
+        </div>
+    </section>
 
-            <div class="visor-catalogo">
-                <h3 class="subtitulo-cat" id="nombreCategoria">Artesanías Chicas</h3>
-                <div class="foto-cuadro" id="cuadroImagen">
-                    🖼️ Pieza <span id="numeroPieza" style="margin-left: 10px; font-weight: bold; color: #00f2fe;">1</span>
-                </div>
-                <div class="control-galeria">
-                    <button class="btn-flecha" onclick="fotoAnterior()">◀</button>
-                    <img src="colibri (1).png" style="width: 35px; height: auto;" alt="Icono">
-                    <button class="btn-flecha" onclick="fotoSiguiente()">▶</button>
-                </div>
+    <section class="seccion-eventos" id="eventos">
+        <h2 style="color:#ff416c; font-size: 2.5rem; margin-bottom:30px;">Eventos</h2>
+        <div class="tarjeta-maraton">
+            <h3>Maratón por la identidad</h3>
+            <p class="meta-ciudades">Meta: Distribuir 1,000 piezas en Roy, Ogden, Layton, Clearfield y Salt Lake, UT.</p>
+            <p>Clase de 20 minutos en casa con la familia a la hora que más te convenga. ¡Cada participante se lleva su obra artesanal y aprendizaje histórico!</p>
+            
+            <div class="kit-destacado">
+                <h4>Solo Kits Pequeños</h4>
+                <p>Obtén tu colección: <strong>"Me reconozco"</strong></p>
             </div>
         </div>
     </section>
 
     <audio id="audioAlas" src="Alas y Raíces (5) (1).mp3"></audio>
-    <audio id="audioZafiro" loop src="aleteo_de_zafiro.mp3"></audio>
+    <audio id="audioZafiro" src="aleteo_de_zafiro.mp3"></audio>
+    <audio id="audioEstafeta" src="LA ESTAFETA VUELA HOY (1).mp3"></audio>
 
     <script>
         const audioAlas = document.getElementById('audioAlas');
         const audioZafiro = document.getElementById('audioZafiro');
-        const videoAvatar = document.getElementById('avatarVideo');
-
-        // Reproducción automática del video del avatar en inicio
-        window.addEventListener('load', () => {
-            videoAvatar.play().catch(error => {
-                // Autoplay puede estar bloqueado por el navegador
-                console.error("Autoplay del video del avatar bloqueado:", error);
-            });
-        });
-
-        let categoriaActual = 'chicas';
-        let fotoActual = 1;
-
-        function cambiarCategoria(cat) {
-            categoriaActual = cat;
-            fotoActual = 1;
-            document.querySelectorAll('.btn-cat').forEach(b => b.classList.remove('activo'));
-            
-            if(cat === 'chicas') {
-                document.getElementById('btnChicas').classList.add('activo');
-                document.getElementById('nombreCategoria').innerText = 'Artesanías Chicas';
-            } else if(cat === 'medianas') {
-                document.getElementById('btnMedianas').classList.add('activo');
-                document.getElementById('nombreCategoria').innerText = 'Artesanías Medianas';
-            } else {
-                document.getElementById('btnGrandes').classList.add('activo');
-                document.getElementById('nombreCategoria').innerText = 'Artesanías Grandes';
-            }
-            actualizarVisor();
-        }
-
-        function fotoAnterior() {
-            if(fotoActual > 1) { fotoActual--; } else { fotoActual = 10; }
-            actualizarVisor();
-        }
-
-        function fotoSiguiente() {
-            if(fotoActual < 10) { fotoActual++; } else { fotoActual = 1; }
-            actualizarVisor();
-        }
-
-        function actualizarVisor() {
-            document.getElementById('numeroPieza').innerText = fotoActual;
-        }
+        const audioEstafeta = document.getElementById('audioEstafeta');
 
         function apagarTodo() {
-            audioAlas.pause();
-            audioZafiro.pause();
-            // Video del avatar sigue reproduciéndose en inicio
-            document.querySelector('.btn-reproducir').innerText = "▶ Alas y Raíces";
-            document.querySelector('.btn-museo-musica').innerText = "🎵 Oír: Aleteo de Zafiro";
+            audioAlas.pause(); audioZafiro.pause(); audioEstafeta.pause();
         }
-
-        function reproducirAlas() {
-            if (audioAlas.paused) { apagarTodo(); audioAlas.play(); document.querySelector('.btn-reproducir').innerText = "⏸ Pausar"; } 
-            else { audioAlas.pause(); document.querySelector('.btn-reproducir').innerText = "▶ Alas y Raíces"; }
-        }
-
-        function reproducirZafiro() {
-            if (audioZafiro.paused) { apagarTodo(); audioZafiro.play(); document.querySelector('.btn-museo-musica').innerText = "⏸ Pausar Música"; } 
-            else { audioZafiro.pause(); document.querySelector('.btn-museo-musica').innerText = "🎵 Oír: Aleteo de Zafiro"; }
-        }
+        function reproducirAlas() { apagarTodo(); audioAlas.play(); }
+        function reproducirZafiro() { apagarTodo(); audioZafiro.play(); }
+        function reproducirEstafeta() { apagarTodo(); audioEstafeta.play(); }
     </script>
 </body>
 </html>
