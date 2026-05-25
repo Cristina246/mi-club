@@ -37,12 +37,26 @@
     </nav>
 </header>
 
-<main id="inicio" style="padding-top: 150px; text-align: center;">
-    <h1>Club Colibrí</h1>
-    <h3>Alas y Raíces</h3>
+<main id="inicio" style="
+    background-image: url('fondo-inicio.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;">
     
-    <div style="margin-top: 40px;">
-        <video id="avatarVideo" width="320" height="auto" controls style="border: 2px solid #00f2fe; border-radius: 10px;">
+    <div style="margin-bottom: 20px;">
+        <h1 style="font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Club Colibrí</h1>
+        <h3 style="font-size: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Alas y Raíces</h3>
+    </div>
+
+    <div style="border: 4px solid #4facfe; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        <video id="avatarVideo" width="400" height="auto" controls>
             <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
             Tu navegador no soporta videos.
         </video>
