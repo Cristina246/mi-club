@@ -5,53 +5,69 @@
     <title>Club Colibrí</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-        header { background: #f4f4f4; text-align: center; padding: 20px; }
-        nav { background: #333; color: white; padding: 1rem; position: sticky; top: 0; display: flex; justify-content: center; gap: 20px; }
+        nav { background: #333; color: white; padding: 15px; position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; z-index: 1000; }
+        .nav-logo { width: 50px; border-radius: 50%; }
+        .nav-links { display: flex; gap: 10px; flex-wrap: wrap; font-size: 13px; }
         nav a { color: white; text-decoration: none; font-weight: bold; }
+        header { text-align: center; padding: 60px 20px; background: url('sello.png') no-repeat center center; background-size: cover; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+        .video-container { margin: 20px auto; max-width: 500px; }
+        video { width: 100%; border-radius: 15px; border: 4px solid #fff; }
         section { padding: 40px 20px; border-bottom: 1px solid #ddd; }
-        .logo { width: 150px; }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="imageLOGO (1).png" class="nav-logo" alt="Logo">
+            <strong>Club Colibrí</strong>
+        </div>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes-somos">¿Quiénes somos?</a>
+            <a href="#museo">Museo</a>
+            <a href="#clases">Clases</a>
+            <a href="#tienda">Tienda</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#presentacion">Presentación</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#videos">Videos</a>
+            <a href="#donaciones">Donaciones</a>
+        </div>
+    </nav>
+
     <header id="inicio">
-        <img src="imageLOGO (1).png" alt="Logo Club Colibrí" class="logo">
         <h1>Club Colibrí</h1>
         <p>“Es algo más que arte”</p>
+        <div class="video-container">
+            <video controls>
+                <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+        </div>
     </header>
-
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#quienes-somos">¿Quiénes somos?</a>
-        <a href="#especiales">Kits</a>
-        <a href="#museo">Museo Digital</a>
-    </nav>
 
     <section id="quienes-somos">
         <h2>¿Quiénes somos?</h2>
-        <p>Somos un grupo dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad. Buscamos potenciar la autoestima de nuestros hijos mediante el aprendizaje del arte, la cultura y la educación, integrando la inteligencia emocional y la creatividad en cada una de nuestras actividades.</p>
-        <p>Empoderamos a la comunidad migrante en los Estados Unidos y sensibilizamos al público general sobre la riqueza del arte prehispánico, a través de iniciativas artísticas que preservan y difunden nuestro valioso legado cultural.</p>
-    </section>
-
-    <section id="especiales">
-        <h2>Kits</h2>
-        <h3>Maratón de la Identidad</h3>
-        <img src="kitsbien.jpg" alt="Maratón de la Identidad" style="max-width: 100%; border-radius: 15px;">
+        <p>Somos un grupo dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
     </section>
 
     <section id="museo">
         <h2>Museo Digital</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-            <div style="text-align: center; width: 200px;"><img src="carita_sonriente.jpg" alt="Carita" style="width: 100%;"><p>Carita Sonriente</p></div>
-            <div style="text-align: center; width: 200px;"><img src="caritamaya_chica.png" alt="Maya" style="width: 100%;"><p>Carita Maya</p></div>
-            <div style="text-align: center; width: 200px;"><img src="mayasentado_chico.jpg" alt="Maya" style="width: 100%;"><p>Maya Sentado</p></div>
-            <div style="text-align: center; width: 200px;"><img src="mediano_rey.jpg" alt="Rey" style="width: 100%;"><p>Figura de Rey</p></div>
-            <div style="text-align: center; width: 200px;"><img src="perfilindio_americano.jpg" alt="Perfil" style="width: 100%;"><p>Perfil Indo Americano</p></div>
-            <div style="text-align: center; width: 200px;"><img src="inflablecatrina.jpg" alt="Catrina" style="width: 100%;"><p>Catrina Inflable</p></div>
-            <div style="text-align: center; width: 200px;"><img src="expoc_biblioteca.jpg" alt="Expo" style="width: 100%;"><p>Exposición Biblioteca</p></div>
-            <div style="text-align: center; width: 200px;"><img src="mascara_papel.jpg" alt="Mascara" style="width: 100%;"><p>Máscara de Papel</p></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+            <div style="text-align: center; width: 150px;"><img src="carita_sonriente.jpg" style="width: 100%;"></div>
+            <div style="text-align: center; width: 150px;"><img src="inflablecatrina.jpg" style="width: 100%;"></div>
+            <div style="text-align: center; width: 150px;"><img src="expoc_biblioteca.jpg" style="width: 100%;"></div>
         </div>
     </section>
+
+    <section id="clases"><h2>Clases</h2></section>
+    <section id="tienda"><h2>Tienda</h2></section>
+    <section id="contacto"><h2>Contacto</h2></section>
+    <section id="presentacion"><h2>Presentación</h2></section>
+    <section id="eventos"><h2>Eventos</h2></section>
+    <section id="videos"><h2>Videos y Vivencias</h2></section>
+    <section id="donaciones"><h2>Donaciones</h2></section>
 
 </body>
 </html>
