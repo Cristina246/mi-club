@@ -5,12 +5,20 @@
     <title>Club Colibrí</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-        nav { background: #333; color: white; padding: 1rem; position: sticky; top: 0; }
-        nav a { color: white; margin-right: 15px; text-decoration: none; }
-        section { padding: 40px 20px; }
+        header { background: #f4f4f4; text-align: center; padding: 20px; }
+        nav { background: #333; color: white; padding: 1rem; position: sticky; top: 0; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        section { padding: 40px 20px; border-bottom: 1px solid #ddd; }
+        .logo { width: 150px; }
     </style>
 </head>
 <body>
+
+    <header id="inicio">
+        <img src="imageLOGO (1).png" alt="Logo Club Colibrí" class="logo">
+        <h1>Club Colibrí</h1>
+        <p>“Es algo más que arte”</p>
+    </header>
 
     <nav>
         <a href="#inicio">Inicio</a>
@@ -18,11 +26,6 @@
         <a href="#especiales">Kits</a>
         <a href="#museo">Museo Digital</a>
     </nav>
-
-    <header id="inicio" style="text-align: center; padding: 50px;">
-        <h1>Club Colibrí</h1>
-        <p>“Es algo más que arte”</p>
-    </header>
 
     <section id="quienes-somos">
         <h2>¿Quiénes somos?</h2>
@@ -33,7 +36,7 @@
     <section id="especiales">
         <h2>Kits</h2>
         <h3>Maratón de la Identidad</h3>
-        <img src="kitsbien.jpg" alt="Maratón de la Identidad" style="max-width: 100%; height: auto; border-radius: 15px;">
+        <img src="kitsbien.jpg" alt="Maratón de la Identidad" style="max-width: 100%; border-radius: 15px;">
     </section>
 
     <section id="museo">
