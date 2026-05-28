@@ -94,6 +94,32 @@
             z-index: 2;
         }
 
+        /* BOTÓN FLOTANTE PARA PAUSAR MÚSICA */
+        .btn-musica {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(17, 17, 17, 0.85);
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-musica:hover {
+            background: #d4af37;
+            color: #111111;
+            transform: scale(1.1);
+        }
+
         /* Ajustes para pantallas móviles */
         @media (max-width: 900px) {
             nav a { font-size: 0.4rem; }
@@ -156,6 +182,9 @@
     </div>
 </nav>
 
+<!-- BOTÓN FLOTANTE PARA CONTROLAR AUDIO -->
+<button class="btn-musica" id="btnSilencio" title="Pausar/Activar Música">🔊</button>
+
 <header id="inicio" class="header">
     <video autoplay loop muted playsinline class="header-video" id="videoInicio">
         <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
@@ -207,7 +236,7 @@
         </ul>
         <h3>Preparación y Aplicación</h3>
         <p><strong>1. Aplicación del color base:</strong> Ponte el guante y pinta toda la pieza asegurando que la pintura entre en las zonas profundas. Deja secar 6 minutos.</p>
-        <p><strong>2. Retirado y resaltado:</strong> Trabaja por secciones pequeñas. Frota con el trapo seco las partes prominentes para dejar la pátina solo en los fondos.</p>
+        <p><strong>2. Retirado y resultó:</strong> Trabaja por secciones pequeñas. Frota con el trapo seco las partes prominentes para dejar la pátina solo en los fondos.</p>
     </section>
 
     <section id="eventos" style="text-align: center; padding: 20px 0;">
@@ -259,13 +288,48 @@
 </main>
 
 <script>
+    var video = document.getElementById('videoInicio');
+    var btnSilencio = document.getElementById('btnSilencio');
+
+    // 1. Activa la música con el primer clic en la pantalla
     document.addEventListener('click', function() {
-        var video = document.getElementById('videoInicio');
-        if (video) {
+        if (video && video.muted) {
             video.muted = false;
             video.play();
+            btnSilencio.textContent = "🔊";
         }
     }, { once: true });
+
+    // 2. Control manual con el botón flotante (Activar/Pausar de golpe)
+    btnSilencio.addEventListener('click', function(e) {
+        e.stopPropagation(); // Evita que interfiera con otros clics
+        if (video.paused || video.muted) {
+            video.muted = false;
+            video.play();
+            btnSilencio.textContent = "🔊";
+        } else {
+            video.pause();
+            btnSilencio.textContent = "🔇";
+        }
+    });
+
+    // 3. APAGADO AUTOMÁTICO: Detiene la música al ir a otra sección
+    var enlaces = document.querySelectorAll('nav a');
+    enlaces.forEach(function(enlace) {
+        enlace.addEventListener('click', function() {
+            var destino = this.getAttribute('href');
+            // Si el usuario va a cualquier lado que NO sea "#inicio", se apaga la música
+            if (destino !== '#inicio' && video) {
+                video.pause();
+                btnSilencio.textContent = "🔇";
+            } else if (destino === '#inicio' && video) {
+                // Si regresa a Inicio, vuelve a sonar
+                video.muted = false;
+                video.play();
+                btnSilencio.textContent = "🔊";
+            }
+        });
+    });
 </script>
 
 </body>
