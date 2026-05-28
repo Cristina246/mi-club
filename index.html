@@ -5,13 +5,41 @@
     <title>Club Colibrí</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
-        nav { background: #1a1a1a; padding: 15px; position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .nav-brand { display: flex; align-items: center; gap: 10px; }
-        .nav-logo { max-height: 40px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
-        .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
-        nav a { color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
+        
+        /* MENÚ CORREGIDO PARA QUE NO OCUPE TODA LA PANTALLA */
+        nav { 
+            background: #1a1a1a; 
+            padding: 12px 20px; 
+            position: sticky; 
+            top: 0; 
+            display: flex; 
+            flex-direction: row;
+            align-items: center; 
+            justify-content: space-between; 
+            z-index: 1000; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .nav-brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+        .nav-logo { max-height: 38px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
+        
+        /* Enlaces ordenados y compactos */
+        .nav-links { 
+            display: flex; 
+            gap: 12px; 
+            flex-wrap: wrap; 
+            justify-content: flex-end;
+        }
+        nav a { 
+            color: #ffffff; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: color 0.3s; 
+            font-size: 0.85rem; /* Letra un poco más pequeña para que quepa todo */
+            white-space: nowrap;
+        }
         nav a:hover { color: #d4af37; }
-        header { text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; color: white; }
+        
+        header { text-align: center; padding: 80px 20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; color: white; }
         section { padding: 60px 20px; border-bottom: 1px solid #e0e0e0; max-width: 900px; margin: auto; }
         h1 { font-size: 3.5rem; margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         h2 { font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center; }
@@ -25,6 +53,12 @@
             mix-blend-mode: screen;
             display: block;
         }
+
+        /* Si la pantalla es mediana o chica, acomoda el menú abajo del logo para que no estorbe */
+        @media (max-width: 900px) {
+            nav { flex-direction: column; gap: 10px; text-align: center; }
+            .nav-links { justify-content: center; gap: 10px; }
+        }
     </style>
 </head>
 <body>
@@ -32,7 +66,7 @@
     <nav>
         <div class="nav-brand">
             <img src="imageLOGO (1).png" alt="Logo" class="nav-logo">
-            <span style="color: #ffffff; font-weight: bold; font-size: 1.2rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
+            <span style="color: #ffffff; font-weight: bold; font-size: 1.1rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
         </div>
         <div class="nav-links">
             <a href="#inicio">Inicio</a>
@@ -93,7 +127,7 @@
             <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica. A través de la exploración creativa y la búsqueda de emociones mediante el arte, utilizamos recursos didácticos y kits de artesanía para ayudarte a plasmar tus emociones en lo tangible e intangible, conectando con tu historia biológica, familiar y cultural.</p>
             <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
             <hr>
-            <p><strong>Materiales incluidos en tu kit:</strong></p>
+            <p><strong>Materiales incluidos in tu kit:</strong></p>
             <ul>
                 <li>Pieza de cerámica con alto relieve.</li>
                 <li>Pintura (marrón oscuro, negro o terracota).</li>
