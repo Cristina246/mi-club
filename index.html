@@ -11,13 +11,20 @@
         .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
         nav a { color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
         nav a:hover { color: #d4af37; }
-        header { text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('solfon.jpg') no-repeat center center/cover; color: white; }
+        header { text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; color: white; }
         section { padding: 60px 20px; border-bottom: 1px solid #e0e0e0; max-width: 900px; margin: auto; }
         h1 { font-size: 3.5rem; margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         h2 { font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center; }
         h3 { font-family: 'Cinzel', serif; color: #333; margin-top: 30px; }
         .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        
+        /* TRUCO DE TRANSPARENCIA PARA EL VIDEO */
+        .video-transparente {
+            width: 100%;
+            mix-blend-mode: screen; /* Este comando vuelve invisible el fondo negro del video */
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -43,10 +50,10 @@
 
     <header id="inicio">
         <h1>Club Colibrí</h1>
-        <p style="font-size: 1.5rem; font-style: italic; color: #d4af37;">“Es algo más que arte”</p>
+        <p style="font-size: 1.5rem; font-style: italic; color: #d4af37; margin-bottom: 5px;">“Es algo más que arte”</p>
         
-        <div style="margin: 30px auto; max-width: 320px;">
-            <video controls style="width: 100%; border-radius: 20px; border: 4px solid #d4af37; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+        <div style="margin: 0 auto; max-width: 500px; overflow: hidden;">
+            <video autoplay loop muted playsinline class="video-transparente">
                 <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
                 Tu navegador no soporta videos.
             </video>
