@@ -198,24 +198,22 @@
   <!-- REPRODUCTOR: Usa el mismo archivo del avatar para extraer su canto -->
   <audio id="musica-inicio" src="Avatar_IV_Video (1) (1).mp4" loop></audio>
 
-  <!-- BOTÓN EN LOS PIES DEL AVATAR -->
-  <button id="btn-reproductor" class="boton-audio-pies" onclick="controlarMusica()">
-    <span id="icono-audio">▶️</span>
-  </button>
-
+  a<!-- BOTÓN EN LOS PIES DEL AVATAR (Simplificado sin onclick duplicado) -->
+<button id="btn-reproductor" class="boton-audio-pies">
+  <span id="icono-audio">▶️</span>
+</button>
 </header>
 
-<!-- ESTILOS Y FUNCIONES EXCLUSIVAS PARA EL INICIO -->
+<!-- ESTILOS EXCLUSIVAS PARA EL INICIO (Corregido el error de llaves dobles) -->
 <style>
-  .boton-audio-pies {
-    .boton-audio-pies {
-  margin-top: 15px; /* Lo posiciona justo abajo, a los pies del avatar */
-  width: 25px;      /* Reducido de 55px a 25px */
-  height: 25px;     /* Reducido de 55px a 25px */
-  background-color: #f39c12; /* Color dorado/naranja */
-  border: 2px solid #ffffff; /* Un borde un poco más delgado para que armonice */
+.boton-audio-pies {
+  margin-top: 15px; 
+  width: 25px;      
+  height: 25px;     
+  background-color: #f39c12; 
+  border: 2px solid #ffffff; 
   border-radius: 50%;
-  font-size: 0.9rem; /* Ajustamos el tamaño del emoji para que quepa bien */
+  font-size: 0.9rem; 
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -224,58 +222,43 @@
   z-index: 100;
   transition: transform 0.2s, background-color 0.2s;
 }
-  .boton-audio-pies:hover {
-    transform: scale(1.1);
-    background-color: #e67e22;
-  }
-
-  /* Garantiza que no se duplique ni aparezca en otras secciones */
-  section:not(#inicio) .boton-audio-pies, 
-  main .boton-audio-pies {
-    display: none !important;
-  }
+.boton-audio-pies:hover {
+  transform: scale(1.1);
+  background-color: #e67e22;
+}
+/* Garantiza que no aparezca en otras secciones */
+section:not(#inicio) .boton-audio-pies, main .boton-audio-pies {
+  display: none !important;
+}
 </style>
 
-<script>
-  function controlarMusica() {
-    var musica = document.getElementById("musica-inicio");
-    var icono = document.getElementById("icono-audio");
-
-    if (musica.paused) {
-      musica.play();
-      icono.textContent = "⏸️"; // Cambia a pausa al sonar
-    } else {
-      musica.pause();
-      icono.textContent = "▶️"; // Cambia a play al detenerse
-    }
-  }
-</script>
 <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
-    
-    <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
-        <h2>¿Quiénes somos?</h2>
-       <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
-    <section id="presentacion" style="text-align: center; padding: 20px 0;">
-        <h2>Presentación</h2>
-        <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
-    </section>
+  <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
+    <h2>¿Quiénes somos?</h2>
+    <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
+  </section>
 
-    <section id="museo" style="padding: 20px 0;">
-        <h2>Museo Digital</h2>
-        <div class="gallery">
-            <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
-           <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
-        <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
-        <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
-        <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
-        <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
-        <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
-        <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
-        <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario"></a>
+  <section id="presentacion" style="text-align: center; padding: 20px 0;">
+    <h2>Presentación</h2>
+    <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
+  </section>
+
+  <section id="museo" style="padding: 20px 0;">
+    <h2>Museo Digital</h2>
+    <div class="gallery">
+      <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
+      <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
+      <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
+      <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
+      <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
+      <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
+      <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
+      <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
+      <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario"></a>
     </div>
-</section>
+  </section>
 
-<section id="clases" style="padding: 20px 0;">
+  <section id="clases" style="padding: 20px 0;">
     <h2>Actividad</h2>
     <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
     <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica...</p>
@@ -283,99 +266,104 @@
     <hr>
     <p><strong>Materiales incluidos en tu kit:</strong></p>
     <ul>
-        <li>Pieza de cerámica con alto relieve.</li>
-        <li>Pintura (marrón oscuro, negro o terracota).</li>
-        <li>Guante para la aplicación.</li>
-        <li>Trapo de algodón limpio y seco.</li>
+      <li>Pieza de cerámica con alto relieve.</li>
+      <li>Pintura (marrón oscuro, negro o terracota).</li>
+      <li>Guante para la aplicación.</li>
+      <li>Trapo de algodón limpio y seco.</li>
     </ul>
     <h3>Preparación y Aplicación</h3>
     <p><strong>1. Application del color base:</strong> Ponte el guante y pinta toda la pieza asegurando que la pintura entre en las zonas profundas. Deja secar 6 minutos.</p>
     <p><strong>2. Retirado y resultó:</strong> Trabaja por secciones pequeñas. Frota con el trapo seco las partes prominentes para dejar la pátina solo en los fondos.</p>
-</section>
+  </section>
 
-<section id="eventos" style="text-align: center; padding: 20px 0;">
+  <section id="eventos" style="text-align: center; padding: 20px 0;">
     <h2>Eventos</h2>
     <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios, exposiciones y maratones artísticos.</p>
-</section>
+  </section>
 
-<section id="participacion" style="text-align: center; padding: 20px 0;">
+  <section id="participacion" style="text-align: center; padding: 20px 0;">
     <h2>Participación</h2>
     <p>Descubre cómo formar parte de nuestros talleres, cómo adquirir tus kits educativos y cómo sumarte a las dinámicas de identidad cultural.</p>
-</section>
+  </section>
 
-<section id="tienda" style="padding: 20px 0;">
+  <section id="tienda" style="padding: 20px 0;">
     <h2>Tienda</h2>
     <h3>Piezas Chicas</h3>
     <div class="gallery" style="justify-content: flex-start;">
-        <img src="kitsbien.jpg" alt="Kit">
-        <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico">
-        <img src="cera_azte.jpg" alt="Pieza Azteca Chica">
+      <img src="kitsbien.jpg" alt="Kit">
+      <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico">
+      <img src="cera_azte.jpg" alt="Pieza Azteca Chica">
     </div>
     <h3>Piezas Medianas</h3>
     <div class="gallery" style="justify-content: flex-start;">
-        <img src="cera_Ameriind.jpg" alt="Amerind">
-        <img src="cera_cmaya.jpg" alt="Maya">
-        <img src="cera_Arb.jpg" alt="Arb">
-        <img src="cera_calLuna.jpg" alt="Cal Luna">
-        <img src="cera_son.jpg" alt="Sonriente">
-        <img src="cera_rey.jpg" alt="Rey Cerámica Mediano">
-        <img src="cera_azte.jpg" alt="Pieza Azteca Mediana">
+      <img src="cera_Ameriind.jpg" alt="Amerind">
+      <img src="cera_cmaya.jpg" alt="Maya">
+      <img src="cera_Arb.jpg" alt="Arb">
+      <img src="cera_calLuna.jpg" alt="Cal Luna">
+      <img src="cera_son.jpg" alt="Sonriente">
+      <img src="cera_rey.jpg" alt="Rey Cerámica Mediano">
+      <img src="cera_azte.jpg" alt="Pieza Azteca Mediana">
     </div>
     <h3>Piezas Grandes</h3>
     <div class="gallery" style="justify-content: flex-start;">
-        <img src="cera_coyo.jpg" alt="Coyo">
-        <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
+      <img src="cera_coyo.jpg" alt="Coyo">
+      <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
     </div>
-</section>
-
+  </section>
 </main>
 
+<!-- SCRIPT ÚNICO DE CONTROL (Sin duplicados) -->
 <script>
-    var video = document.getElementById('videoInicio');
-    var btnSilencio = document.getElementById('btn-reproductor');
+  var video = document.getElementById('videoInicio');
+  var musica = document.getElementById('musica-inicio');
+  var btnSilencio = document.getElementById('btn-reproductor');
+  var icono = document.getElementById('icono-audio');
 
-    // 1. Activa la música con el primer clic en la pantalla
-    document.addEventListener('click', function() {
-        if (video && video.muted) {
-            video.muted = false;
-            video.play();
-            var icono = document.getElementById('icono-audio');
-            if(icono) icono.textContent = "🔊";
-        }
-    }, { once: true });
-
-    // 2. Control manual con el botón flotante
-    if (btnSilencio) {
-        btnSilencio.addEventListener('click', function(e) {
-            e.stopPropagation(); 
-            var icono = document.getElementById('icono-audio');
-            if (video.paused || video.muted) {
-                video.muted = false;
-                video.play();
-                if(icono) icono.textContent = "包装";
-            } else {
-                video.pause();
-                if(icono) icono.textContent = "▶️";
-            }
-        });
-    }
-
-    // 3. Apagado automático al cambiar de sección
-    var enlaces = document.querySelectorAll('nav a');
-    enlaces.forEach(function(enlace) {
-        enlace.addEventListener('click', function() {
-            var destino = this.getAttribute('href');
-            var icono = document.getElementById('icono-audio');
-            if (destino !== '#inicio' && video) {
-                video.pause();
-                if(icono) icono.textContent = "▶️";
-            } else if (destino === '#inicio' && video) {
-                video.muted = false;
-                video.play();
-                if(icono) icono.textContent = "⏸️";
-            }
-        });
+  // Una sola función que controla todo el encendido y apagado
+  if (btnSilencio) {
+    btnSilencio.addEventListener('click', function(e) {
+      e.stopPropagation(); // Evita interferencias con el clic general del documento
+      
+      if (musica.paused) {
+        video.muted = false;
+        video.play();
+        musica.play();
+        if (icono) icono.textContent = "⏸️";
+      } else {
+        video.pause();
+        musica.pause();
+        if (icono) icono.textContent = "▶️";
+      }
     });
+  }
+
+  // Activa la música automáticamente solo en el primer clic general de la pantalla
+  document.addEventListener('click', function() {
+    if (musica && musica.paused) {
+      video.muted = false;
+      video.play();
+      musica.play();
+      if (icono) icono.textContent = "⏸️";
+    }
+  }, { once: true });
+
+  // Apagado automático al cambiar de sección en el menú
+  var enlaces = document.querySelectorAll('nav a');
+  enlaces.forEach(function(enlace) {
+    enlace.addEventListener('click', function() {
+      var destino = this.getAttribute('href');
+      if (destino !== '#inicio' && video) {
+        video.pause();
+        if (musica) musica.pause();
+        if (icono) icono.textContent = "▶️";
+      } else if (destino === '#inicio' && video) {
+        video.muted = false;
+        video.play();
+        if (musica) musica.play();
+        if (icono) icono.textContent = "⏸️";
+      }
+    });
+  });
 </script>
 </body>
 </html>
