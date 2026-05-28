@@ -83,12 +83,29 @@
         <h1>Club Colibrí</h1>
         <p style="font-size: 1.5rem; font-style: italic; color: #d4af37; margin-bottom: 5px;">“Es algo más que arte”</p>
         
-        <div style="margin: 0 auto; max-width: 500px; overflow: hidden;">
-            <video loop playsinline controls class="video-transparente">
-                <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
-                Tu navegador no soporta videos.
-            </video>
-        </div>
+        <div class="contenedor-avatar">
+    <video id="miAvatar" autoplay loop playsinline muted class="video-avatar">
+        <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <div class="botones-avatar">
+        <button class="btn-audio" onclick="activarCanto()">🎵 Escuchar Canción</button>
+        <button class="btn-audio" onclick="silenciarAvatar()">🔇 Silenciar</button>
+    </div>
+</div>
+
+<script>
+function activarCanto() {
+    var video = document.getElementById("miAvatar");
+    video.muted = false; // Quita el silencio
+    video.play();        // Asegura que siga reproduciéndose
+}
+
+function silenciarAvatar() {
+    var video = document.getElementById("miAvatar");
+    video.muted = true;  // Vuelve a silenciar
+}
+</script>
     </header>
 
     <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
