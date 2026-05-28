@@ -5,71 +5,25 @@
     <title>Club Colibrí</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
-        
-        /* BARRA DEL ALTO EXACTO DEL LOGO - UNA SOLA FILA */
-        nav { 
-            background: #111111; 
-            padding: 0px 15px; /* Sin relleno vertical para que quede al ras */
-            position: sticky; 
-            top: 0; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            z-index: 1000; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            flex-wrap: nowrap; /* Prohíbe que los links se bajen a otra fila */
-            height: 35px; /* Altura fija ultra delgada */
-        }
-        .nav-brand { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-        .nav-logo { height: 26px; width: 26px; border-radius: 50%; border: 1px solid #d4af37; object-fit: cover; }
-        
-        /* LETRAS ULTRA PEQUEÑAS EN UNA FILA COMPACTA */
-        .nav-links { 
-            display: flex; 
-            gap: 6px; /* Espacio mínimo entre links */
-            flex-wrap: nowrap; 
-            align-items: center;
-        }
-        nav a { 
-            color: #ffffff; 
-            text-decoration: none; 
-            font-weight: 500; 
-            transition: color 0.3s; 
-            font-size: 0.58rem; /* Letras bien chiquitas del tamaño del logo */
-            white-space: nowrap; /* Evita que las palabras se rompan */
-            padding: 2px 2px;
-        }
+        nav { background: #1a1a1a; padding: 15px; position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .nav-brand { display: flex; align-items: center; gap: 10px; }
+        .nav-logo { max-height: 40px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
+        .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
+        nav a { color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
         nav a:hover { color: #d4af37; }
-        
-        /* DISEÑO DE LA CABECERA CON EL SOL */
-        header { 
-            text-align: center; 
-            padding: 40px 20px; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; 
-            color: white; 
-        }
+        header { text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; color: white; }
         section { padding: 60px 20px; border-bottom: 1px solid #e0e0e0; max-width: 900px; margin: auto; }
-        h1 { font-size: 3.5rem; margin-bottom: 5px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        h1 { font-size: 3.5rem; margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         h2 { font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center; }
         h3 { font-family: 'Cinzel', serif; color: #333; margin-top: 30px; }
         .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
         
-        /* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
+        /* TRUCO DE TRANSPARENCIA PARA EL VIDEO */
         .video-transparente {
-            max-height: 250px; 
-            width: auto;
-            mix-blend-mode: screen;
-            display: inline-block;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        /* Ajuste para pantallas de celulares */
-        @media (max-width: 768px) {
-            nav { flex-direction: column; height: auto; padding: 6px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 5px; }
-            nav a { font-size: 0.65rem; }
+            width: 100%;
+            mix-blend-mode: screen; /* Este comando vuelve invisible el fondo negro del video */
+            display: block;
         }
     </style>
 </head>
@@ -78,16 +32,16 @@
     <nav>
         <div class="nav-brand">
             <img src="imageLOGO (1).png" alt="Logo" class="nav-logo">
-            <span style="color: #ffffff; font-weight: bold; font-size: 0.7rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
+            <span style="color: #ffffff; font-weight: bold; font-size: 1.2rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
         </div>
         <div class="nav-links">
             <a href="#inicio">Inicio</a>
-            <a href="#quienes-somos">Nosotros</a>
+            <a href="#quienes-somos">¿Quiénes somos?</a>
             <a href="#presentacion">Presentación</a>
             <a href="#museo">Museo</a>
             <a href="#clases">Actividad</a>
             <a href="#eventos">Eventos</a>
-            <a href="#participacion">Unirse</a>
+            <a href="#participacion">Participación</a>
             <a href="#tienda">Tienda</a>
             <a href="#contacto">Contacto</a>
             <a href="#donacion">Donación</a>
@@ -96,10 +50,10 @@
 
     <header id="inicio">
         <h1>Club Colibrí</h1>
-        <p style="font-size: 1.3rem; font-style: italic; color: #d4af37; margin-bottom: 15px;">“Es algo más que arte”</p>
+        <p style="font-size: 1.5rem; font-style: italic; color: #d4af37; margin-bottom: 5px;">“Es algo más que arte”</p>
         
-        <div style="margin: 0 auto; text-align: center;">
-            <video controls loop playsinline class="video-transparente">
+        <div style="margin: 0 auto; max-width: 500px; overflow: hidden;">
+            <video autoplay loop muted playsinline class="video-transparente">
                 <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
                 Tu navegador no soporta videos.
             </video>
@@ -110,7 +64,7 @@
         
         <section id="quienes-somos" style="text-align: center;">
             <h2>¿Quiénes somos?</h2>
-            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
+            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un grupo dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
         </section>
 
         <section id="presentacion" style="text-align: center;">
