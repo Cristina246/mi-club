@@ -6,7 +6,7 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
         
-        /* BARRA DE NAVEGACIÓN TOTALMENTE REFORMADA */
+        /* BARRA DE NAVEGACIÓN COMPACTA */
         nav { 
             background: #111111; 
             padding: 10px 20px; 
@@ -17,12 +17,11 @@
             justify-content: space-between; 
             z-index: 1000; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            flex-wrap: nowrap; /* Evita que se rompa en varias filas grandes */
+            flex-wrap: nowrap;
         }
         .nav-brand { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
         .nav-logo { max-height: 35px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
         
-        /* Enlaces del menú ultra compactos y limpios */
         .nav-links { 
             display: flex; 
             gap: 10px; 
@@ -34,28 +33,36 @@
             text-decoration: none; 
             font-weight: 500; 
             transition: color 0.3s; 
-            font-size: 0.78rem; /* Tamaño ideal para que quepan todos los links en Mac */
+            font-size: 0.78rem; 
             white-space: nowrap;
             padding: 4px 2px;
         }
         nav a:hover { color: #d4af37; }
         
-        header { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; color: white; }
+        /* DISEÑO DE LA CABECERA CON EL SOL */
+        header { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; 
+            color: white; 
+        }
         section { padding: 60px 20px; border-bottom: 1px solid #e0e0e0; max-width: 900px; margin: auto; }
-        h1 { font-size: 3.5rem; margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        h1 { font-size: 3.5rem; margin-bottom: 5px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         h2 { font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center; }
         h3 { font-family: 'Cinzel', serif; color: #333; margin-top: 30px; }
         .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
         
-        /* TRUCO DE TRANSPARENCIA PARA EL VIDEO */
+        /* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
         .video-transparente {
-            width: 100%;
+            max-height: 250px; /* Evita que el reproductor ocupe toda la pantalla */
+            width: auto;
             mix-blend-mode: screen;
-            display: block;
+            display: inline-block;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3); /* Un marco dorado muy delgadito */
         }
 
-        /* Ajuste automático si la pantalla es estrecha */
         @media (max-width: 950px) {
             nav { flex-direction: column; gap: 8px; text-align: center; }
             .nav-links { justify-content: center; gap: 8px; }
@@ -86,9 +93,9 @@
 
     <header id="inicio">
         <h1>Club Colibrí</h1>
-        <p style="font-size: 1.5rem; font-style: italic; color: #d4af37; margin-bottom: 5px;">“Es algo más que arte”</p>
+        <p style="font-size: 1.3rem; font-style: italic; color: #d4af37; margin-bottom: 15px;">“Es algo más que arte”</p>
         
-        <div style="margin: 0 auto; max-width: 320px; overflow: hidden;">
+        <div style="margin: 0 auto; text-align: center;">
             <video controls loop playsinline class="video-transparente">
                 <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
                 Tu navegador no soporta videos.
@@ -100,7 +107,7 @@
         
         <section id="quienes-somos" style="text-align: center;">
             <h2>¿Quiénes somos?</h2>
-            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
+            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiences, fortalecer los lazos familiares y preservar nuestra identidad.</p>
         </section>
 
         <section id="presentacion" style="text-align: center;">
