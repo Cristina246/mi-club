@@ -6,68 +6,88 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
         
-        /* BARRA DEL MISMO ALTO QUE EL LOGO */
+        /* BARRA DE NAVEGACIÓN DELGADA Y PROFESIONAL */
         nav { 
             background: #111111; 
-            padding: 4px 15px; /* Altura mínima al ras del logo */
+            padding: 5px 20px; 
             position: sticky; 
             top: 0; 
             display: flex; 
-            align-items: center; 
+            align-items: center; /* Centra todo verticalmente */
             justify-content: space-between; 
             z-index: 1000; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            flex-wrap: nowrap;
-            height: 32px; /* Altura fija para que no se estire */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            height: 50px; /* Altura fija para que sea delgada */
         }
-        .nav-brand { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-        .nav-logo { max-height: 24px; width: auto; border-radius: 50%; border: 1px solid #d4af37; object-fit: cover; }
-        
-        /* LETRAS ULTRA PEQUEÑAS PARA QUE QUEPAN EN UNA FILA */
+
+        .nav-brand { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            flex-shrink: 0; 
+        }
+
+        .nav-logo { 
+            height: 40px; /* El logo manda en la altura */
+            width: auto; 
+            border-radius: 50%; 
+            border: 1px solid #d4af37; 
+        }
+
+        .nav-brand span {
+            color: #ffffff; 
+            font-weight: bold; 
+            font-size: 1.1rem; 
+            font-family: 'Cinzel', serif;
+        }
+
+        /* LINKS EN UNA SOLA LÍNEA Y MÁS PEQUEÑOS */
         .nav-links { 
             display: flex; 
-            gap: 8px; 
-            flex-wrap: nowrap; 
+            gap: 12px; 
+            align-items: center;
         }
+
         nav a { 
             color: #ffffff; 
             text-decoration: none; 
             font-weight: 500; 
             transition: color 0.3s; 
-            font-size: 0.62rem; /* Letras bien pequeñitas */
-            white-space: nowrap;
-            padding: 2px 3px;
+            font-size: 0.75rem; /* Letras pequeñas para que quepan todas */
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
         nav a:hover { color: #d4af37; }
-        
-        /* DISEÑO DE LA CABECERA CON EL SOL */
+
+        /* CABECERA */
         header { 
             text-align: center; 
-            padding: 40px 20px; 
+            padding: 60px 20px; 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; 
             color: white; 
         }
-        section { padding: 60px 20px; border-bottom: 1px solid #e0e0e0; max-width: 900px; margin: auto; }
-        h1 { font-size: 3.5rem; margin-bottom: 5px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        h2 { font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center; }
-        h3 { font-family: 'Cinzel', serif; color: #333; margin-top: 30px; }
-        .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-        .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+        h1 { font-size: 3.5rem; margin: 0; font-family: 'Cinzel', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         
-        /* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
+        /* VIDEO TRANSPARENTE COMPACTO */
         .video-transparente {
             max-height: 250px; 
             width: auto;
             mix-blend-mode: screen;
             display: inline-block;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            margin-top: 15px;
         }
 
-        /* Ajuste para pantallas móviles */
-        @media (max-width: 768px) {
-            nav { flex-direction: column; height: auto; padding: 6px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 5px; }
+        section { padding: 50px 20px; border-bottom: 1px solid #e0e0e0; max-width: 900px; margin: auto; }
+        h2 { font-family: 'Cinzel', serif; color: #1a1a1a; text-align: center; }
+        .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; }
+
+        /* Ajuste para que en celulares no se amontone */
+        @media (max-width: 800px) {
+            nav { height: auto; flex-direction: column; padding: 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 10px; }
             nav a { font-size: 0.65rem; }
         }
     </style>
@@ -77,7 +97,7 @@
     <nav>
         <div class="nav-brand">
             <img src="imageLOGO (1).png" alt="Logo" class="nav-logo">
-            <span style="color: #ffffff; font-weight: bold; font-size: 0.75rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
+            <span>Club Colibrí</span>
         </div>
         <div class="nav-links">
             <a href="#inicio">Inicio</a>
@@ -95,116 +115,34 @@
 
     <header id="inicio">
         <h1>Club Colibrí</h1>
-        <p style="font-size: 1.3rem; font-style: italic; color: #d4af37; margin-bottom: 15px;">“Es algo más que arte”</p>
-        
-        <div style="margin: 0 auto; text-align: center;">
-            <video controls loop playsinline class="video-transparente">
-                <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
-                Tu navegador no soporta videos.
-            </video>
-        </div>
+        <p style="font-size: 1.2rem; font-style: italic; color: #d4af37;">“Es algo más que arte”</p>
+        <video controls loop playsinline class="video-transparente">
+            <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
+        </video>
     </header>
 
-    <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
-        
+    <main>
         <section id="quienes-somos" style="text-align: center;">
             <h2>¿Quiénes somos?</h2>
-            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
-        </section>
-
-        <section id="presentacion" style="text-align: center;">
-            <h2>Presentación</h2>
-            <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
+            <p>Somos un <strong>club</strong> dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
         </section>
 
         <section id="museo">
             <h2>Museo Digital</h2>
             <div class="gallery">
-                <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
-                <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
-                <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
-                <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
-                <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
-                <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
-                <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
-                <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
-                <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario"></a>
+                <img src="carita_sonriente.jpg">
+                <img src="caritamaya_chica.png">
+                <img src="mayacarachico.jpg">
+                <img src="mediano_rey.jpg">
             </div>
         </section>
-
-        <section id="clases">
-            <h2>Actividad</h2>
-            <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
-            <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica. A través de la exploración creativa y la búsqueda de emociones mediante el arte, utilizamos recursos didácticos y kits de artesanía para ayudarte a plasmar tus emociones en lo tangible e intangible, conectando con tu historia biológica, familiar y cultural.</p>
-            <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
-            <hr>
-            <p><strong>Materiales incluidos en tu kit:</strong></p>
-            <ul>
-                <li>Pieza de cerámica con alto relieve.</li>
-                <li>Pintura (marrón oscuro, negro o terracota).</li>
-                <li>Guante para la aplicación.</li>
-                <li>Trapo de algodón limpio y seco.</li>
-            </ul>
-            <h3>Preparación y Aplicación</h3>
-            <p><strong>Preparación:</strong> Tu pieza ya está lista para empezar.</p>
-            <p><strong>1. Aplicación del color base:</strong> Ponte el guante y pinta toda la pieza asegurando que la pintura entre en las zonas profundas. Deja secar 6 minutos.</p>
-            <p><strong>2. Retirado y resaltado:</strong> Trabaja por secciones pequeñas. Frota con el trapo seco las partes prominentes para dejar la pátina solo en los fondos. Mantén el trapo tenso en tu dedo.</p>
-            <h3>Consejos y Comunidad</h3>
-            <p>Mantén el trapo tenso sobre tu dedo para evitar limpiar el fondo del bajo relieve. Conecta con tu historia y fortalece tu sentido de pertenencia.</p>
-            <p><strong>3. Usa tu inteligencia creativa:</strong> Busca un lugar especial para tu pieza terminada. ¡Mándanos la foto de tu resultado final! Hay insignias por participar. Si deseas perfeccionar el acabado o necesitas trucos específicos con materiales que tienes en casa, ¡envía tus preguntas! "Completa tu propia colección".</p>
-        </section>
-
-        <section id="eventos" style="text-align: center;">
-            <h2>Eventos</h2>
-            <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios, exposiciones y maratones artísticos.</p>
-        </section>
-
-        <section id="participacion" style="text-align: center;">
-            <h2>Participación</h2>
-            <p>Descubre cómo formar parte de nuestros talleres, cómo adquirir tus kits educativos y cómo sumarte a las dinámicas de identidad cultural.</p>
-        </section>
-
-        <section id="tienda">
-            <h2>Tienda</h2>
-            
-            <h3>Piezas Chicas</h3>
-            <div class="gallery" style="justify-content: flex-start;">
-                <img src="kitsbien.jpg" alt="Kit">
-                <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico">
-                <img src="cera_azte.jpg" alt="Pieza Azteca Chica">
-            </div>
-            
-            <h3>Piezas Medianas</h3>
-            <div class="gallery" style="justify-content: flex-start;">
-                <img src="cera_Ameriind.jpg" alt="Amerind">
-                <img src="cera_cmaya.jpg" alt="Maya">
-                <img src="cera_Arb.jpg" alt="Arb">
-                <img src="cera_calLuna.jpg" alt="Cal Luna">
-                <img src="cera_son.jpg" alt="Sonriente">
-                <img src="cera_rey.jpg" alt="Rey Cerámica Mediano">
-                <img src="cera_azte.jpg" alt="Pieza Azteca Mediana">
-            </div>
-            
-            <h3>Piezas Grandes</h3>
-            <div class="gallery" style="justify-content: flex-start;">
-                <img src="cera_coyo.jpg" alt="Coyo">
-                <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
-            </div>
-        </section>
-
+        
         <section id="contacto" style="text-align: center;">
             <h2>Contacto</h2>
             <p><strong>Profesora:</strong> Cristina Estrada</p>
-            <p><strong>Clase presencial:</strong> Disponible por contratación</p>
-            <p><strong>Correo:</strong> <a href="mailto:clubcolibri.2018@gmail.com" style="color: #d4af37; text-decoration: none; font-weight: bold;">clubcolibri.2018@gmail.com</a></p>
-            <p><strong>Teléfono:</strong> <a href="tel:+18019038491" style="color: #d4af37; text-decoration: none; font-weight: bold;">801 903 8491</a></p>
+            <p>Tel: 801 903 8491</p>
         </section>
-
-        <section id="donacion" style="text-align: center;">
-            <h2>Donación</h2>
-            <p>Apoya nuestra iniciativa cultural para ayudarnos a llevar kits artísticos y educativos a más niños y familias de la comunidad.</p>
-        </section>
-
     </main>
+
 </body>
 </html>
