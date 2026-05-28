@@ -19,43 +19,12 @@
         .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
         
-      /* DISEÑO PARA EL VIDEO DEL AVATAR COMPLETAMENTE VISIBLE */
-.contenedor-avatar {
-    width: 100%;
-    max-width: 600px; /* Aumentamos el ancho para que quepa todo el video */
-    margin: 20px auto;
-    background: #111111; /* Mantiene el fondo oscuro para ocultar el bloque negro */
-    border-radius: 15px;
-    padding: 10px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-    border: 1px solid #d4af37; /* Marco dorado de Club Colibrí */
-}
-.video-avatar {
-    width: 100%;
-    height: auto; /* Esto asegura que el alto se ajuste solo y no se corte el tambor */
-    display: block;
-    border-radius: 10px;
-}
-.botones-avatar {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-}
-.btn-audio {
-    background: #d4af37;
-    color: #1a1a1a;
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: 'Cinzel', serif;
-    transition: background 0.3s;
-}
-.btn-audio:hover {
-    background: #ffffff;
-}
+        /* TRUCO DE TRANSPARENCIA PARA EL VIDEO */
+        .video-transparente {
+            width: 100%;
+            mix-blend-mode: screen; /* Este comando vuelve invisible el fondo negro del video */
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -83,29 +52,12 @@
         <h1>Club Colibrí</h1>
         <p style="font-size: 1.5rem; font-style: italic; color: #d4af37; margin-bottom: 5px;">“Es algo más que arte”</p>
         
-        <div class="contenedor-avatar">
-    <video id="miAvatar" autoplay loop playsinline muted class="video-avatar">
-        <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
-        Tu navegador no soporta videos.
-    </video>
-    <div class="botones-avatar">
-        <button class="btn-audio" onclick="activarCanto()">🎵 Escuchar Canción</button>
-        <button class="btn-audio" onclick="silenciarAvatar()">🔇 Silenciar</button>
-    </div>
-</div>
-
-<script>
-function activarCanto() {
-    var video = document.getElementById("miAvatar");
-    video.muted = false; // Quita el silencio
-    video.play();        // Asegura que siga reproduciéndose
-}
-
-function silenciarAvatar() {
-    var video = document.getElementById("miAvatar");
-    video.muted = true;  // Vuelve a silenciar
-}
-</script>
+        <div style="margin: 0 auto; max-width: 500px; overflow: hidden;">
+            <video autoplay loop muted playsinline class="video-transparente">
+                <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
     </header>
 
     <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
