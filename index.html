@@ -43,66 +43,52 @@
             white-space: nowrap;
             padding: 2px 1px;   
         }
-
-        nav a:hover {
-            color: #d4af37;
-        }
-
-        /* Ajuste sutil para pantallas móviles */
-        @media (max-width: 900px) {
-            nav a {
-                font-size: 0.4rem; 
-            }
-            .nav-links {
-                gap: 6px; 
-            }
-        }
-/* ESTILOS DE LA CABECERA MODIFICADA */
+/* ESTILOS DE LA CABECERA (INICIO) */
         .header {
             text-align: center;
-            padding: 50px 20px; 
-            background-image: url('solfon.jpg'); 
+            padding: 40px 20px; 
+            background-image: url('solfon.jpg'); /* Tu fondo del sol */
             background-size: cover; 
             background-position: center; 
             color: white; 
             position: relative; 
             overflow: hidden; 
-            height: 400px; 
+            min-height: 300px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
-        /* Estilos para el video de fondo en la cabecera */
+        /* El Avatar encima del fondo con transparencia */
         .header-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
+            max-height: 200px; /* Tamaño ideal para el avatar */
             width: auto;
-            height: auto;
-            z-index: 1; 
-            transform: translate(-50%, -50%);
-            mix-blend-mode: screen; 
-            object-fit: cover; 
+            mix-blend-mode: screen; /* Logra el efecto transparente sobre el sol */
+            z-index: 1;
+            margin-bottom: 10px;
         }
-        /* ESTILOS DEL CONTENIDO */
+
+        /* ESTILOS DEL TEXTO EN INICIO */
         h1 {
-            font-size: 0.7rem; /* 5 veces más chico */
-            margin-bottom: 5px;
+            font-size: 0.7rem; /* Tu título 5 veces más chico */
+            margin: 0 0 5px 0;
             font-family: 'Cinzel', serif;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            z-index: 2; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            z-index: 2; /* Asegura que se vea sobre el video */
         }
 
         .header p {
-            font-size: 1rem; 
-            margin-top: 0;
-            z-index: 2; 
-        
+            font-size: 0.55rem; /* Subtítulo aún más chico y estilizado */
+            margin: 0;
+            font-style: italic;
+            color: #d4af37; /* Color dorado elegante */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+            z-index: 2;
+        }
+
+        /* ESTILOS DEL RESTO DEL CONTENIDO */
         h2 {
             font-family: 'Cinzel', serif;
             color: #1a1a1a;
@@ -157,18 +143,16 @@
         <a href="#contacto">Contacto</a>
         <a href="#donacion">Donación</a>
     </div>
-</nav>    <header id="inicio">
-        <h1>Club Colibrí</h1>
-        <p style="font-size: 1.3rem; font-style: italic; color: #d4af37; margin-bottom: 15px;">“Es algo más que arte”</p>
+</nav>    
+<header id="inicio" class="header">
+        <video autoplay loop muted playsinline class="header-video">
+            <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
         
-        <div style="margin: 0 auto; text-align: center;">
-            <video controls loop playsinline class="video-transparente">
-                <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
-                Tu navegador no soporta videos.
-            </video>
-        </div>
+        <h1>Club Colibrí</h1>
+        <p>“Es algo más que arte”</p>
     </header>
-
     <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
         
         <section id="quienes-somos" style="text-align: center;">
