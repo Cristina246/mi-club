@@ -65,16 +65,23 @@ nav a:hover {
     color: #d4af37;
 }
 
-/* Ajuste sutil para pantallas medianas y móviles */
-@media (max-width: 900px) {
+</style>
+@media (max-width: 768px) {
     nav {
-        padding: 0 6px;
-    }
-    nav a {
-        font-size: 0.4rem; /* Se hace un reflejo milimétrico en pantallas chicas */
-        padding: 2px 0.5px;
+        flex-direction: column;
+        height: auto;
+        padding: 6px;
     }
     .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    nav a {
+        font-size: 0.65rem;
+    }
+}
+</style>
         gap: 3px; /* Junta un poco más los links en celular para que no se saturen */
     }
     .nav-brand span {
