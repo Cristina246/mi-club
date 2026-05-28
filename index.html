@@ -6,10 +6,10 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
         
-        /* BARRA DE NAVEGACIÓN COMPACTA */
+        /* BARRA DE NAVEGACIÓN ULTRA COMPACTA */
         nav { 
             background: #111111; 
-            padding: 10px 20px; 
+            padding: 8px 15px; /* Más delgada */
             position: sticky; 
             top: 0; 
             display: flex; 
@@ -19,23 +19,23 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             flex-wrap: nowrap;
         }
-        .nav-brand { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-        .nav-logo { max-height: 35px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
+        .nav-brand { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+        .nav-logo { max-height: 30px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
         
+        /* ENLACES MUCHO MÁS PEQUEÑOS Y JUNTOS */
         .nav-links { 
             display: flex; 
-            gap: 10px; 
-            flex-wrap: wrap; 
-            justify-content: flex-end;
+            gap: 6px; /* Menos espacio entre links */
+            flex-wrap: nowrap; /* Fuerza a que se queden en una sola fila */
         }
         nav a { 
             color: #ffffff; 
             text-decoration: none; 
             font-weight: 500; 
             transition: color 0.3s; 
-            font-size: 0.78rem; 
+            font-size: 0.68rem; /* Letras bastante más pequeñas para Mac */
             white-space: nowrap;
-            padding: 4px 2px;
+            padding: 2px 4px; /* Espaciado interno mínimo */
         }
         nav a:hover { color: #d4af37; }
         
@@ -55,18 +55,19 @@
         
         /* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
         .video-transparente {
-            max-height: 250px; /* Evita que el reproductor ocupe toda la pantalla */
+            max-height: 250px; 
             width: auto;
             mix-blend-mode: screen;
             display: inline-block;
             border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3); /* Un marco dorado muy delgadito */
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        @media (max-width: 950px) {
-            nav { flex-direction: column; gap: 8px; text-align: center; }
-            .nav-links { justify-content: center; gap: 8px; }
-            nav a { font-size: 0.75rem; }
+        /* Ajuste para pantallas móviles */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 6px; text-align: center; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 6px; }
+            nav a { font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -75,7 +76,7 @@
     <nav>
         <div class="nav-brand">
             <img src="imageLOGO (1).png" alt="Logo" class="nav-logo">
-            <span style="color: #ffffff; font-weight: bold; font-size: 1rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
+            <span style="color: #ffffff; font-weight: bold; font-size: 0.9rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
         </div>
         <div class="nav-links">
             <a href="#inicio">Inicio</a>
@@ -107,7 +108,7 @@
         
         <section id="quienes-somos" style="text-align: center;">
             <h2>¿Quiénes somos?</h2>
-            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiences, fortalecer los lazos familiares y preservar nuestra identidad.</p>
+            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
         </section>
 
         <section id="presentacion" style="text-align: center;">
@@ -136,7 +137,7 @@
             <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica. A través de la exploración creativa y la búsqueda de emociones mediante el arte, utilizamos recursos didácticos y kits de artesanía para ayudarte a plasmar tus emociones en lo tangible e intangible, conectando con tu historia biológica, familiar y cultural.</p>
             <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
             <hr>
-            <p><strong>Materiales incluidos in tu kit:</strong></p>
+            <p><strong>Materiales incluidos en tu kit:</strong></p>
             <ul>
                 <li>Pieza de cerámica con alto relieve.</li>
                 <li>Pintura (marrón oscuro, negro o terracota).</li>
