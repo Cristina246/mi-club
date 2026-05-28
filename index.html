@@ -5,37 +5,45 @@
     <title>Club Colibrí</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
-        nav { background: #333; color: white; padding: 10px; position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; z-index: 1000; }
+        nav { background: #1a1a1a; padding: 15px; position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .nav-brand { display: flex; align-items: center; gap: 10px; }
-        .nav-logo { width: 40px; border-radius: 50%; }
-        .nav-links { display: flex; gap: 15px; font-size: 14px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; }
-        header { text-align: center; padding: 80px 20px; background: url('solfon.jpg') no-repeat center center; background-size: cover; color: white; text-shadow: 2px 2px 6px #000; }
-        .video-container { margin: 30px auto; max-width: 500px; }
-        video { width: 100%; border-radius: 20px; border: 5px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        section { padding: 50px 20px; border-bottom: 1px solid #ddd; max-width: 900px; margin: auto; }
+        .nav-logo { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
+        .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
+        nav a { color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
+        nav a:hover { color: #d4af37; }
+        header { text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('solfon.jpg') no-repeat center center/cover; color: white; }
+        section { padding: 60px 20px; border-bottom: 1px solid #e0e0e0; max-width: 900px; margin: auto; }
+        h1 { font-size: 3.5rem; margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        h2 { font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center; }
+        h3 { font-family: 'Cinzel', serif; color: #333; margin-top: 30px; }
+        .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
 
-    <nav style="background-color: #1a1a1a; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="imageLOGO (1).png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover;">
+    <nav>
+        <div class="nav-brand">
+            <img src="imageLOGO (1).png" alt="Logo">
             <span style="color: #ffffff; font-weight: bold; font-size: 1.2rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
         </div>
-        <div style="display: flex; gap: 20px;">
-            <a href="#inicio" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s;">Inicio</a>
-            <a href="#quienes-somos" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s;">¿Quiénes somos?</a>
-            <a href="#museo" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s;">Museo</a>
-            <a href="#clases" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s;">Actividad</a>
-            <a href="#tienda" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s;">Tienda</a>
-            <a href="#contacto" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s;">Contacto</a>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes-somos">¿Quiénes somos?</a>
+            <a href="#presentacion">Presentación</a>
+            <a href="#museo">Museo</a>
+            <a href="#clases">Actividad</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#participacion">Participación</a>
+            <a href="#tienda">Tienda</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#donacion">Donación</a>
         </div>
     </nav>
 
-    <header id="inicio" style="text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('solfon.jpg') no-repeat center center/cover; color: white;">
-        <h1 style="font-size: 3.5rem; margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Club Colibrí</h1>
-        <p style="font-size: 1.5rem; font-style: italic; color: #d4af37; font-family: 'Montserrat', sans-serif;">“Es algo más que arte”</p>
+    <header id="inicio">
+        <h1>Club Colibrí</h1>
+        <p style="font-size: 1.5rem; font-style: italic; color: #d4af37;">“Es algo más que arte”</p>
         
         <div style="margin: 30px auto; max-width: 320px;">
             <video controls style="width: 100%; border-radius: 20px; border: 4px solid #d4af37; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
@@ -52,28 +60,33 @@
 
     <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
         
-        <section id="quienes-somos" style="padding: 60px 0; border-bottom: 1px solid #e0e0e0; text-align: center;">
-            <h2 style="font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; position: relative; display: inline-block;">¿Quiénes somos?</h2>
+        <section id="quienes-somos" style="text-align: center;">
+            <h2>¿Quiénes somos?</h2>
             <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un grupo dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
         </section>
 
-        <section id="museo" style="padding: 60px 0; border-bottom: 1px solid #e0e0e0;">
-            <h2 style="font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center;">Museo Digital</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
-                <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
-                <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
-                <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
-                <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
-                <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
-                <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
-                <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
-                <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
-                <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;"></a>
+        <section id="presentacion" style="text-align: center;">
+            <h2>Presentación</h2>
+            <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
+        </section>
+
+        <section id="museo">
+            <h2>Museo Digital</h2>
+            <div class="gallery">
+                <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
+                <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
+                <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
+                <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
+                <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
+                <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
+                <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
+                <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
+                <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario"></a>
             </div>
         </section>
 
-        <section id="clases" style="padding: 60px 0; border-bottom: 1px solid #e0e0e0;">
-            <h2 style="font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center;">Actividad</h2>
+        <section id="clases">
+            <h2>Actividad</h2>
             <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
             <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica. A través de la exploración creativa y la búsqueda de emociones mediante el arte, utilizamos recursos didácticos y kits de artesanía para ayudarte a plasmar tus emociones en lo tangible e intangible, conectando con tu historia biológica, familiar y cultural.</p>
             <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
@@ -94,40 +107,55 @@
             <p><strong>3. Usa tu inteligencia creativa:</strong> Busca un lugar especial para tu pieza terminada. ¡Mándanos la foto de tu resultado final! Hay insignias por participar. Si deseas perfeccionar el acabado o necesitas trucos específicos con materiales que tienes en casa, ¡envía tus preguntas! "Completa tu propia colección".</p>
         </section>
 
-        <section id="tienda" style="padding: 60px 0; border-bottom: 1px solid #e0e0e0;">
-            <h2 style="font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center;">Tienda</h2>
+        <section id="eventos" style="text-align: center;">
+            <h2>Eventos</h2>
+            <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios, exposiciones y maratones artísticos.</p>
+        </section>
+
+        <section id="participacion" style="text-align: center;">
+            <h2>Participación</h2>
+            <p>Descubre cómo formar parte de nuestros talleres, cómo adquirir tus kits educativos y cómo sumarte a las dinámicas de identidad cultural.</p>
+        </section>
+
+        <section id="tienda">
+            <h2>Tienda</h2>
             
             <h3>Piezas Chicas</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
-                <img src="kitsbien.jpg" alt="Kit" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_azte.jpg" alt="Pieza Azteca Chica" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
+            <div class="gallery" style="justify-content: flex-start;">
+                <img src="kitsbien.jpg" alt="Kit">
+                <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico">
+                <img src="cera_azte.jpg" alt="Pieza Azteca Chica">
             </div>
             
             <h3>Piezas Medianas</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
-                <img src="cera_Ameriind.jpg" alt="Amerind" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_cmaya.jpg" alt="Maya" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_Arb.jpg" alt="Arb" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_calLuna.jpg" alt="Cal Luna" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_son.jpg" alt="Sonriente" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_rey.jpg" alt="Rey Cerámica Mediano" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_azte.jpg" alt="Pieza Azteca Mediana" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
+            <div class="gallery" style="justify-content: flex-start;">
+                <img src="cera_Ameriind.jpg" alt="Amerind">
+                <img src="cera_cmaya.jpg" alt="Maya">
+                <img src="cera_Arb.jpg" alt="Arb">
+                <img src="cera_calLuna.jpg" alt="Cal Luna">
+                <img src="cera_son.jpg" alt="Sonriente">
+                <img src="cera_rey.jpg" alt="Rey Cerámica Mediano">
+                <img src="cera_azte.jpg" alt="Pieza Azteca Mediana">
             </div>
             
             <h3>Piezas Grandes</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
-                <img src="cera_coyo.jpg" alt="Coyo" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                <img src="cera_azte.jpg" alt="Pieza Azteca Grande" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
+            <div class="gallery" style="justify-content: flex-start;">
+                <img src="cera_coyo.jpg" alt="Coyo">
+                <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
             </div>
         </section>
 
-        <section id="contacto" style="padding: 60px 0; text-align: center;">
-            <h2 style="font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px;">Contacto</h2>
+        <section id="contacto" style="text-align: center;">
+            <h2>Contacto</h2>
             <p><strong>Profesora:</strong> Cristina Estrada</p>
             <p><strong>Clase presencial:</strong> Disponible por contratación</p>
             <p><strong>Correo:</strong> <a href="mailto:clubcolibri.2018@gmail.com" style="color: #d4af37; text-decoration: none; font-weight: bold;">clubcolibri.2018@gmail.com</a></p>
             <p><strong>Teléfono:</strong> <a href="tel:+18019038491" style="color: #d4af37; text-decoration: none; font-weight: bold;">801 903 8491</a></p>
+        </section>
+
+        <section id="donacion" style="text-align: center;">
+            <h2>Donación</h2>
+            <p>Apoya nuestra iniciativa cultural para ayudarnos a llevar kits artísticos y educativos a más niños y familias de la comunidad.</p>
         </section>
 
     </main>
