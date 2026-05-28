@@ -50,14 +50,15 @@ nav {
     align-items: center;
 }
 
+/* ENLACES ULTRA COMPACTOS A MITAD DE TAMANO */
 nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
-    font-size: 0.72rem; /* Tamaño de letra chica solicitado */
+    font-size: 0.45rem; /* Se reduce a la mitad para que se vea súper fino y pequeño */
     white-space: nowrap;/* Impide por completo que el texto se parta en dos filas */
-    padding: 4px 2px;
+    padding: 2px 1px;   /* Margen interno mínimo para no empujar la altura de la barra */
 }
 
 nav a:hover {
@@ -70,17 +71,16 @@ nav a:hover {
         padding: 0 6px;
     }
     nav a {
-        font-size: 0.62rem; /* Se encoge un poco más para asegurar una sola línea */
-        padding: 4px 1px;
+        font-size: 0.4rem; /* Se hace un reflejo milimétrico en pantallas chicas */
+        padding: 2px 0.5px;
     }
     .nav-links {
-        gap: 4px;
+        gap: 3px; /* Junta un poco más los links en celular para que no se saturen */
     }
     .nav-brand span {
-        display: none; /* En pantallas muy chicas oculta el texto "Club Colibrí" para darle prioridad absoluta al logo e iconos */
+        display: none; /* Oculta "Club Colibrí" en móvil para proteger el espacio del logo e iconos */
     }
 }
-
 /* ESTILOS DEL CONTENIDO */
 h1 {
     font-size: 3.5rem;
