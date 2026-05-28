@@ -20,7 +20,7 @@
             top: 0;
             display: flex;
             align-items: center;
-            justify-content: center; /* Centra los links de forma estética */
+            justify-content: center;
             z-index: 1000;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             flex-wrap: nowrap; 
@@ -29,7 +29,7 @@
 
         .nav-links {
             display: flex;
-            gap: 12px;         /* Espacio elegante entre cada opción */
+            gap: 12px;
             flex-wrap: nowrap;
             align-items: center;
         }
@@ -39,21 +39,26 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
-            font-size: 0.45rem; /* Letra diminuta a la mitad de su tamaño original */
+            font-size: 0.45rem; /* Letra de links diminuta */
             white-space: nowrap;
             padding: 2px 1px;   
         }
-/* ESTILOS DE LA CABECERA (INICIO) */
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* ESTILOS DE LA CABECERA (PÁGINA DE INICIO) */
         .header {
             text-align: center;
             padding: 40px 20px; 
-            background-image: url('solfon.jpg'); /* Tu fondo del sol */
+            background-image: url('solfon.jpg'); /* Tu fondo de sol */
             background-size: cover; 
             background-position: center; 
             color: white; 
             position: relative; 
             overflow: hidden; 
-            min-height: 300px; 
+            min-height: 320px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -62,33 +67,44 @@
 
         /* El Avatar encima del fondo con transparencia */
         .header-video {
-            max-height: 200px; /* Tamaño ideal para el avatar */
+            max-height: 180px; /* Tamaño ideal del avatar en el inicio */
             width: auto;
-            mix-blend-mode: screen; /* Logra el efecto transparente sobre el sol */
+            mix-blend-mode: screen; /* Logra la transparencia sobre el sol */
             z-index: 1;
             margin-bottom: 10px;
         }
 
-        /* ESTILOS DEL TEXTO EN INICIO */
+        /* TITULO PRINCIPAL (CLUB COLIBRÍ) */
         h1 {
-            font-size: 0.7rem; /* Tu título 5 veces más chico */
+            font-size: 0.7rem; /* 5 veces más chico */
             margin: 0 0 5px 0;
             font-family: 'Cinzel', serif;
             letter-spacing: 2px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-            z-index: 2; /* Asegura que se vea sobre el video */
+            z-index: 2; 
         }
 
+        /* SUBTÍTULO (ALGO MÁS QUE ARTE) */
         .header p {
-            font-size: 0.55rem; /* Subtítulo aún más chico y estilizado */
+            font-size: 0.55rem; /* Letra aún más chica para el subtítulo */
             margin: 0;
             font-style: italic;
-            color: #d4af37; /* Color dorado elegante */
+            color: #d4af37; /* Color dorado */
             text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
             z-index: 2;
+        } /* <--- AQUÍ ES DONDE VA LA LLAVE CORRECTAMENTE */
+
+        /* Ajustes para pantallas móviles */
+        @media (max-width: 900px) {
+            nav a {
+                font-size: 0.4rem; 
+            }
+            .nav-links {
+                gap: 6px; 
+            }
         }
 
-        /* ESTILOS DEL RESTO DEL CONTENIDO */
+        /* ESTILOS DEL CONTENIDO */
         h2 {
             font-family: 'Cinzel', serif;
             color: #1a1a1a;
@@ -117,7 +133,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
         .video-transparente {
             max-height: 250px;
             width: auto;
@@ -129,7 +144,6 @@
     </style>
 </head>
 <body>
-
 <nav>
     <div class="nav-links">
         <a href="#inicio">Inicio</a>
@@ -152,7 +166,7 @@
         
         <h1>Club Colibrí</h1>
         <p>“Es algo más que arte”</p>
-    </header>
+    </header> 
     <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
         
         <section id="quienes-somos" style="text-align: center;">
