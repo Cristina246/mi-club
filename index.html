@@ -19,11 +19,42 @@
         .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
         
-        /* TRUCO DE TRANSPARENCIA PARA EL VIDEO */
-        .video-transparente {
-            width: 100%;
-            mix-blend-mode: screen; /* Este comando vuelve invisible el fondo negro del video */
-            display: block;
+       /* DISEÑO PARA EL VIDEO DEL AVATAR */
+.contenedor-avatar {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    background: #111111; /* Fondo oscuro elegante que oculta el bloque negro */
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    border: 1px solid #d4af37; /* Marco dorado a juego con Club Colibrí */
+}
+.video-avatar {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.botones-avatar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+.btn-audio {
+    background: #d4af37;
+    color: #1a1a1a;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    transition: background 0.3s;
+}
+.btn-audio:hover {
+    background: #ffffff;
+}
         }
     </style>
 </head>
