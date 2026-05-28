@@ -19,19 +19,20 @@
         .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
         
-       /* DISEÑO PARA EL VIDEO DEL AVATAR */
+      /* DISEÑO PARA EL VIDEO DEL AVATAR COMPLETAMENTE VISIBLE */
 .contenedor-avatar {
     width: 100%;
-    max-width: 450px;
+    max-width: 600px; /* Aumentamos el ancho para que quepa todo el video */
     margin: 20px auto;
-    background: #111111; /* Fondo oscuro elegante que oculta el bloque negro */
+    background: #111111; /* Mantiene el fondo oscuro para ocultar el bloque negro */
     border-radius: 15px;
     padding: 10px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-    border: 1px solid #d4af37; /* Marco dorado a juego con Club Colibrí */
+    border: 1px solid #d4af37; /* Marco dorado de Club Colibrí */
 }
 .video-avatar {
     width: 100%;
+    height: auto; /* Esto asegura que el alto se ajuste solo y no se corte el tambor */
     display: block;
     border-radius: 10px;
 }
@@ -39,13 +40,13 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .btn-audio {
     background: #d4af37;
     color: #1a1a1a;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
@@ -55,7 +56,6 @@
 .btn-audio:hover {
     background: #ffffff;
 }
-        }
     </style>
 </head>
 <body>
