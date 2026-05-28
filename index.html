@@ -183,17 +183,73 @@
 </nav>
 
 <!-- BOTÓN FLOTANTE PARA CONTROLAR AUDIO -->
-<button class="btn-musica" id="btnSilencio" title="Pausar/Activar Música">🔊</button>
+<!-- BLOQUE DE INICIO CON VIDEO, AUDIO Y BOTÓN A LOS PIES -->
+<header id="inicio" class="header" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  
+  <!-- Video del Avatar -->
+  <video autoplay loop muted playsinline class="header-video" id="videoInicio">
+    <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
+    Tu navegador no soporta videos.
+  </video>
 
-<header id="inicio" class="header">
-    <video autoplay loop muted playsinline class="header-video" id="videoInicio">
-        <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
-        Tu navegador no soporta videos.
-    </video>
-    <h1>Club Colibrí</h1>
-    <p>“Es algo más que arte”</p>
+  <h1>Club Colibrí</h1>
+  <p>“Es algo más que arte”</p>
+
+  <!-- REPRODUCTOR: Usa el mismo archivo del avatar para extraer su canto -->
+  <audio id="musica-inicio" src="Avatar_IV_Video (1) (1).mp4" loop></audio>
+
+  <!-- BOTÓN EN LOS PIES DEL AVATAR -->
+  <button id="btn-reproductor" class="boton-audio-pies" onclick="controlarMusica()">
+    <span id="icono-audio">▶️</span>
+  </button>
+
 </header>
 
+<!-- ESTILOS Y FUNCIONES EXCLUSIVAS PARA EL INICIO -->
+<style>
+  .boton-audio-pies {
+    margin-top: 15px; /* Lo posiciona justo abajo, a los pies del avatar */
+    width: 55px;
+    height: 55px;
+    background-color: #f39c12; /* Color dorado/naranja */
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .boton-audio-pies:hover {
+    transform: scale(1.1);
+    background-color: #e67e22;
+  }
+
+  /* Garantiza que no se duplique ni aparezca en otras secciones */
+  section:not(#inicio) .boton-audio-pies, 
+  main .boton-audio-pies {
+    display: none !important;
+  }
+</style>
+
+<script>
+  function controlarMusica() {
+    var musica = document.getElementById("musica-inicio");
+    var icono = document.getElementById("icono-audio");
+
+    if (musica.paused) {
+      musica.play();
+      icono.textContent = "⏸️"; // Cambia a pausa al sonar
+    } else {
+      musica.pause();
+      icono.textContent = "▶️"; // Cambia a play al detenerse
+    }
+  }
+</script>
 <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
     
     <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
