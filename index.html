@@ -22,7 +22,7 @@
         /* TRUCO DE TRANSPARENCIA PARA EL VIDEO */
         .video-transparente {
             width: 100%;
-            mix-blend-mode: screen; /* Este comando vuelve invisible el fondo negro del video */
+            mix-blend-mode: screen; /* Mantiene el fondo invisible */
             display: block;
         }
     </style>
@@ -52,8 +52,8 @@
         <h1>Club Colibrí</h1>
         <p style="font-size: 1.5rem; font-style: italic; color: #d4af37; margin-bottom: 5px;">“Es algo más que arte”</p>
         
-        <div style="margin: 0 auto; max-width: 500px; overflow: hidden;">
-            <video autoplay loop muted playsinline class="video-transparente">
+        <div style="margin: 0 auto; max-width: 320px; overflow: hidden;">
+            <video controls loop playsinline class="video-transparente">
                 <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
                 Tu navegador no soporta videos.
             </video>
@@ -64,7 +64,7 @@
         
         <section id="quienes-somos" style="text-align: center;">
             <h2>¿Quiénes somos?</h2>
-            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un grupo dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
+            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
         </section>
 
         <section id="presentacion" style="text-align: center;">
