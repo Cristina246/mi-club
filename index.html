@@ -4,151 +4,111 @@
     <meta charset="UTF-8">
     <title>Club Colibrí</title>
     <style>
-body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
 
-/* BARRA DE NAVEGACIÓN - UNA SOLA FILA COMPACTA */
-nav {
-    background: #111111;
-    padding: 0 12px;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    flex-wrap: nowrap; /* Prohibido bajarse a otra línea */
-    height: 44px;      /* Altura compacta y elegante */
-}
+        /* BARRA DE NAVEGACIÓN - SOLO ENLACES EN UNA FILA COMPACTA */
+        nav {
+            background: #111111;
+            padding: 0 12px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centra los links ahora que no hay logo */
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            flex-wrap: nowrap; 
+            height: 44px;      
+        }
 
-.nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;   /* Protege el logo para que no se achique */
-}
+        .nav-links {
+            display: flex;
+            gap: 12px;         /* Espacio elegante entre cada opción */
+            flex-wrap: nowrap;
+            align-items: center;
+        }
 
-.nav-logo {
-    height: 26px;     /* Reducido a la esquina izquierda */
-    width: 26px;
-    border-radius: 50%;
-    border: 1px solid #d4af37;
-    object-fit: cover;
-}
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.45rem; /* Letra diminuta y fina a la mitad de su tamaño */
+            white-space: nowrap;
+            padding: 2px 1px;   
+        }
 
-/* ENLACES ULTRA COMPACTOS EN UNA SOLA LÍNEA */
-.nav-links {
-    display: flex;
-    gap: 8px;         /* Espacio milimétrico entre opciones */
-    flex-wrap: nowrap;/* Fuerza la alineación horizontal */
-    align-items: center;
-}
+        nav a:hover {
+            color: #d4af37;
+        }
 
-/* ENLACES ULTRA COMPACTOS A MITAD DE TAMANO */
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    font-size: 0.45rem; /* Se reduce a la mitad para que se vea súper fino y pequeño */
-    white-space: nowrap;/* Impide por completo que el texto se parta en dos filas */
-    padding: 2px 1px;   /* Margen interno mínimo para no empujar la altura de la barra */
-}
+        /* Ajuste sutil para pantallas móviles */
+        @media (max-width: 900px) {
+            nav a {
+                font-size: 0.4rem; 
+            }
+            .nav-links {
+                gap: 6px; 
+            }
+        }
 
-nav a:hover {
-    color: #d4af37;
-}
+        /* ESTILOS DEL CONTENIDO */
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 5px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
-</style>
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        height: auto;
-        padding: 6px;
-    }
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-    }
-    nav a {
-        font-size: 0.65rem;
-    }
-}
-</style>
-        gap: 3px; /* Junta un poco más los links en celular para que no se saturen */
-    }
-    .nav-brand span {
-        display: none; /* Oculta "Club Colibrí" en móvil para proteger el espacio del logo e iconos */
-    }
-}
-/* ESTILOS DEL CONTENIDO */
-h1 {
-    font-size: 3.5rem;
-    margin-bottom: 5px;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-h2 {
-    font-family: 'Cinzel', serif;
-    color: #1a1a1a;
-    margin-bottom: 20px;
-    text-align: center;
-}
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 30px;
+        }
 
-h3 {
-    font-family: 'Cinzel', serif;
-    color: #333;
-    margin-top: 30px;
-}
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
 
-.gallery img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
-.video-transparente {
-    max-height: 250px;
-    width: auto;
-    mix-blend-mode: screen;
-    display: inline-block;
-    border-radius: 15px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-}
-</style>
-        @media (max-width: 768px) {
-            nav { flex-direction: column; height: auto; padding: 6px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 5px; }
-            nav a { font-size: 0.65rem; }
+        /* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
+        .video-transparente {
+            max-height: 250px;
+            width: auto;
+            mix-blend-mode: screen;
+            display: inline-block;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
     </style>
 </head>
 <body>
 
-   <nav>
-    <div class="nav-brand">
-        <img src="imageLOGO (1).png" alt="Logo" class="nav-logo">
-        <span style="color: #ffffff; font-weight: bold; font-size: 0.85rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
-    </div>
+<nav>
     <div class="nav-links">
         <a href="#inicio">Inicio</a>
         <a href="#quienes-somos">Nosotros</a>
@@ -161,9 +121,7 @@ h3 {
         <a href="#contacto">Contacto</a>
         <a href="#donacion">Donación</a>
     </div>
-</nav> 
-
-    <header id="inicio">
+</nav>    <header id="inicio">
         <h1>Club Colibrí</h1>
         <p style="font-size: 1.3rem; font-style: italic; color: #d4af37; margin-bottom: 15px;">“Es algo más que arte”</p>
         
