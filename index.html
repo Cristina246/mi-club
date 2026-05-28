@@ -6,26 +6,26 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
         
-        /* MENÚ CORREGIDO PARA QUE NO OCUPE TODA LA PANTALLA */
+        /* BARRA DE NAVEGACIÓN TOTALMENTE REFORMADA */
         nav { 
-            background: #1a1a1a; 
-            padding: 12px 20px; 
+            background: #111111; 
+            padding: 10px 20px; 
             position: sticky; 
             top: 0; 
             display: flex; 
-            flex-direction: row;
             align-items: center; 
             justify-content: space-between; 
             z-index: 1000; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            flex-wrap: nowrap; /* Evita que se rompa en varias filas grandes */
         }
-        .nav-brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-        .nav-logo { max-height: 38px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
+        .nav-brand { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        .nav-logo { max-height: 35px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
         
-        /* Enlaces ordenados y compactos */
+        /* Enlaces del menú ultra compactos y limpios */
         .nav-links { 
             display: flex; 
-            gap: 12px; 
+            gap: 10px; 
             flex-wrap: wrap; 
             justify-content: flex-end;
         }
@@ -34,12 +34,13 @@
             text-decoration: none; 
             font-weight: 500; 
             transition: color 0.3s; 
-            font-size: 0.85rem; /* Letra un poco más pequeña para que quepa todo */
+            font-size: 0.78rem; /* Tamaño ideal para que quepan todos los links en Mac */
             white-space: nowrap;
+            padding: 4px 2px;
         }
         nav a:hover { color: #d4af37; }
         
-        header { text-align: center; padding: 80px 20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; color: white; }
+        header { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('solfon.jpg') no-repeat center center/cover; color: white; }
         section { padding: 60px 20px; border-bottom: 1px solid #e0e0e0; max-width: 900px; margin: auto; }
         h1 { font-size: 3.5rem; margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         h2 { font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center; }
@@ -54,10 +55,11 @@
             display: block;
         }
 
-        /* Si la pantalla es mediana o chica, acomoda el menú abajo del logo para que no estorbe */
-        @media (max-width: 900px) {
-            nav { flex-direction: column; gap: 10px; text-align: center; }
-            .nav-links { justify-content: center; gap: 10px; }
+        /* Ajuste automático si la pantalla es estrecha */
+        @media (max-width: 950px) {
+            nav { flex-direction: column; gap: 8px; text-align: center; }
+            .nav-links { justify-content: center; gap: 8px; }
+            nav a { font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -66,7 +68,7 @@
     <nav>
         <div class="nav-brand">
             <img src="imageLOGO (1).png" alt="Logo" class="nav-logo">
-            <span style="color: #ffffff; font-weight: bold; font-size: 1.1rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
+            <span style="color: #ffffff; font-weight: bold; font-size: 1rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
         </div>
         <div class="nav-links">
             <a href="#inicio">Inicio</a>
