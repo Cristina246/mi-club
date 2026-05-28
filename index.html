@@ -57,16 +57,52 @@
                 gap: 6px; 
             }
         }
+/* ESTILOS DE LA CABECERA MODIFICADA */
+        .header {
+            text-align: center;
+            padding: 50px 20px; 
+            background-image: url('solfon.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            color: white; 
+            position: relative; 
+            overflow: hidden; 
+            height: 400px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
+        /* Estilos para el video de fondo en la cabecera */
+        .header-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 1; 
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen; 
+            object-fit: cover; 
+        }
         /* ESTILOS DEL CONTENIDO */
         h1 {
-            font-size: 3.5rem;
+            font-size: 0.7rem; /* 5 veces más chico */
             margin-bottom: 5px;
             font-family: 'Cinzel', serif;
             letter-spacing: 2px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 2; 
         }
 
+        .header p {
+            font-size: 1rem; 
+            margin-top: 0;
+            z-index: 2; 
+        
         h2 {
             font-family: 'Cinzel', serif;
             color: #1a1a1a;
