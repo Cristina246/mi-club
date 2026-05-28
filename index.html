@@ -254,9 +254,7 @@
     
     <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
         <h2>¿Quiénes somos?</h2>
-        <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
-    </section>
-
+       <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
     <section id="presentacion" style="text-align: center; padding: 20px 0;">
         <h2>Presentación</h2>
         <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
@@ -348,14 +346,16 @@
     var btnSilencio = document.getElementById('btnSilencio');
 
     // 1. Activa la música con el primer clic en la pantalla
-    document.addEventListener('click', function() {
+    document.addEventListener('click', function() { 
         if (video && video.muted) {
             video.muted = false;
             video.play();
             btnSilencio.textContent = "🔊";
         }
     }, { once: true });
-
+</script>
+</body>
+</html>
     // 2. Control manual con el botón flotante (Activar/Pausar de golpe)
     btnSilencio.addEventListener('click', function(e) {
         e.stopPropagation(); // Evita que interfiera con otros clics
