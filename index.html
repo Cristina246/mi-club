@@ -6,36 +6,37 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
         
-        /* BARRA DE NAVEGACIÓN ULTRA COMPACTA */
+        /* BARRA DEL MISMO ALTO QUE EL LOGO */
         nav { 
             background: #111111; 
-            padding: 8px 15px; /* Más delgada */
+            padding: 4px 15px; /* Altura mínima al ras del logo */
             position: sticky; 
             top: 0; 
             display: flex; 
             align-items: center; 
             justify-content: space-between; 
             z-index: 1000; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             flex-wrap: nowrap;
+            height: 32px; /* Altura fija para que no se estire */
         }
         .nav-brand { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-        .nav-logo { max-height: 30px; width: auto; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; }
+        .nav-logo { max-height: 24px; width: auto; border-radius: 50%; border: 1px solid #d4af37; object-fit: cover; }
         
-        /* ENLACES MUCHO MÁS PEQUEÑOS Y JUNTOS */
+        /* LETRAS ULTRA PEQUEÑAS PARA QUE QUEPAN EN UNA FILA */
         .nav-links { 
             display: flex; 
-            gap: 6px; /* Menos espacio entre links */
-            flex-wrap: nowrap; /* Fuerza a que se queden en una sola fila */
+            gap: 8px; 
+            flex-wrap: nowrap; 
         }
         nav a { 
             color: #ffffff; 
             text-decoration: none; 
             font-weight: 500; 
             transition: color 0.3s; 
-            font-size: 0.68rem; /* Letras bastante más pequeñas para Mac */
+            font-size: 0.62rem; /* Letras bien pequeñitas */
             white-space: nowrap;
-            padding: 2px 4px; /* Espaciado interno mínimo */
+            padding: 2px 3px;
         }
         nav a:hover { color: #d4af37; }
         
@@ -65,9 +66,9 @@
 
         /* Ajuste para pantallas móviles */
         @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 6px; text-align: center; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 6px; }
-            nav a { font-size: 0.7rem; }
+            nav { flex-direction: column; height: auto; padding: 6px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 5px; }
+            nav a { font-size: 0.65rem; }
         }
     </style>
 </head>
@@ -76,16 +77,16 @@
     <nav>
         <div class="nav-brand">
             <img src="imageLOGO (1).png" alt="Logo" class="nav-logo">
-            <span style="color: #ffffff; font-weight: bold; font-size: 0.9rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
+            <span style="color: #ffffff; font-weight: bold; font-size: 0.75rem; font-family: 'Cinzel', serif;">Club Colibrí</span>
         </div>
         <div class="nav-links">
             <a href="#inicio">Inicio</a>
-            <a href="#quienes-somos">¿Quiénes somos?</a>
+            <a href="#quienes-somos">Nosotros</a>
             <a href="#presentacion">Presentación</a>
             <a href="#museo">Museo</a>
             <a href="#clases">Actividad</a>
             <a href="#eventos">Eventos</a>
-            <a href="#participacion">Participación</a>
+            <a href="#participacion">Unirse</a>
             <a href="#tienda">Tienda</a>
             <a href="#contacto">Contacto</a>
             <a href="#donacion">Donación</a>
