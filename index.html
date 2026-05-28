@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <title>Club Colibrí</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
-        
-       /* BARRA DE NAVEGACIÓN - UNA SOLA FILA COMPACTA */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* BARRA DE NAVEGACIÓN - UNA SOLA FILA COMPACTA */
 nav {
     background: #111111;
-    padding: 0 15px;
+    padding: 0 12px;
     position: sticky;
     top: 0;
     display: flex;
@@ -17,20 +23,20 @@ nav {
     justify-content: space-between;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    flex-wrap: nowrap; /* Evita que se baje a una segunda línea */
-    height: 40px;      /* Altura fija y elegante para la barra */
+    flex-wrap: nowrap; /* Prohibido bajarse a otra línea */
+    height: 44px;      /* Altura compacta y elegante */
 }
 
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 8px;
-    flex-shrink: 0;   /* Protege el logo para que no se altere */
+    gap: 6px;
+    flex-shrink: 0;   /* Protege el logo para que no se achique */
 }
 
 .nav-logo {
-    height: 28px;     /* Tamaño ideal y reducido para la esquina */
-    width: 28px;
+    height: 26px;     /* Reducido a la esquina izquierda */
+    width: 26px;
     border-radius: 50%;
     border: 1px solid #d4af37;
     object-fit: cover;
@@ -39,8 +45,8 @@ nav {
 /* ENLACES ULTRA COMPACTOS EN UNA SOLA LÍNEA */
 .nav-links {
     display: flex;
-    gap: 10px;        /* Espacio reducido entre cada opción */
-    flex-wrap: nowrap;/* Fuerza a que se mantengan alineados */
+    gap: 8px;         /* Espacio milimétrico entre opciones */
+    flex-wrap: nowrap;/* Fuerza la alineación horizontal */
     align-items: center;
 }
 
@@ -49,8 +55,8 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
-    font-size: 0.75rem; /* Tamaño de letra chico y legible */
-    white-space: nowrap;/* Impide que el texto de un link se parta en dos filas */
+    font-size: 0.72rem; /* Tamaño de letra chica solicitado */
+    white-space: nowrap;/* Impide por completo que el texto se parta en dos filas */
     padding: 4px 2px;
 }
 
@@ -58,35 +64,70 @@ nav a:hover {
     color: #d4af37;
 }
 
-/* Ajuste sutil para pantallas muy pequeñas (celulares) */
-@media (max-width: 768px) {
+/* Ajuste sutil para pantallas medianas y móviles */
+@media (max-width: 900px) {
     nav {
-        padding: 0 8px;
+        padding: 0 6px;
     }
     nav a {
-        font-size: 0.65rem; /* Se hace aún más chica en móvil para no romperse */
-        gap: 5px;
+        font-size: 0.62rem; /* Se encoge un poco más para asegurar una sola línea */
+        padding: 4px 1px;
     }
     .nav-links {
-        gap: 6px;
+        gap: 4px;
+    }
+    .nav-brand span {
+        display: none; /* En pantallas muy chicas oculta el texto "Club Colibrí" para darle prioridad absoluta al logo e iconos */
     }
 }
-        h1 { font-size: 3.5rem; margin-bottom: 5px; font-family: 'Cinzel', serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        h2 { font-family: 'Cinzel', serif; color: #1a1a1a; margin-bottom: 20px; text-align: center; }
-        h3 { font-family: 'Cinzel', serif; color: #333; margin-top: 30px; }
-        .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-        .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        
-        /* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
-        .video-transparente {
-            max-height: 250px; 
-            width: auto;
-            mix-blend-mode: screen;
-            display: inline-block;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
 
+/* ESTILOS DEL CONTENIDO */
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Cinzel', serif;
+    color: #333;
+    margin-top: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* MEDIDA AJUSTADA PARA EL VIDEO TRANSPARENTE */
+.video-transparente {
+    max-height: 250px;
+    width: auto;
+    mix-blend-mode: screen;
+    display: inline-block;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+</style>
         @media (max-width: 768px) {
             nav { flex-direction: column; height: auto; padding: 6px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 5px; }
