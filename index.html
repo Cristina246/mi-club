@@ -63,6 +63,50 @@
       color: #d4af37;
     }
 
+    /* ESTILOS DEL ENCABEZADO (FONDO DEL AVATAR) */
+    .header {
+      background-image: url('solfon.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* El Avatar encima del fondo con transparencia */
+    .header-video {
+      max-height: 180px;
+      width: auto;
+      mix-blend-mode: screen;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+
+    /* TITULO PRINCIPAL */
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 5px 0;
+      font-family: sans-serif;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      z-index: 2;
+    }
+
+    /* SUBTÍTULO */
+    .header p {
+      font-size: 1rem;
+      margin: 0;
+      font-style: italic;
+      color: #d4af37;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+      z-index: 2;
+    }
+
     /* Ajustes para pantallas chicas */
     @media (max-width: 950px) {
       nav a {
@@ -72,6 +116,28 @@
       .nav-links {
         gap: 5px;
       }
+    }
+
+    /* ESTILOS DEL CONTENIDO */
+    h2 {
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -99,319 +165,178 @@
     </div>
   </nav>
 
+  <!-- BLOQUE DE INICIO CON VIDEO, AUDIO Y BOTÓN A LOS PIES -->
+  <header id="inicio" class="header">
+    <!-- Video del Avatar -->
+    <video autoplay loop muted playsinline class="header-video" id="videoInicio">
+      <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+    <h1>Club Colibrí</h1>
+    <p>“Es algo más que arte”</p>
+    
+    <!-- REPRODUCTOR: Usa el mismo archivo del avatar para extraer su canto -->
+    <audio id="musica-inicio" src="Avatar_IV_Video (1) (1).mp4" loop></audio>
+
+    <!-- BOTÓN EN LOS PIES DEL AVATAR -->
+    <button id="btn-reproductor" class="boton-audio-pies">
+      <span id="icono-audio">▶️</span>
+    </button>
+  </header>
+
+  <!-- ESTILOS EXCLUSIVOS PARA EL BOTÓN DE AUDIO -->
   <style>
-            background-image: url('solfon.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            color: white; 
-            position: relative; 
-            overflow: hidden; 
-            min-height: 320px; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+    .boton-audio-pies {
+      margin-top: 15px;
+      width: 25px;
+      height: 25px;
+      background-color: #f39c12;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+      z-index: 100;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    .boton-audio-pies:hover {
+      transform: scale(1.1);
+      background-color: #e67e22;
+    }
+  </style>
+
+  <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333; line-height: 1.8;">
+    
+    <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
+      <h2>¿Quiénes somos?</h2>
+      <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiences, fortalecer los lazos familiares y preservar nuestra identidad.</p>
+    </section>
+
+    <section id="presentacion" style="text-align: center; padding: 20px 0;">
+      <h2>Presentación</h2>
+      <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
+    </section>
+
+    <section id="museo" style="padding: 20px 0;">
+      <h2>Museo Digital</h2>
+      <div class="gallery">
+        <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
+        <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
+        <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
+        <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
+        <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
+        <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
+        <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
+        <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
+        <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario"></a>
+      </div>
+    </section>
+
+    <section id="clases" style="padding: 20px 0;">
+      <h2>Actividad</h2>
+      <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
+      <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica...</p>
+      <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
+      <hr>
+      <p><strong>Materiales incluidos en tu kit:</strong></p>
+      <ul>
+        <li>Pieza de cerámica con alto relieve.</li>
+        <li>Pintura (marrón oscuro, negro o terracota).</li>
+        <li>Guante para la aplicación.</li>
+        <li>Trapo de algodón limpio y seco.</li>
+      </ul>
+      <h3>Preparación y Aplicación</h3>
+      <p><strong>1. Aplicación del color base:</strong> Ponte el guante y pinta toda la pieza asegurando que la pintura entre en las zonas profundas. Deja secar 6 minutos.</p>
+      <p><strong>2. Retirado y resultado:</strong> Trabaja por secciones pequeñas. Frota con el trapo seco las partes prominentes para dejar la pátina solo en los fondos.</p>
+    </section>
+
+    <section id="eventos" style="text-align: center; padding: 20px 0;">
+      <h2>Eventos</h2>
+      <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios, exposiciones y maratones artísticos.</p>
+    </section>
+
+    <section id="participacion" style="text-align: center; padding: 20px 0;">
+      <h2>Participación</h2>
+      <p>Descubre cómo formar parte de nuestros talleres, cómo adquirir tus kits educativos y cómo sumarte a las dinámicas de identidad cultural.</p>
+    </section>
+
+    <section id="tienda" style="padding: 20px 0;">
+      <h2>Tienda</h2>
+      <h3>Piezas Chicas</h3>
+      <div class="gallery" style="justify-content: flex-start;">
+        <img src="kitsbien.jpg" alt="Kit">
+        <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico">
+        <img src="cera_azte.jpg" alt="Pieza Azteca Chica">
+      </div>
+      <h3>Piezas Medianas</h3>
+      <div class="gallery" style="justify-content: flex-start;">
+        <img src="cera_Ameriind.jpg" alt="Amerind">
+        <img src="cera_cmaya.jpg" alt="Maya">
+        <img src="cera_Arb.jpg" alt="Arb">
+        <img src="cera_calLuna.jpg" alt="Cal Luna">
+        <img src="cera_son.jpg" alt="Sonriente">
+        <img src="cera_rey.jpg" alt="Rey Cerámica Mediano">
+        <img src="cera_azte.jpg" alt="Pieza Azteca Mediana">
+      </div>
+      <h3>Piezas Grandes</h3>
+      <div class="gallery" style="justify-content: flex-start;">
+        <img src="cera_coyo.jpg" alt="Coyo">
+        <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPT ÚNICO DE CONTROL -->
+  <script>
+    var video = document.getElementById('videoInicio');
+    var musica = document.getElementById('musica-inicio');
+    var btnSilencio = document.getElementById('btn-reproductor');
+    var icono = document.getElementById('icono-audio');
+
+    if (btnSilencio) {
+      btnSilencio.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (musica.paused) {
+          video.muted = false;
+          video.play();
+          musica.play();
+          if (icono) icono.textContent = "⏸️";
+        } else {
+          video.pause();
+          musica.pause();
+          if (icono) icono.textContent = "▶️";
         }
+      });
+    }
 
-        /* El Avatar encima del fondo con transparencia */
-        .header-video {
-            max-height: 180px; 
-            width: auto;
-            mix-blend-mode: screen; 
-            z-index: 1;
-            margin-bottom: 10px;
-        }
-
-        /* TITULO PRINCIPAL */
-        h1 {
-            font-size: 0.7rem; 
-            margin: 0 0 5px 0;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-            z-index: 2; 
-        }
-
-        /* SUBTÍTULO */
-        .header p {
-            font-size: 0.55rem; 
-            margin: 0;
-            font-style: italic;
-            color: #d4af37; 
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-            z-index: 2;
-        }
-
-        /* BOTÓN FLOTANTE PARA PAUSAR MÚSICA */
-        .btn-musica {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(17, 17, 17, 0.85);
-            color: #d4af37;
-            border: 1px solid #d4af37;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
-        }
-        .btn-musica:hover {
-            background: #d4af37;
-            color: #111111;
-            transform: scale(1.1);
-        }
-
-        /* Ajustes para pantallas móviles */
-        @media (max-width: 900px) {
-            nav a { font-size: 0.4rem; }
-            .nav-links { gap: 6px; }
-        }
-
-        /* ESTILOS DEL CONTENIDO */
-        h2 {
-            font-family: 'Cinzel', serif;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        h3 {
-            font-family: 'Cinzel', serif;
-            color: #333;
-            margin-top: 30px;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .gallery img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .video-transparente {
-            max-height: 250px;
-            width: auto;
-            mix-blend-mode: screen;
-            display: inline-block;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-    </style>
-</head>
-<body>
-
-<nav>
-    <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#quienes-somos">Nosotros</a>
-        <a href="#presentacion">Presentación</a>
-        <a href="#museo">Museo</a>
-        <a href="#clases">Actividad</a>
-        <a href="#eventos">Eventos</a>
-        <a href="#participacion">Unirse</a>
-        <a href="#tienda">Tienda</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#donacion">Donación</a>
-    </div>
-</nav>
-
-<!-- BOTÓN FLOTANTE PARA CONTROLAR AUDIO -->
-<!-- BLOQUE DE INICIO CON VIDEO, AUDIO Y BOTÓN A LOS PIES -->
-<header id="inicio" class="header" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-  
-  <!-- Video del Avatar -->
-  <video autoplay loop muted playsinline class="header-video" id="videoInicio">
-    <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
-    Tu navegador no soporta videos.
-  </video>
-
-  <h1>Club Colibrí</h1>
-  <p>“Es algo más que arte”</p>
-
-  <!-- REPRODUCTOR: Usa el mismo archivo del avatar para extraer su canto -->
-  <audio id="musica-inicio" src="Avatar_IV_Video (1) (1).mp4" loop></audio>
-
-  a<!-- BOTÓN EN LOS PIES DEL AVATAR (Simplificado sin onclick duplicado) -->
-<button id="btn-reproductor" class="boton-audio-pies">
-  <span id="icono-audio">▶️</span>
-</button>
-</header>
-
-<!-- ESTILOS EXCLUSIVAS PARA EL INICIO (Corregido el error de llaves dobles) -->
-<style>
-.boton-audio-pies {
-  margin-top: 15px; 
-  width: 25px;      
-  height: 25px;     
-  background-color: #f39c12; 
-  border: 2px solid #ffffff; 
-  border-radius: 50%;
-  font-size: 0.9rem; 
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-  z-index: 100;
-  transition: transform 0.2s, background-color 0.2s;
-}
-.boton-audio-pies:hover {
-  transform: scale(1.1);
-  background-color: #e67e22;
-}
-/* Garantiza que no aparezca en otras secciones */
-section:not(#inicio) .boton-audio-pies, main .boton-audio-pies {
-  display: none !important;
-}
-</style>
-
-<main style="max-width: 1200px; margin: auto; padding: 20px; font-family: 'Montserrat', sans-serif; color: #333333; line-height: 1.8;">
-  <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
-    <h2>¿Quiénes somos?</h2>
-    <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
-  </section>
-
-  <section id="presentacion" style="text-align: center; padding: 20px 0;">
-    <h2>Presentación</h2>
-    <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
-  </section>
-
-  <section id="museo" style="padding: 20px 0;">
-    <h2>Museo Digital</h2>
-    <div class="gallery">
-      <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
-      <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
-      <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
-      <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
-      <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
-      <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
-      <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
-      <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
-      <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario"></a>
-    </div>
-  </section>
-
-  <section id="clases" style="padding: 20px 0;">
-    <h2>Actividad</h2>
-    <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
-    <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica...</p>
-    <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
-    <hr>
-    <p><strong>Materiales incluidos en tu kit:</strong></p>
-    <ul>
-      <li>Pieza de cerámica con alto relieve.</li>
-      <li>Pintura (marrón oscuro, negro o terracota).</li>
-      <li>Guante para la aplicación.</li>
-      <li>Trapo de algodón limpio y seco.</li>
-    </ul>
-    <h3>Preparación y Aplicación</h3>
-    <p><strong>1. Application del color base:</strong> Ponte el guante y pinta toda la pieza asegurando que la pintura entre en las zonas profundas. Deja secar 6 minutos.</p>
-    <p><strong>2. Retirado y resultó:</strong> Trabaja por secciones pequeñas. Frota con el trapo seco las partes prominentes para dejar la pátina solo en los fondos.</p>
-  </section>
-
-  <section id="eventos" style="text-align: center; padding: 20px 0;">
-    <h2>Eventos</h2>
-    <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios, exposiciones y maratones artísticos.</p>
-  </section>
-
-  <section id="participacion" style="text-align: center; padding: 20px 0;">
-    <h2>Participación</h2>
-    <p>Descubre cómo formar parte de nuestros talleres, cómo adquirir tus kits educativos y cómo sumarte a las dinámicas de identidad cultural.</p>
-  </section>
-
-  <section id="tienda" style="padding: 20px 0;">
-    <h2>Tienda</h2>
-    <h3>Piezas Chicas</h3>
-    <div class="gallery" style="justify-content: flex-start;">
-      <img src="kitsbien.jpg" alt="Kit">
-      <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico">
-      <img src="cera_azte.jpg" alt="Pieza Azteca Chica">
-    </div>
-    <h3>Piezas Medianas</h3>
-    <div class="gallery" style="justify-content: flex-start;">
-      <img src="cera_Ameriind.jpg" alt="Amerind">
-      <img src="cera_cmaya.jpg" alt="Maya">
-      <img src="cera_Arb.jpg" alt="Arb">
-      <img src="cera_calLuna.jpg" alt="Cal Luna">
-      <img src="cera_son.jpg" alt="Sonriente">
-      <img src="cera_rey.jpg" alt="Rey Cerámica Mediano">
-      <img src="cera_azte.jpg" alt="Pieza Azteca Mediana">
-    </div>
-    <h3>Piezas Grandes</h3>
-    <div class="gallery" style="justify-content: flex-start;">
-      <img src="cera_coyo.jpg" alt="Coyo">
-      <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
-    </div>
-  </section>
-</main>
-
-<!-- SCRIPT ÚNICO DE CONTROL (Sin duplicados) -->
-<script>
-  var video = document.getElementById('videoInicio');
-  var musica = document.getElementById('musica-inicio');
-  var btnSilencio = document.getElementById('btn-reproductor');
-  var icono = document.getElementById('icono-audio');
-
-  // Una sola función que controla todo el encendido y apagado
-  if (btnSilencio) {
-    btnSilencio.addEventListener('click', function(e) {
-      e.stopPropagation(); // Evita interferencias con el clic general del documento
-      
-      if (musica.paused) {
+    document.addEventListener('click', function() {
+      if (musica && musica.paused) {
         video.muted = false;
         video.play();
         musica.play();
         if (icono) icono.textContent = "⏸️";
-      } else {
-        video.pause();
-        musica.pause();
-        if (icono) icono.textContent = "▶️";
       }
-    });
-  }
+    }, { once: true });
 
-  // Activa la música automáticamente solo en el primer clic general de la pantalla
-  document.addEventListener('click', function() {
-    if (musica && musica.paused) {
-      video.muted = false;
-      video.play();
-      musica.play();
-      if (icono) icono.textContent = "⏸️";
-    }
-  }, { once: true });
-
-  // Apagado automático al cambiar de sección en el menú
-  var enlaces = document.querySelectorAll('nav a');
-  enlaces.forEach(function(enlace) {
-    enlace.addEventListener('click', function() {
-      var destino = this.getAttribute('href');
-      if (destino !== '#inicio' && video) {
-        video.pause();
-        if (musica) musica.pause();
-        if (icono) icono.textContent = "▶️";
-      } else if (destino === '#inicio' && video) {
-        video.muted = false;
-        video.play();
-        if (musica) musica.play();
-        if (icono) icono.textContent = "⏸️";
-      }
+    var enlaces = document.querySelectorAll('nav a');
+    enlaces.forEach(function(enlace) {
+      enlace.addEventListener('click', function() {
+        var destino = this.getAttribute('href');
+        if (destino !== '#inicio' && video) {
+          video.pause();
+          if (musica) musica.pause();
+          if (icono) icono.textContent = "▶️";
+        } else if (destino === '#inicio' && video) {
+          video.muted = false;
+          video.play();
+          if (musica) musica.play();
+          if (icono) icono.textContent = "⏸️";
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
