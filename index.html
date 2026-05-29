@@ -33,7 +33,7 @@
       align-items: center;
     }
 
-    /* Ajuste de tamaño para tu logo colibriLOGO.png */
+    /* Tamaño corregido para tu logo con C mayúscula */
     .nav-logo img {
       height: 35px;
       width: auto;
@@ -43,20 +43,20 @@
     /* Contenedor de enlaces a la derecha */
     .nav-links {
       display: flex;
-      gap: 10px;
+      gap: 8px; /* Espacio compacto */
       flex-wrap: nowrap;
       align-items: center;
     }
 
-    /* Enlaces pequeños y estilizados para que quepan todos */
+    /* Enlaces pequeños para que quepan todos en una sola fila sin cortarse */
     nav a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
-      font-size: 0.8rem; /* Tamaño compacto corregido */
+      font-size: 0.75rem; /* Letra un poquito más chica para que "Actividad" quepa bien */
       white-space: nowrap;
-      padding: 4px 6px;
+      padding: 4px 5px;
     }
 
     nav a:hover {
@@ -104,17 +104,6 @@
       z-index: 2;
     }
 
-    /* Ajustes para pantallas chicas o celulares */
-    @media (max-width: 950px) {
-      nav a {
-        font-size: 0.7rem;
-        padding: 2px 4px;
-      }
-      .nav-links {
-        gap: 5px;
-      }
-    }
-
     /* ESTILOS DE LA GALERÍA DEL MUSEO */
     h2 {
       color: #1a1a1a;
@@ -129,7 +118,7 @@
       justify-content: center;
     }
 
-    /* Fotos en miniatura en una sola hoja */
+    /* Miniaturas en cuadritos ordenados */
     .gallery img {
       width: 150px;
       height: 150px;
@@ -148,9 +137,9 @@
 
   <!-- BARRA DE NAVEGACIÓN VISIBLE -->
   <nav>
-    <!-- Izquierda: Tu imagen de Logo Corregida -->
+    <!-- Izquierda: Tu imagen de Logo con C mayúscula -->
     <div class="nav-logo">
-      <img src="colibriLOGO.png" alt="Logo Club Colibrí">
+      <img src="ColibriLOGO.png" alt="Logo Club Colibrí">
     </div>
 
     <!-- Derecha: Menú de Links -->
@@ -238,7 +227,7 @@
       <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica...</p>
       <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
       <hr>
-      <p><strong>Materiales incluidos en tu kit:</strong></p>
+      <p><strong>Materiales incluidos in tu kit:</strong></p>
       <ul>
         <li>Pieza de cerámica con alto relieve.</li>
         <li>Pintura (marrón oscuro, negro o terracota).</li>
