@@ -12,7 +12,7 @@
       background-color: #f9f9f9;
     }
 
-    /* BARRA DE NAVEGACIÓN - FILA COMPACTA Y ALINEADA */
+    /* BARRA DE NAVEGACIÓN COMPACTA */
     nav {
       background: #111111;
       padding: 0 15px;
@@ -33,7 +33,7 @@
       align-items: center;
     }
 
-    /* Reducción proporcional del logo para la barra */
+    /* Ajuste de tamaño para tu logo colibriLOGO.png */
     .nav-logo img {
       height: 35px;
       width: auto;
@@ -48,13 +48,13 @@
       align-items: center;
     }
 
-    /* Enlaces más pequeños y estilizados */
+    /* Enlaces pequeños y estilizados para que quepan todos */
     nav a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
-      font-size: 0.8rem;
+      font-size: 0.8rem; /* Tamaño compacto corregido */
       white-space: nowrap;
       padding: 4px 6px;
     }
@@ -78,7 +78,6 @@
       align-items: center;
     }
 
-    /* El Avatar encima del fondo con transparencia */
     .header-video {
       max-height: 180px;
       width: auto;
@@ -87,7 +86,6 @@
       margin-bottom: 10px;
     }
 
-    /* TITULO PRINCIPAL */
     h1 {
       font-size: 2rem;
       margin: 0 0 5px 0;
@@ -97,7 +95,6 @@
       z-index: 2;
     }
 
-    /* SUBTÍTULO */
     .header p {
       font-size: 1rem;
       margin: 0;
@@ -107,7 +104,7 @@
       z-index: 2;
     }
 
-    /* Ajustes para pantallas chicas */
+    /* Ajustes para pantallas chicas o celulares */
     @media (max-width: 950px) {
       nav a {
         font-size: 0.7rem;
@@ -118,7 +115,7 @@
       }
     }
 
-    /* ESTILOS DEL CONTENIDO */
+    /* ESTILOS DE LA GALERÍA DEL MUSEO */
     h2 {
       color: #1a1a1a;
       margin-bottom: 20px;
@@ -132,12 +129,18 @@
       justify-content: center;
     }
 
+    /* Fotos en miniatura en una sola hoja */
     .gallery img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -145,9 +148,9 @@
 
   <!-- BARRA DE NAVEGACIÓN VISIBLE -->
   <nav>
-    <!-- Izquierda: Imagen del Sello / Logo -->
+    <!-- Izquierda: Tu imagen de Logo Corregida -->
     <div class="nav-logo">
-      <img src="imagenLOGO (1).png" alt="Logo Club Colibrí">
+      <img src="colibriLOGO.png" alt="Logo Club Colibrí">
     </div>
 
     <!-- Derecha: Menú de Links -->
@@ -165,9 +168,8 @@
     </div>
   </nav>
 
-  <!-- BLOQUE DE INICIO CON VIDEO, AUDIO Y BOTÓN A LOS PIES -->
+  <!-- BLOQUE DE INICIO CON EL AVATAR DEL SOL -->
   <header id="inicio" class="header">
-    <!-- Video del Avatar -->
     <video autoplay loop muted playsinline class="header-video" id="videoInicio">
       <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
       Tu navegador no soporta videos.
@@ -175,16 +177,14 @@
     <h1>Club Colibrí</h1>
     <p>“Es algo más que arte”</p>
     
-    <!-- REPRODUCTOR: Usa el mismo archivo del avatar para extraer su canto -->
     <audio id="musica-inicio" src="Avatar_IV_Video (1) (1).mp4" loop></audio>
 
-    <!-- BOTÓN EN LOS PIES DEL AVATAR -->
     <button id="btn-reproductor" class="boton-audio-pies">
       <span id="icono-audio">▶️</span>
     </button>
   </header>
 
-  <!-- ESTILOS EXCLUSIVOS PARA EL BOTÓN DE AUDIO -->
+  <!-- ESTILOS DEL BOTÓN DE AUDIO -->
   <style>
     .boton-audio-pies {
       margin-top: 15px;
@@ -200,15 +200,10 @@
       justify-content: center;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
       z-index: 100;
-      transition: transform 0.2s, background-color 0.2s;
-    }
-    .boton-audio-pies:hover {
-      transform: scale(1.1);
-      background-color: #e67e22;
     }
   </style>
 
-  <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333; line-height: 1.8;">
+  <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333;">
     
     <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
       <h2>¿Quiénes somos?</h2>
@@ -220,8 +215,10 @@
       <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
     </section>
 
+    <!-- MUSEO DIGITAL CON MINIATURAS QUE SE ABREN EN GRANDE AL HACER CLICK -->
     <section id="museo" style="padding: 20px 0;">
       <h2>Museo Digital</h2>
+      <p style="text-align: center; color: #666; margin-bottom: 20px;">Toque una imagen para verla en detalle y más grande.</p>
       <div class="gallery">
         <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
         <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
@@ -289,7 +286,6 @@
     </section>
   </main>
 
-  <!-- SCRIPT ÚNICO DE CONTROL -->
   <script>
     var video = document.getElementById('videoInicio');
     var musica = document.getElementById('musica-inicio');
