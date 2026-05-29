@@ -12,53 +12,53 @@
       background-color: #f9f9f9;
     }
 
-    /* BARRA DE NAVEGACIÓN COMPACTA Y ALINEADA */
+    /* BARRA DE NAVEGACIÓN COMPACTA Y SIN LOGO */
     nav {
       background: #111111;
-      padding: 0 15px;
+      padding: 0 10px;
       position: sticky;
       top: 0;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* Centra todos tus enlaces */
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       flex-wrap: nowrap;
       height: 50px;
     }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-    }
-
-    /* Tamaño ideal para tu logo de colibrí */
-    .nav-logo img {
-      height: 35px;
-      width: auto;
-      display: block;
-    }
-
+    /* Contenedor horizontal de enlaces */
     .nav-links {
       display: flex;
-      gap: 10px;
+      gap: 12px; /* Espaciado equilibrado entre las secciones */
       flex-wrap: nowrap;
       align-items: center;
     }
 
-    /* Enlaces pequeños para que quepan todos en una sola fila */
+    /* Enlaces con buen tamaño de letra y visibles */
     nav a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
-      font-size: 0.8rem;
+      font-size: 0.85rem; 
       white-space: nowrap;
-      padding: 4px 6px;
+      padding: 6px 4px;
     }
 
     nav a:hover {
       color: #d4af37;
+    }
+
+    /* Ajuste automático para pantallas medianas o tabletas */
+    @media (max-width: 1000px) {
+      nav a {
+        font-size: 0.75rem;
+        padding: 4px 2px;
+      }
+      .nav-links {
+        gap: 6px;
+      }
     }
 
     /* ESTILOS DEL ENCABEZADO (FONDO DEL AVATAR) */
@@ -102,17 +102,6 @@
       z-index: 2;
     }
 
-    /* Ajustes para pantallas chicas o celulares */
-    @media (max-width: 950px) {
-      nav a {
-        font-size: 0.7rem;
-        padding: 2px 4px;
-      }
-      .nav-links {
-        gap: 5px;
-      }
-    }
-
     /* ESTILOS DE LA GALERÍA DEL MUSEO */
     h2 {
       color: #1a1a1a;
@@ -127,7 +116,6 @@
       justify-content: center;
     }
 
-    /* Miniaturas en cuadritos ordenados en una sola hoja */
     .gallery img {
       width: 150px;
       height: 150px;
@@ -144,29 +132,24 @@
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGACIÓN VISIBLE -->
+  <!-- BARRA DE NAVEGACIÓN CON TU NUEVA LISTA EXACTA -->
   <nav>
-    <!-- Izquierda: Tu imagen de Logo con C mayúscula -->
-    <div class="nav-logo">
-      <img src="ColibriLOGO.png" alt="Logo Club Colibrí">
-    </div>
-
-    <!-- Derecha: Menú de Links -->
     <div class="nav-links">
       <a href="#inicio">Inicio</a>
-      <a href="#quienes-somos">Nosotros</a>
+      <a href="#quienes-somos">¿Quiénes somos?</a>
       <a href="#presentacion">Presentación</a>
-      <a href="#museo">Museo</a>
-      <a href="#clases">Actividad</a>
+      <a href="#museo">Museo Digital</a>
+      <a href="#clases">Clases</a>
       <a href="#eventos">Eventos</a>
-      <a href="#participacion">Unirse</a>
+      <a href="#proximas-clases">Próximas clases</a>
+      <a href="#videos">Videos y vivencias</a>
       <a href="#tienda">Tienda</a>
       <a href="#contacto">Contacto</a>
-      <a href="#donacion">Donación</a>
+      <a href="#donaciones">Donaciones</a>
     </div>
   </nav>
 
-  <!-- BLOQUE DE INICIO CON EL AVATAR DEL SOL -->
+  <!-- BLOQUE DE INICIO CON EL AVATAR DEL SOL CENTRADO -->
   <header id="inicio" class="header">
     <video autoplay loop muted playsinline class="header-video" id="videoInicio">
       <source src="Avatar_IV_Video (1) (1).mp4" type="video/mp4">
@@ -205,7 +188,7 @@
     
     <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
       <h2>¿Quiénes somos?</h2>
-      <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiences, fortalecer los lazos familiares y preservar nuestra identidad.</p>
+      <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
     </section>
 
     <section id="presentacion" style="text-align: center; padding: 20px 0;">
@@ -213,7 +196,7 @@
       <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
     </section>
 
-    <!-- MUSEO DIGITAL CON MINIATURAS QUE SE ABREN EN GRANDE AL HACER CLICK -->
+    <!-- MUSEO DIGITAL -->
     <section id="museo" style="padding: 20px 0;">
       <h2>Museo Digital</h2>
       <p style="text-align: center; color: #666; margin-bottom: 20px;">Toque una imagen para verla en detalle y más grande.</p>
@@ -231,10 +214,9 @@
     </section>
 
     <section id="clases" style="padding: 20px 0;">
-      <h2>Actividad</h2>
+      <h2>Clases</h2>
       <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
       <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica...</p>
-      <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
       <hr>
       <p><strong>Materiales incluidos en tu kit:</strong></p>
       <ul>
@@ -243,19 +225,21 @@
         <li>Guante para la aplicación.</li>
         <li>Trapo de algodón limpio y seco.</li>
       </ul>
-      <h3>Preparación y Aplicación</h3>
-      <p><strong>1. Aplicación del color base:</strong> Ponte el guante y pinta toda la pieza asegurando que la pintura entre en las zonas profundas. Deja secar 6 minutos.</p>
-      <p><strong>2. Retirado y resultado:</strong> Trabaja por secciones pequeñas. Frota con el trapo seco las partes prominentes para dejar la pátina solo en los fondos.</p>
     </section>
 
     <section id="eventos" style="text-align: center; padding: 20px 0;">
       <h2>Eventos</h2>
-      <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios, exposiciones y maratones artísticos.</p>
+      <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios y exposiciones culturales.</p>
     </section>
 
-    <section id="participacion" style="text-align: center; padding: 20px 0;">
-      <h2>Participación</h2>
-      <p>Descubre cómo formar parte de nuestros talleres, cómo adquirir tus kits educativos y cómo sumarte a las dinámicas de identidad cultural.</p>
+    <section id="proximas-clases" style="text-align: center; padding: 20px 0;">
+      <h2>Próximas clases</h2>
+      <p>Mantente al tanto de nuestros próximos horarios y ubicaciones para asistir con toda tu familia.</p>
+    </section>
+
+    <section id="videos" style="text-align: center; padding: 20px 0;">
+      <h2>Videos y vivencias</h2>
+      <p>Aquí compartiremos memorias de los talleres, testimonios e historias de nuestra comunidad viviendo el arte con sus propias manos.</p>
     </section>
 
     <section id="tienda" style="padding: 20px 0;">
@@ -281,6 +265,16 @@
         <img src="cera_coyo.jpg" alt="Coyo">
         <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
       </div>
+    </section>
+
+    <section id="contacto" style="text-align: center; padding: 20px 0;">
+      <h2>Contacto</h2>
+      <p>¿Tienes dudas o quieres agendar un taller? Contáctanos y con gusto te atenderemos.</p>
+    </section>
+
+    <section id="donaciones" style="text-align: center; padding: 20px 0;">
+      <h2>Donaciones</h2>
+      <p>Tu apoyo nos ayuda a seguir distribuyendo kits artísticos y educativos a más escuelas y familias de la comunidad.</p>
     </section>
   </main>
 
