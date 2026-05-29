@@ -12,46 +12,26 @@
             background-color: #f9f9f9;
         }
 
-        /* BARRA DE NAVEGACIÓN - FILA COMPACTA */
-        nav {
-            background: #111111;
-            padding: 0 12px;
-            position: sticky;
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            flex-wrap: nowrap; 
-            height: 44px;      
-        }
+       <nav>
+  <!-- Izquierda: Imagen del Sello/Logo -->
+  <div class="nav-logo">
+    <img src="imagenLOGO (1).png" alt="Logo Club Colibrí">
+  </div>
 
-        .nav-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: nowrap;
-            align-items: center;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.45rem; /* Letra de links diminuta */
-            white-space: nowrap;
-            padding: 2px 1px;   
-        }
-
-        nav a:hover {
-            color: #d4af37;
-        }
-
-        /* ESTILOS DE LA CABECERA (PÁGINA DE INICIO) */
-        .header {
-            text-align: center;
-            padding: 40px 20px; 
+  <!-- Derecha: Menú de Links -->
+  <div class="nav-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#quienes-somos">Nosotros</a>
+    <a href="#presentacion">Presentación</a>
+    <a href="#museo">Museo</a>
+    <a href="#clases">Actividad</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#participacion">Unirse</a>
+    <a href="#tienda">Tienda</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#donacion">Donación</a>
+  </div>
+</nav>
             background-image: url('solfon.jpg'); 
             background-size: cover; 
             background-position: center; 
