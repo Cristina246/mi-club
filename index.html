@@ -12,7 +12,7 @@
       background-color: #f9f9f9;
     }
 
-    /* BARRA DE NAVEGACIÓN COMPACTA */
+    /* BARRA DE NAVEGACIÓN COMPACTA Y ALINEADA */
     nav {
       background: #111111;
       padding: 0 15px;
@@ -33,7 +33,7 @@
       align-items: center;
     }
 
-    /* Tamaño corregido para tu logo con C mayúscula */
+    /* Tamaño ideal para tu logo de colibrí */
     .nav-logo img {
       height: 35px;
       width: auto;
@@ -43,20 +43,20 @@
     /* Contenedor de enlaces a la derecha */
     .nav-links {
       display: flex;
-      gap: 8px; /* Espacio compacto */
+      gap: 10px;
       flex-wrap: nowrap;
       align-items: center;
     }
 
-    /* Enlaces pequeños para que quepan todos en una sola fila sin cortarse */
+    /* Enlaces pequeños para que quepan todos en una sola fila */
     nav a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
-      font-size: 0.75rem; /* Letra un poquito más chica para que "Actividad" quepa bien */
+      font-size: 0.8rem;
       white-space: nowrap;
-      padding: 4px 5px;
+      padding: 4px 6px;
     }
 
     nav a:hover {
@@ -104,6 +104,17 @@
       z-index: 2;
     }
 
+    /* Ajustes para pantallas chicas o celulares */
+    @media (max-width: 950px) {
+      nav a {
+        font-size: 0.7rem;
+        padding: 2px 4px;
+      }
+      .nav-links {
+        gap: 5px;
+      }
+    }
+
     /* ESTILOS DE LA GALERÍA DEL MUSEO */
     h2 {
       color: #1a1a1a;
@@ -118,7 +129,7 @@
       justify-content: center;
     }
 
-    /* Miniaturas en cuadritos ordenados */
+    /* Miniaturas en cuadritos ordenados en una sola hoja */
     .gallery img {
       width: 150px;
       height: 150px;
@@ -227,7 +238,7 @@
       <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica...</p>
       <p><strong>El objetivo es conocernos, presentarnos con orgullo y fortalecer nuestra autoestima.</strong></p>
       <hr>
-      <p><strong>Materiales incluidos in tu kit:</strong></p>
+      <p><strong>Materiales incluidos en tu kit:</strong></p>
       <ul>
         <li>Pieza de cerámica con alto relieve.</li>
         <li>Pintura (marrón oscuro, negro o terracota).</li>
