@@ -1,37 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Club Colibrí</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
+  <meta charset="UTF-8">
+  <title>Club Colibrí</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
 
-       <nav>
-  <!-- Izquierda: Imagen del Sello/Logo -->
-  <div class="nav-logo">
-    <img src="imagenLOGO (1).png" alt="Logo Club Colibrí">
-  </div>
+    /* BARRA DE NAVEGACIÓN - FILA COMPACTA Y ALINEADA */
+    nav {
+      background: #111111;
+      padding: 0 15px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Logo a la izquierda, links a la derecha */
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      flex-wrap: nowrap;
+      height: 50px;
+    }
 
-  <!-- Derecha: Menú de Links -->
-  <div class="nav-links">
-    <a href="#inicio">Inicio</a>
-    <a href="#quienes-somos">Nosotros</a>
-    <a href="#presentacion">Presentación</a>
-    <a href="#museo">Museo</a>
-    <a href="#clases">Actividad</a>
-    <a href="#eventos">Eventos</a>
-    <a href="#participacion">Unirse</a>
-    <a href="#tienda">Tienda</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#donacion">Donación</a>
-  </div>
-</nav>
+    /* Contenedor del Logo */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Reducción proporcional del logo para la barra */
+    .nav-logo img {
+      height: 35px;
+      width: auto;
+      display: block;
+    }
+
+    /* Contenedor de enlaces a la derecha */
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    /* Enlaces más pequeños y estilizados */
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      padding: 4px 6px;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* Ajustes para pantallas chicas */
+    @media (max-width: 950px) {
+      nav a {
+        font-size: 0.7rem;
+        padding: 2px 4px;
+      }
+      .nav-links {
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN VISIBLE -->
+  <nav>
+    <!-- Izquierda: Imagen del Sello / Logo -->
+    <div class="nav-logo">
+      <img src="imagenLOGO (1).png" alt="Logo Club Colibrí">
+    </div>
+
+    <!-- Derecha: Menú de Links -->
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#quienes-somos">Nosotros</a>
+      <a href="#presentacion">Presentación</a>
+      <a href="#museo">Museo</a>
+      <a href="#clases">Actividad</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#participacion">Unirse</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#donacion">Donación</a>
+    </div>
+  </nav>
+
+  <style>
             background-image: url('solfon.jpg'); 
             background-size: cover; 
             background-position: center; 
