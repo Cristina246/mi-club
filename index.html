@@ -182,7 +182,20 @@
             <span id="icono-audio">▶️</span>
         </button>
     </header>
-
+<!-- BLOQUE DE INICIO -->
+    <header id="inicio" class="header">
+        <!-- CORREGIDO: Ahora el video apunta a tu archivo real y tiene el ID correcto -->
+        <video loop playsinline class="header-video" id="avatar" src="Avatar_IV_Video (1) (1).mp4"></video>
+        
+        <h1>Club Colibrí</h1>
+        <p>“Es algo más que arte”</p>
+        
+        <!-- Quitamos la etiqueta <audio> separada para que no se duplique la misma canción -->
+        
+        <button id="btn-reproductor" class="boton-audio-pies">
+            <span id="icono-audio">▶️</span>
+        </button>
+    </header>
     <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333;">
         
         <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
@@ -277,28 +290,59 @@
         </section>
     </main>
 
-    <!-- SCRIPT CORREGIDO CON ID REAL DEL VIDEO ('avatar') -->
+    <!-- SCRIPT SIMPLIFICADO Y CORREGIDO -->
     <script>
-        var video = document.getElementById('avatar'); // Corregido el ID aquí
-        var musica = document.getElementById('musica-inicio');
+        var video = document.getElementById('avatar');
         var btnSilencio = document.getElementById('btn-reproductor');
         var icono = document.getElementById('icono-audio');
+
+        // Al inicio, nos aseguramos de que el video empiece pausado y con volumen
+        if (video) {
+            video.muted = false; 
+        }
 
         if (btnSilencio) {
             btnSilencio.addEventListener('click', function(e) {
                 e.stopPropagation();
-                if (musica.paused) {
-                    if(video) { video.muted = false; video.play(); }
-                    musica.play();
-                    if (icono) icono.textContent = "⏸️";
-                } else {
-                    if(video) video.pause();
-                    musica.pause();
-                    if (icono) icono.textContent = "▶️";
+                if (video) {
+                    if (video.paused) {
+                        video.play();
+                        if (icono) icono.textContent = "⏸️";
+                    } else {
+                        video.pause();
+                        if (icono) icono.textContent = "▶️";
+                    }
                 }
             });
         }
 
+        // Reproducción automática al primer clic en la página (exigencia de los navegadores)
+        document.addEventListener('click', function() {
+            if (video && video.paused) {
+                video.play();
+                if (icono) icono.textContent = "⏸️";
+            }
+        }, { once: true });
+
+        // Controlar la música cuando navegas por el menú
+        var enlaces = document.querySelectorAll('nav a');
+        enlaces.forEach(function(enlace) {
+            enlace.addEventListener('click', function() {
+                var destino = this.getAttribute('href');
+                if (destino !== '#inicio') {
+                    if (video) {
+                        video.pause();
+                    }
+                    if (icono) icono.textContent = "▶️";
+                } else {
+                    if (video) {
+                        video.play();
+                    }
+                    if (icono) icono.textContent = "⏸️";
+                }
+            });
+        });
+    </script>
         document.addEventListener('click', function() {
             if (musica && musica.paused) {
                 if(video) { video.muted = false; video.play(); }
