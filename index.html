@@ -1,330 +1,327 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Club Colibrí</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
+    <meta charset="UTF-8">
+    <title>Club Colibrí</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        /* BARRA DE NAVEGACIÓN COMPACTA CORREGIDA */
+        nav {
+            background: #111111;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            /* Permitimos que se adapte a dos líneas si la pantalla es chica para que no se encimen */
+            flex-wrap: wrap; 
+            min-height: 50px;
+        }
 
-    /* BARRA DE NAVEGACIÓN COMPACTA Y SIN LOGO */
-    nav {
-      background: #111111;
-      padding: 0 10px;
-      position: sticky;
-      top: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center; /* Centra todos tus enlaces */
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      flex-wrap: nowrap;
-      height: 50px;
-    }
+        /* Contenedor horizontal de enlaces */
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
 
-    /* Contenedor horizontal de enlaces */
-    .nav-links {
-      display: flex;
-      gap: 12px; /* Espaciado equilibrado entre las secciones */
-      flex-wrap: nowrap;
-      align-items: center;
-    }
+        /* Enlaces visibles y con buen espacio */
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            padding: 6px 8px;
+        }
 
-    /* Enlaces con buen tamaño de letra y visibles */
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-      font-size: 0.85rem; 
-      white-space: nowrap;
-      padding: 6px 4px;
-    }
+        nav a:hover {
+            color: #d4af37;
+        }
 
-    nav a:hover {
-      color: #d4af37;
-    }
+        /* Ajuste automático para pantallas medianas o tabletas */
+        @media (max-width: 1024px) {
+            nav a {
+                font-size: 0.78rem;
+                padding: 4px 6px;
+            }
+            .nav-links {
+                gap: 8px;
+            }
+        }
+        
+        /* ESTILOS DEL ENCABEZADO */
+        .header {
+            background-image: url('solfon.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    /* Ajuste automático para pantallas medianas o tabletas */
-    @media (max-width: 1000px) {
-      nav a {
-        font-size: 0.75rem;
-        padding: 4px 2px;
-      }
-      .nav-links {
-        gap: 6px;
-      }
-    }
+        .header-video {
+            max-height: 180px;
+            width: auto;
+            mix-blend-mode: screen;
+            z-index: 1;
+            margin-bottom: 10px;
+        }
 
-    /* ESTILOS DEL ENCABEZADO (FONDO DEL AVATAR) */
-    .header {
-      background-image: url('solfon.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-      min-height: 320px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+        h1 {
+            font-size: 2rem;
+            margin: 0 0 5px 0;
+            font-family: sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            z-index: 2;
+        }
 
-    .header-video {
-      max-height: 180px;
-      width: auto;
-      mix-blend-mode: screen;
-      z-index: 1;
-      margin-bottom: 10px;
-    }
+        .header p {
+            font-size: 1rem;
+            margin: 0;
+            font-style: italic;
+            color: #d4af37;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+            z-index: 2;
+        }
 
-    h1 {
-      font-size: 2rem;
-      margin: 0 0 5px 0;
-      font-family: sans-serif;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-      z-index: 2;
-    }
+        /* ESTILOS DE LA GALERÍA DEL MUSEO */
+        h2 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-    .header p {
-      font-size: 1rem;
-      margin: 0;
-      font-style: italic;
-      color: #d4af37;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-      z-index: 2;
-    }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
 
-    /* ESTILOS DE LA GALERÍA DEL MUSEO */
-    h2 {
-      color: #1a1a1a;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
 
-    .gallery img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-  </style>
+        .boton-audio-pies {
+            margin-top: 15px;
+            width: 35px;
+            height: 35px;
+            background-color: #f39c12;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGACIÓN CON TU NUEVA LISTA EXACTA -->
-  <nav>
-    <div class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#quienes-somos">¿Quiénes somos?</a>
-      <a href="#presentacion">Presentación</a>
-      <a href="#museo">Museo Digital</a>
-      <a href="#clases">Clases</a>
-      <a href="#eventos">Eventos</a>
-      <a href="#proximas-clases">Próximas clases</a>
-      <a href="#videos">Videos y vivencias</a>
-      <a href="#tienda">Tienda</a>
-      <a href="#contacto">Contacto</a>
-      <a href="#donaciones">Donaciones</a>
-    </div>
-  </nav>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes-somos">¿Quiénes somos?</a>
+            <a href="#presentacion">Presentación</a>
+            <a href="#museo">Museo Digital</a>
+            <a href="#clases">Clases</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#proximas-clases">Próximas clases</a>
+            <a href="#videos">Videos y vivencias</a>
+            <a href="#tienda">Tienda</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#donaciones">Donaciones</a>
+        </div>
+    </nav>
 
-  <!-- BLOQUE DE INICIO CON EL AVATAR DEL SOL CENTRADO -->
-  <header id="inicio" class="header">
-    <video loop muted playsinline class="header-video" id="avatar">
-      <source src="Video_del_avatar.mp4"type="video/mp4">
-      Tu navegador no soporta videos.
-    </video>
-    <h1>Club Colibrí</h1>
-    <p>“Es algo más que arte”</p>
-    
-    <audio id="musica-inicio" src="Avatar_IV_Video (1) (1).mp4" loop></audio>
+    <!-- BLOQUE DE INICIO -->
+    <header id="inicio" class="header">
+        <video loop muted playsinline class="header-video" id="avatar">
+            <source src="Video_del_avatar.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <h1>Club Colibrí</h1>
+        <p>“Es algo más que arte”</p>
+        
+        <audio id="musica-inicio" src="Avatar_IV_Video (1) (1).mp4" loop></audio>
+        
+        <button id="btn-reproductor" class="boton-audio-pies">
+            <span id="icono-audio">▶️</span>
+        </button>
+    </header>
 
-    <button id="btn-reproductor" class="boton-audio-pies">
-      <span id="icono-audio">▶️</span>
-    </button>
-  </header>
+    <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333;">
+        
+        <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
+            <h2>¿Quiénes somos?</h2>
+            <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
+        </section>
 
-  <!-- ESTILOS DEL BOTÓN DE AUDIO -->
-  <style>
-    .boton-audio-pies {
-      margin-top: 15px;
-      width: 25px;
-      height: 25px;
-      background-color: #f39c12;
-      border: 2px solid #ffffff;
-      border-radius: 50%;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-      z-index: 100;
-    }
-  </style>
+        <section id="presentacion" style="text-align: center; padding: 20px 0;">
+            <h2>Presentación</h2>
+            <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
+        </section>
 
-  <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333;">
-    
-    <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
-      <h2>¿Quiénes somos?</h2>
-      <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #555555;">Somos un club dedicado a crear un espacio de encuentro para compartir experiencias, fortalecer los lazos familiares y preservar nuestra identidad.</p>
-    </section>
+        <!-- MUSEO DIGITAL -->
+        <section id="museo" style="padding: 20px 0;">
+            <h2>Museo Digital</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">Toque una imagen para verla en detalle y más grande.</p>
+            <div class="gallery">
+                <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
+                <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
+                <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
+                <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
+                <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
+                <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
+                <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
+                <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
+                <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario"></a>
+            </div>
+        </section>
 
-    <section id="presentacion" style="text-align: center; padding: 20px 0;">
-      <h2>Presentación</h2>
-      <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
-    </section>
+        <section id="clases" style="padding: 20px 0;">
+            <h2>Clases</h2>
+            <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
+            <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica...</p>
+            <hr>
+            <p><strong>Materiales incluidos en tu kit:</strong></p>
+            <ul>
+                <li>Pieza de cerámica con alto relieve.</li>
+                <li>Pintura (marrón oscuro, negro o terracota).</li>
+                <li>Guante para la aplicación.</li>
+                <li>Trapo de algodón limpio y seco.</li>
+            </ul>
+        </section>
 
-    <!-- MUSEO DIGITAL -->
-    <section id="museo" style="padding: 20px 0;">
-      <h2>Museo Digital</h2>
-      <p style="text-align: center; color: #666; margin-bottom: 20px;">Toque una imagen para verla en detalle y más grande.</p>
-      <div class="gallery">
-        <a href="carita_sonriente.jpg" target="_blank"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
-        <a href="caritamaya_chica.png" target="_blank"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
-        <a href="expoc_biblioteca.jpg" target="_blank"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
-        <a href="mayacarachico.jpg" target="_blank"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
-        <a href="mayas_chicos.jpg" target="_blank"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
-        <a href="mediano_rey.jpg" target="_blank"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
-        <a href="mascara_papel.jpg" target="_blank"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
-        <a href="inflablecatrina.jpg" target="_blank"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
-        <a href="museo_calen.jpg" target="_blank"><img src="museo_calen.jpg" alt="Calendario"></a>
-      </div>
-    </section>
+        <section id="eventos" style="text-align: center; padding: 20px 0;">
+            <h2>Eventos</h2>
+            <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios y exposiciones culturales.</p>
+        </section>
 
-    <section id="clases" style="padding: 20px 0;">
-      <h2>Clases</h2>
-      <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
-      <p>En esta actividad, interpretarás los preceptos internos que te permitirán expresar una visión personal, lógica, física y metafísica...</p>
-      <hr>
-      <p><strong>Materiales incluidos en tu kit:</strong></p>
-      <ul>
-        <li>Pieza de cerámica con alto relieve.</li>
-        <li>Pintura (marrón oscuro, negro o terracota).</li>
-        <li>Guante para la aplicación.</li>
-        <li>Trapo de algodón limpio y seco.</li>
-      </ul>
-    </section>
+        <section id="proximas-clases" style="text-align: center; padding: 20px 0;">
+            <h2>Próximas clases</h2>
+            <p>Mantente al tanto de nuestros próximos horarios y ubicaciones para asistir con toda tu familia.</p>
+        </section>
 
-    <section id="eventos" style="text-align: center; padding: 20px 0;">
-      <h2>Eventos</h2>
-      <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios y exposiciones culturales.</p>
-    </section>
+        <section id="videos" style="text-align: center; padding: 20px 0;">
+            <h2>Videos y vivencias</h2>
+            <p>Aquí compartiremos memorias de los talleres, testimonios e historias de nuestra comunidad viviendo el arte con sus propias manos.</p>
+        </section>
 
-    <section id="proximas-clases" style="text-align: center; padding: 20px 0;">
-      <h2>Próximas clases</h2>
-      <p>Mantente al tanto de nuestros próximos horarios y ubicaciones para asistir con toda tu familia.</p>
-    </section>
+        <section id="tienda" style="padding: 20px 0;">
+            <h2>Tienda</h2>
+            <h3>Piezas Chicas</h3>
+            <div class="gallery" style="justify-content: flex-start;">
+                <img src="kitsbien.jpg" alt="Kit">
+                <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico">
+                <img src="cera_azte.jpg" alt="Pieza Azteca Chica">
+            </div>
+            <h3>Piezas Medianas</h3>
+            <div class="gallery" style="justify-content: flex-start;">
+                <img src="cera_Ameriind.jpg" alt="Amerind">
+                <img src="cera_cmaya.jpg" alt="Maya">
+                <img src="cera_Arb.jpg" alt="Arb">
+                <img src="cera_calLuna.jpg" alt="Cal Luna">
+                <img src="cera_son.jpg" alt="Sonriente">
+                <img src="cera_rey.jpg" alt="Rey Cerámica Mediano">
+                <img src="cera_azte.jpg" alt="Pieza Azteca Mediana">
+            </div>
+            <h3>Piezas Grandes</h3>
+            <div class="gallery" style="justify-content: flex-start;">
+                <img src="cera_coyo.jpg" alt="Coyo">
+                <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
+            </div>
+        </section>
 
-    <section id="videos" style="text-align: center; padding: 20px 0;">
-      <h2>Videos y vivencias</h2>
-      <p>Aquí compartiremos memorias de los talleres, testimonios e historias de nuestra comunidad viviendo el arte con sus propias manos.</p>
-    </section>
+        <section id="contacto" style="text-align: center; padding: 20px 0;">
+            <h2>Contacto</h2>
+            <p>¿Tienes dudas o quieres agendar un taller? Contáctanos y con gusto te atenderemos.</p>
+        </section>
 
-    <section id="tienda" style="padding: 20px 0;">
-      <h2>Tienda</h2>
-      <h3>Piezas Chicas</h3>
-      <div class="gallery" style="justify-content: flex-start;">
-        <img src="kitsbien.jpg" alt="Kit">
-        <img src="cera_mayitsent.jpg" alt="Maya Sentado Chico">
-        <img src="cera_azte.jpg" alt="Pieza Azteca Chica">
-      </div>
-      <h3>Piezas Medianas</h3>
-      <div class="gallery" style="justify-content: flex-start;">
-        <img src="cera_Ameriind.jpg" alt="Amerind">
-        <img src="cera_cmaya.jpg" alt="Maya">
-        <img src="cera_Arb.jpg" alt="Arb">
-        <img src="cera_calLuna.jpg" alt="Cal Luna">
-        <img src="cera_son.jpg" alt="Sonriente">
-        <img src="cera_rey.jpg" alt="Rey Cerámica Mediano">
-        <img src="cera_azte.jpg" alt="Pieza Azteca Mediana">
-      </div>
-      <h3>Piezas Grandes</h3>
-      <div class="gallery" style="justify-content: flex-start;">
-        <img src="cera_coyo.jpg" alt="Coyo">
-        <img src="cera_azte.jpg" alt="Pieza Azteca Grande">
-      </div>
-    </section>
+        <section id="donaciones" style="text-align: center; padding: 20px 0;">
+            <h2>Donaciones</h2>
+            <p>Tu apoyo nos ayuda a seguir distribuyendo kits artísticos y educativos a más escuelas y familias de la comunidad.</p>
+        </section>
+    </main>
 
-    <section id="contacto" style="text-align: center; padding: 20px 0;">
-      <h2>Contacto</h2>
-      <p>¿Tienes dudas o quieres agendar un taller? Contáctanos y con gusto te atenderemos.</p>
-    </section>
+    <!-- SCRIPT CORREGIDO CON ID REAL DEL VIDEO ('avatar') -->
+    <script>
+        var video = document.getElementById('avatar'); // Corregido el ID aquí
+        var musica = document.getElementById('musica-inicio');
+        var btnSilencio = document.getElementById('btn-reproductor');
+        var icono = document.getElementById('icono-audio');
 
-    <section id="donaciones" style="text-align: center; padding: 20px 0;">
-      <h2>Donaciones</h2>
-      <p>Tu apoyo nos ayuda a seguir distribuyendo kits artísticos y educativos a más escuelas y familias de la comunidad.</p>
-    </section>
-  </main>
-
-  <script>
-    var video = document.getElementById('videoInicio');
-    var musica = document.getElementById('musica-inicio');
-    var btnSilencio = document.getElementById('btn-reproductor');
-    var icono = document.getElementById('icono-audio');
-
-    if (btnSilencio) {
-      btnSilencio.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (musica.paused) {
-          video.muted = false;
-          video.play();
-          musica.play();
-          if (icono) icono.textContent = "⏸️";
-        } else {
-          video.pause();
-          musica.pause();
-          if (icono) icono.textContent = "▶️";
+        if (btnSilencio) {
+            btnSilencio.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (musica.paused) {
+                    if(video) { video.muted = false; video.play(); }
+                    musica.play();
+                    if (icono) icono.textContent = "⏸️";
+                } else {
+                    if(video) video.pause();
+                    musica.pause();
+                    if (icono) icono.textContent = "▶️";
+                }
+            });
         }
-      });
-    }
 
-    document.addEventListener('click', function() {
-      if (musica && musica.paused) {
-        video.muted = false;
-        video.play();
-        musica.play();
-        if (icono) icono.textContent = "⏸️";
-      }
-    }, { once: true });
+        document.addEventListener('click', function() {
+            if (musica && musica.paused) {
+                if(video) { video.muted = false; video.play(); }
+                musica.play();
+                if (icono) icono.textContent = "⏸️";
+            }
+        }, { once: true });
 
-    var enlaces = document.querySelectorAll('nav a');
-    enlaces.forEach(function(enlace) {
-      enlace.addEventListener('click', function() {
-        var destino = this.getAttribute('href');
-        if (destino !== '#inicio' && video) {
-          video.pause();
-          if (musica) musica.pause();
-          if (icono) icono.textContent = "▶️";
-        } else if (destino === '#inicio' && video) {
-          video.muted = false;
-          video.play();
-          if (musica) musica.play();
-          if (icono) icono.textContent = "⏸️";
-        }
-      });
-    });
-  </script>
+        var enlaces = document.querySelectorAll('nav a');
+        enlaces.forEach(function(enlace) {
+            enlace.addEventListener('click', function() {
+                var destino = this.getAttribute('href');
+                if (destino !== '#inicio') {
+                    if(video) video.pause();
+                    if (musica) musica.pause();
+                    if (icono) icono.textContent = "▶️";
+                } else {
+                    if(video) { video.muted = false; video.play(); }
+                    if (musica) musica.play();
+                    if (icono) icono.textContent = "⏸️";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
