@@ -163,12 +163,11 @@
         </div>
     </nav>
 
-    <!-- UN SOLO BLOQUE DE INICIO CORREGIDO -->
+    <!-- BLOQUE DE INICIO CON AVATAR -->
     <header id="inicio" class="header">
         <video loop playsinline class="header-video" id="avatar" src="Avatar_IV_Video (1) (1).mp4"></video>
         <h1>Club Colibrí</h1>
         <p>“Es algo más que arte”</p>
-        
         <button id="btn-reproductor" class="boton-audio-pies">
             <span id="icono-audio">▶️</span>
         </button>
@@ -176,16 +175,19 @@
 
     <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333;">
         
-        <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
-<!-- SECCIÓN ¿QUIÉNES SOMOS? PREPARADA -->
-        <section id="quienes-somos" style="text-align: center; padding: 20px 0;">
+        <!-- SECCIÓN ¿QUIÉNES SOMOS? LIMPIA Y CORREGIDA -->
+        <section id="quienes-somos" style="text-align: center; padding: 40px 0;">
             <h2>¿Quiénes somos?</h2>
-            
-            <!-- Aquí colocamos el reproductor listo. Solo faltará que subas el archivo -->
-            <video controls playsinline style="max-width: 100%; width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin-top: 15px;">
+            <video controls playsinline style="max-width: 100%; width: 620px; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.15); margin-top: 20px;">
                 <source src="quienes_somos_video.mp4" type="video/mp4">
                 Tu navegador no soporta la reproducción de videos.
             </video>
+        </section>
+
+        <!-- PRESENTACIÓN -->
+        <section id="presentacion" style="text-align: center; padding: 20px 0;">
+            <h2>Presentación</h2>
+            <p>Bienvenidos a nuestro espacio comunitario. Aquí compartimos el corazón de nuestro proyecto a través de talleres interactivos y experiencias artísticas únicas.</p>
         </section>
 
         <!-- MUSEO DIGITAL -->
@@ -205,6 +207,7 @@
             </div>
         </section>
 
+        <!-- CLASES -->
         <section id="clases" style="padding: 20px 0;">
             <h2>Clases</h2>
             <p>Queremos que nuestros hijos, nacidos aquí, conozcan su herencia cultural de una forma mágica y tangible.</p>
@@ -212,28 +215,32 @@
             <hr>
             <p><strong>Materiales incluidos en tu kit:</strong></p>
             <ul>
-                <li>Pieza de cerámica con alto relieve.</li>
+                <li>Pieza de cerámica con alto relief.</li>
                 <li>Pintura (marrón oscuro, negro o terracota).</li>
                 <li>Guante para la aplicación.</li>
                 <li>Trapo de algodón limpio y seco.</li>
             </ul>
         </section>
 
+        <!-- EVENTOS -->
         <section id="eventos" style="text-align: center; padding: 20px 0;">
             <h2>Eventos</h2>
             <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios y exposiciones culturales.</p>
         </section>
 
+        <!-- PRÓXIMAS CLASES -->
         <section id="proximas-clases" style="text-align: center; padding: 20px 0;">
             <h2>Próximas clases</h2>
             <p>Mantente al tanto de nuestros próximos horarios y ubicaciones para asistir con toda tu familia.</p>
         </section>
 
+        <!-- VIDEOS Y VIVENCIAS -->
         <section id="videos" style="text-align: center; padding: 20px 0;">
             <h2>Videos y vivencias</h2>
             <p>Aquí compartiremos memorias de los talleres, testimonios e historias de nuestra comunidad viviendo el arte con sus propias manos.</p>
         </section>
 
+        <!-- TIENDA -->
         <section id="tienda" style="padding: 20px 0;">
             <h2>Tienda</h2>
             <h3>Piezas Chicas</h3>
@@ -259,29 +266,29 @@
             </div>
         </section>
 
+        <!-- CONTACTO -->
         <section id="contacto" style="text-align: center; padding: 20px 0;">
             <h2>Contacto</h2>
             <p>¿Tienes dudas o quieres agendar un taller? Contáctanos y con gusto te atenderemos.</p>
         </section>
 
+        <!-- DONACIONES -->
         <section id="donaciones" style="text-align: center; padding: 20px 0;">
             <h2>Donaciones</h2>
             <p>Tu apoyo nos ayuda a seguir distribuyendo kits artísticos y educativos a más escuelas y familias de la comunidad.</p>
         </section>
     </main>
 
-    <!-- UN SOLO SCRIPT DE CONTROL TOTALMENTE LIMPIO -->
+    <!-- SCRIPT DE CONTROL -->
     <script>
         var video = document.getElementById('avatar');
         var btnSilencio = document.getElementById('btn-reproductor');
         var icono = document.getElementById('icono-audio');
 
-        // Nos aseguramos de que empiece con sonido activado
         if (video) {
             video.muted = false; 
         }
 
-        // Control con el botón de Play/Pausa
         if (btnSilencio) {
             btnSilencio.addEventListener('click', function(e) {
                 e.stopPropagation();
@@ -297,7 +304,6 @@
             });
         }
 
-        // Activar al primer clic en cualquier parte de la pantalla (regla obligatoria de navegadores)
         document.addEventListener('click', function() {
             if (video && video.paused) {
                 video.play().catch(function(error) { console.log("Interacción requerida:", error); });
@@ -305,7 +311,6 @@
             }
         }, { once: true });
 
-        // Control al navegar usando las secciones del menú
         var enlaces = document.querySelectorAll('nav a');
         enlaces.forEach(function(enlace) {
             enlace.addEventListener('click', function() {
