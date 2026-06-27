@@ -163,16 +163,20 @@
         </div>
     </nav>
 
-   <!-- ESPACIO RESERVADO PARA LA PRESENTACIÓN INTERACTIVA -->
-<section id="inicio" style="width: 100%; min-height: 80vh; display: flex; justify-content: center; align-items: center; background-color: #111; color: #fff; padding: 20px; box-sizing: border-box;">
-    
-    <!-- Contenedor donde mostraremos tu presentación -->
-    <div id="contenedor-presentacion" style="width: 100%; max-width: 960px; aspect-ratio: 16/9; background: #222; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px dashed #d4af37; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-        <p style="font-size: 1.3rem; margin-bottom: 10px; color: #d4af37;">✨ Espacio de Presentación listo</p>
-        <p style="font-size: 1rem; color: #aaa; max-width: 80%;">El escenario musical y las diapositivas de "Link_Inicio.pptx" aparecerán aquí.</p>
+  <!-- PRESENTACIÓN DE INICIO DESDE YOUTUBE -->
+<section id="inicio" style="width: 100%; min-height: 80vh; display: flex; justify-content: center; align-items: center; background-color: #111; padding: 40px 20px; box-sizing: border-box;">
+    <div style="width: 100%; max-width: 850px; aspect-ratio: 16/9; background: #000; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.1);">
+        <!-- Los parámetros hl=en y cc_lang_pref=en configuran los subtítulos en inglés de forma predeterminada -->
+        <iframe 
+            src="https://www.youtube.com/embed/ODQZ2I4lHFg?rel=0&modestbranding=1&hl=en&cc_load_policy=1&cc_lang_pref=en" 
+            style="width: 100%; height: 100%; border: none;" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
     </div>
-
 </section>
+
+<main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333;">
          <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333;">   
         <button id="btnIniciarMusica" style="background-color: #d4af37; color: #111; padding: 12px 30px; font-size: 1.1rem; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; transition: transform 0.2s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
             🎵 Iniciar Experiencia
