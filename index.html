@@ -4,322 +4,119 @@
     <meta charset="UTF-8">
     <title>Club Colibrí</title>
     <style>
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        
-        /* BARRA DE NAVEGACIÓN COMPACTA CORREGIDA */
-        nav {
-            background: #111111;
-            padding: 10px;
-            position: sticky;
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            flex-wrap: wrap; 
-            min-height: 50px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            padding: 6px 8px;
-        }
-
-        nav a:hover {
-            color: #d4af37;
-        }
-
-        @media (max-width: 1024px) {
-            nav a {
-                font-size: 0.78rem;
-                padding: 4px 6px;
-            }
-            .nav-links {
-                gap: 8px;
-            }
-        }
-        
-        /* ESTILOS DEL ENCABEZADO */
-        .header {
-            background-image: url('solfon.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .header-video {
-            max-height: 180px;
-            width: auto;
-            mix-blend-mode: screen;
-            z-index: 1;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin: 0 0 5px 0;
-            font-family: sans-serif;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-            z-index: 2;
-        }
-
-        .header p {
-            font-size: 1rem;
-            margin: 0;
-            font-style: italic;
-            color: #d4af37;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-            z-index: 2;
-        }
-
-        /* ESTILOS DE LA GALERÍA DEL MUSEO */
-        h2 {
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .gallery img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .boton-audio-pies {
-            margin-top: 15px;
-            width: 35px;
-            height: 35px;
-            background-color: #f39c12;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            font-size: 0.9rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-            z-index: 100;
-        }
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
+        nav { background: #111111; padding: 10px; position: sticky; top: 0; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.3); flex-wrap: wrap; min-height: 50px; }
+        .nav-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; align-items: center; }
+        nav a { color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s; font-size: 0.85rem; white-space: nowrap; padding: 6px 8px; }
+        nav a:hover { color: #d4af37; }
+        @media (max-width: 1024px) { nav a { font-size: 0.78rem; padding: 4px 6px; } .nav-links { gap: 8px; } }
+        h2 { color: #1a1a1a; margin-bottom: 20px; text-align: center; }
+        .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .gallery img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.2s; }
+        .gallery img:hover { transform: scale(1.05); }
     </style>
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav>
-        <div class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#quienes-somos">¿Quiénes somos?</a>
-            <a href="#presentacion">Presentación</a>
-            <a href="#museo">Museo Digital</a>
-            <a href="#clases">Clases</a>
-            <a href="#eventos">Eventos</a>
-            <a href="#proximas-clases">Próximas clases</a>
-            <a href="#videos">Videos y vivencias</a>
-            <a href="#tienda">Tienda</a>
-            <a href="#contacto">Contacto</a>
-            <a href="#donaciones">Donaciones</a>
-        </div>
-    </nav>
-
- <!-- SECCIÓN DE INICIO -->
-<section id="inicio" style="padding: 40px 20px; text-align: center; background-color: #ffffff;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h2 style="font-size: 28px; margin-bottom: 20px; color: #111111;">Bienvenidos a Mi Club</h2>
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
-      <iframe src="https://youtube.com" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- BARRA DE NAVEGACIÓN -->
+<nav>
+    <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#quienes-somos">¿Quiénes somos?</a>
+        <a href="#presentacion">Presentación</a>
+        <a href="#museo">Museo Digital</a>
+        <a href="#clases">Clases</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#proximas-clases">Próximas clases</a>
+        <a href="#videos">Videos y vivencias</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#donaciones">Donaciones</a>
     </div>
-  </div>
+</nav>
+
+<!-- SECCIÓN DE INICIO (Video: Quienes somos) -->
+<section id="inicio" style="padding: 40px 20px; text-align: center; background-color: #ffffff;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 28px; margin-bottom: 20px; color: #111111;">Bienvenidos a Mi Club</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 </section>
- 
-    
+
 <main style="max-width: 1200px; margin: auto; padding: 20px; font-family: sans-serif; color: #333333;">
 
-      <!-- SECCIÓN QUIÉNES SOMOS -->
-<section id="quienes-somos" style="padding: 40px 20px; text-align: center; background-color: #f9f9f9;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h2 style="font-size: 28px; margin-bottom: 20px; color: #111111;">Quiénes Somos</h2>
-    <p style="font-size: 16px; color: #555555; margin-bottom: 20px;">Conoce más sobre nuestra historia y nuestro club en este video.</p>
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
-      <iframe src="https://youtube.com" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
+    <!-- SECCIÓN QUIÉNES SOMOS -->
+    <section id="quienes-somos" style="padding: 40px 20px; text-align: center; background-color: #f9f9f9;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 28px; margin-bottom: 20px; color: #111111;">Quiénes Somos</h2>
+            <p style="font-size: 16px; color: #555555; margin-bottom: 20px;">Conoce más sobre nuestra historia y nuestro club en este video.</p>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
 
-    
-<!-- SECCIÓN PRESENTACIÓN -->
-<section id="presentacion" style="padding: 40px 20px; text-align: center; background-color: #ffffff;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h2 style="font-size: 28px; margin-bottom: 20px; color: #111111;">Presentación</h2>
-    <p style="font-size: 16px; color: #555555; margin-bottom: 20px;">Te damos la bienvenida formal a nuestro espacio. Disfruta de nuestra entrada para presentación.</p>
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
-      <iframe src="https://youtube.com" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
+    <!-- SECCIÓN PRESENTACIÓN (Video: Entrada) -->
+    <section id="presentacion" style="padding: 40px 20px; text-align: center; background-color: #ffffff;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 28px; margin-bottom: 20px; color: #111111;">Presentación</h2>
+            <p style="font-size: 16px; color: #555555; margin-bottom: 20px;">Te damos la bienvenida formal a nuestro espacio. Disfruta de nuestra entrada para presentación.</p>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
 
-    
     <!-- MUSEO DIGITAL -->
-        <section id="museo" style="padding: 20px 0;">
-            <h2>Museo Digital</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 20px;">Toque una imagen para verla en detalle y más grande.</p>
-            <div class="gallery">
-  <a href="carita_sonriente.jpg"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
-  <a href="caritamaya_chica.png"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
-  <a href="expoc_biblioteca.jpg"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
-  <a href="mayacarachico.jpg"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
-  <a href="mayas_chicos.jpg"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
-  <a href="mediano_rey.jpg"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
-  <a href="mascara_papel.jpg"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
-  <a href="inflablecatrina.jpg"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
-  <a href="museo_calen.jpg"><img src="museo_calen.jpg" alt="Calendario"></a>
-</div>
-```
-```
- <!-- SECCIÓN DE CLASE -->
-<section id="clase" style="padding: 40px 20px; text-align: center; background-color: #f9f9f9;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <!-- TÍTULO Y SUBTÍTULO QUE SOLICITASTE -->
-    <h1 style="font-size: 32px; margin-bottom: 5px; color: #111111; font-weight: bold;">Clase</h1>
-    <h2 style="font-size: 22px; margin-bottom: 25px; color: #555555; font-weight: normal;">Me reconozco</h2>
-    
-    <!-- TEXTO DE LOS NIÑOS HISPANOS -->
-    <p style="font-size: 16px; color: #333333; margin-bottom: 30px; line-height: 1.6;">
-      Espacio dedicado a trabajar con los niños hispanos y la organización de sus carnets.
-    </p>
-
-    <!-- NUEVO ESPACIO: VIDEO HISTORIA BIOLÓGICA -->
-    <div style="margin-top: 20px;">
-      <h3 style="font-size: 20px; margin-bottom: 15px; color: #222222;">Video Historia Biológica</h3>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
-        <iframe src="https://youtube.com" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-        </section>
-
-      <div style="text-align: center; margin-bottom: 30px;">
-        <span style="background-color: #BC84EE; color: white; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 14px; display: inline-block;">
-          ACTIVIDAD 1: HISTORIA CULTURAL
-        </span>
-        <h3 style="font-size: 26px; color: #1e293b; margin: 15px 0 5px 0;">Técnica de Pátina en Alto Relieve</h3>
-        <p style="color: #64748b; font-style: italic;">Mira el video demostrativo y sigue los pasos con las ilustraciones de abajo</p>
-      </div>
-
-      <!-- MULTIMEDIA: VIDEO DE LA PRÁCTICA -->
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 15px; background: #000; box-shadow: 0 8px 20px rgba(0,0,0,0.15); margin-bottom: 40px;">
-        <!-- Puedes reemplazar "dQw4w9WgXcQ" por el ID real de tu video de YouTube cuando lo tengas -->
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
-      </div>
-
-      <!-- MATERIALES INCLUIDOS -->
-      <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin-bottom: 35px; border-left: 5px solid #BC84EE; text-align: left;">
-        <h4 style="margin: 0 0 10px 0; color: #1e293b; font-size: 18px;">🎒 Tu Kit Incluye:</h4>
-        <p style="margin: 0; color: #475569; line-height: 1.6; font-size: 15px;">
-          • Pieza cerámica prehispánica en alto relieve • Pintura oscura (marrón o negro) • Pintura metalizada (oro o plata) • Guante aplicador • Trapo de algodón limpio y seco.
-        </p>
-      </div>
-
-      <!-- PASO A PASO CON ESPACIO PARA FOTOS/DIBUJOS -->
-      <h4 style="font-size: 20px; color: #1e293b; margin-bottom: 25px; text-align: center;">Guía Visual Paso a Paso</h4>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
-        
-        <!-- PASO 1 -->
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center;">
-          <div style="background: #1e293b; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto 15px auto;">1</div>
-          <h5 style="font-size: 16px; margin: 0 0 10px 0; color: #1e293b;">Fondo Oscuro</h5>
-          <p style="font-size: 14px; color: #64748b; line-height: 1.5; margin-bottom: 15px;">Cubre toda la pieza con pintura negra o marrón. Asegúrate de llenar bien cada recoveco del relieve para crear la sombra base.</p>
-          <div style="background: #f1f5f9; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px;">≠®<img src="inst1.png" alt="Paso 1: Fondo Oscuro" style="max-width: 100%; border-radius: 10px;"></div>
+    <section id="museo" style="padding: 20px 0;">
+        <h2>Museo Digital</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">Toque una imagen para verla en detalle y más grande.</p>
+        <div class="gallery">
+            <a href="carita_sonriente.jpg"><img src="carita_sonriente.jpg" alt="Carita Sonriente"></a>
+            <a href="caritamaya_chica.png"><img src="caritamaya_chica.png" alt="Carita Maya"></a>
+            <a href="expoc_biblioteca.jpg"><img src="expoc_biblioteca.jpg" alt="Exposición"></a>
+            <a href="mayacarachico.jpg"><img src="mayacarachico.jpg" alt="Maya Cara Chico"></a>
+            <a href="mayas_chicos.jpg"><img src="mayas_chicos.jpg" alt="Mayas Chicos"></a>
+            <a href="mediano_rey.jpg"><img src="mediano_rey.jpg" alt="Mediano Rey"></a>
+            <a href="mascara_papel.jpg"><img src="mascara_papel.jpg" alt="Máscara Papel"></a>
+            <a href="inflablecatrina.jpg"><img src="inflablecatrina.jpg" alt="Inflable Catrina"></a>
+            <a href="museo_calen.jpg"><img src="museo_calen.jpg" alt="Calendario"></a>
         </div>
+    </section>
 
-        <!-- PASO 2 -->
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center;">
-          <div style="background: #1e293b; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto 15px auto;">2</div>
-          <h5 style="font-size: 16px; margin: 0 0 10px 0; color: #1e293b;">Crear Volumen</h5>
-          <p style="font-size: 14px; color: #64748b; line-height: 1.5; margin-bottom: 15px;">Envuelve el trapo seco en tus dedos y limpia suavemente las partes altas del relieve, dejando el fondo oscuro en los valles.</p>
-          <div style="background: #f1f5f9; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px;"><img src="inst2.jpg" alt="Paso 2: Crear Volumen" style="max-width: 100%; border-radius: 10px;"></div>
+    <!-- SECCIÓN DE CLASE -->
+    <section id="clase" style="padding: 40px 20px; text-align: center; background-color: #f9f9f9;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1 style="font-size: 32px; margin-bottom: 5px; color: #111111; font-weight: bold;">Clase</h1>
+            <h2 style="font-size: 22px; margin-bottom: 25px; color: #555555; font-weight: normal;">Me reconozco</h2>
+            <p style="font-size: 16px; color: #333333; margin-bottom: 30px; line-height: 1.6;">Espacio dedicado a trabajar con los niños hispanos y la organización de sus carnets.</p>
+            
+            <div style="margin-top: 20px;">
+                <h3 style="font-size: 20px; margin-bottom: 15px; color: #222222;">Video Historia Biológica</h3>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- PASO 3 -->
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center;">
-          <div style="background: #1e293b; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto 15px auto;">3</div>
-          <h5 style="font-size: 16px; margin: 0 0 10px 0; color: #1e293b;">Destellos de Luz</h5>
-          <p style="font-size: 14px; color: #64748b; line-height: 1.5; margin-bottom: 15px;">Con el guante puesto, usa la yema de tu dedo con un toque de oro o plata para rozar suavemente los relieves más altos.</p>
-          <div style="background: #f1f5f9; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px;"><img src="inst3.jpg" alt="Paso 3: Destellos de Luz" style="max-width: 100%; border-radius: 10px;"></div>
+    <!-- SECCIÓN PRÓXIMA CLASE (Video: Calaveritas Mexicanas) -->
+    <section id="proxima-clase" style="padding: 40px 20px; text-align: center; background-color: #ffffff;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1 style="font-size: 32px; margin-bottom: 5px; color: #111111; font-weight: bold;">Próxima Clase</h1>
+            <h2 style="font-size: 22px; margin-bottom: 25px; color: #cc5500; font-weight: normal;">Calaveritas Mexicanas</h2>
+            <p style="font-size: 16px; color: #555555; margin-bottom: 25px;">Prepárate para nuestra siguiente sesión descubriendo esta hermosa tradición mexicana.</p>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
+    </section>
 
-      </div>
-
-      <!-- MENSAJE DE FELICITACIÓN -->
-      <div style="margin-top: 35px; background: #FDD5BD; padding: 20px; border-radius: 12px; text-align: center; color: #1e293b;">
-        <p style="margin: 0; font-weight: bold; font-size: 16px;">📸 ¡No olvides presumir tu obra!</p>
-        <p style="margin: 5px 0 0 0; font-size: 14px; color: #475569;">Al terminar, tómale una foto a tu pieza colocada en el espejo y mándala para obtener tu insignia virtual de la **Historia Cultural**.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- ================= FIN SECTION CLASES ================= -->
-        <!-- EVENTOS -->
-        <section id="eventos" style="text-align: center; padding: 20px 0;">
-            <h2>Eventos</h2>
-            <p>Próximamente compartiremos aquí nuestro calendario de talleres comunitarios y exposiciones culturales.</p>
-        </section>
-
-        <!-- SECCIÓN PRÓXIMA CLASE -->
-<section id="proxima-clase" style="padding: 40px 20px; text-align: center; background-color: #ffffff;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h1 style="font-size: 32px; margin-bottom: 5px; color: #111111; font-weight: bold;">Próxima Clase</h1>
-    <h2 style="font-size: 22px; margin-bottom: 25px; color: #cc5500; font-weight: normal;">Calaveritas Mexicanas</h2>
-    <p style="font-size: 16px; color: #555555; margin-bottom: 25px;">Prepárate para nuestra siguiente sesión descubriendo esta hermosa tradición mexicana.</p>
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
-      <iframe src="https://youtube.com" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
+</main>
+</body>
+</html>
     
 
         <!-- VIDEOS Y VIVENCIAS -->
