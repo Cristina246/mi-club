@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Club Colibrí</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f5f6fa; }
-        nav { background: #111111; padding: 15px; position: sticky; top: 0; z-index: 100; text-align: center; }
-        .nav-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-        nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.9rem; padding: 5px 8px; }
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f5f6fa; scroll-behavior: smooth; }
+        nav { background: #111111; padding: 20px; position: sticky; top: 0; z-index: 100; text-align: center; }
+        .nav-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; }
+        nav a { color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1.1rem; padding: 5px 10px; }
         nav a:hover { color: #d4af37; }
-        @media (max-width: 1024px) { nav a { font-size: 0.78rem; padding: 4px 6px; } }
-        h2 { color: #1a1a1a; margin-bottom: 20px; text-align: center; font-size: 1.8rem; }
+        h2 { color: #1a1a1a; margin-bottom: 20px; text-align: center; font-size: 2.2rem; }
         .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 20px; }
         .gallery-item { text-align: center; background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 160px; }
         .gallery img { width: 140px; height: 140px; object-fit: cover; border-radius: 6px; }
@@ -20,207 +19,167 @@
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 20px; }
         .video-card { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; }
-        .video-card h3 { margin-top: 0; font-size: 1.1rem; color: #333; text-align: center; min-height: 40px; }
-        .btn-donar { display: inline-block; background-color: #ff9f43; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 25px; transition: background 0.2s; font-size: 1.1rem; margin-top: 15px; }
+        .video-card h3 { margin-top: 0; font-size: 1.3rem; color: #333; text-align: center; min-height: 40px; }
+        .btn-donar { display: inline-block; background-color: #ff9f43; color: white; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 30px; font-size: 1.2rem; margin-top: 15px; }
         .btn-donar:hover { background-color: #ee5253; }
         footer { background: #111; color: #fff; text-align: center; padding: 15px 0; margin-top: 40px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <nav style="background: #111111; padding: 20px; position: sticky; top: 0; z-index: 100; text-align: center;">
-    <div class="nav-links" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center;">
-        <a href="#inicio" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Inicio</a>
-        <a href="#quienes-somos" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1.1rem;">¿Quiénes somos?</a>
-        <a href="#presentacion" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Presentación</a>
-        <a href="#museo" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Museo Digital</a>
-        <a href="#clases" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Clases</a>
-        <a href="#proximas-clases" style="color: #ff9f43; text-decoration: none; font-weight: bold; font-size: 1.2rem; background: rgba(255,159,67,0.2); padding: 8px 15px; border-radius: 5px;">⭐ Próximas Clases</a>
-        <a href="#tienda" style="color: #ff9f43; text-decoration: none; font-weight: bold; font-size: 1.2rem; background: rgba(255,159,67,0.2); padding: 8px 15px; border-radius: 5px;">🛍️ Tienda</a>
-        <a href="#contacto" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Contacto</a>
-        <a href="#donaciones" style="color: #ff9f43; text-decoration: none; font-weight: bold; font-size: 1.2rem; background: rgba(255,159,67,0.2); padding: 8px 15px; border-radius: 5px;">💖 Donaciones</a>
-    </div>
-</nav>
+    <nav>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes-somos">¿Quiénes somos?</a>
+            <a href="#presentacion">Presentación</a>
+            <a href="#museo">Museo Digital</a>
+            <a href="#clases">Clases</a>
+            <a href="#proximas-clases" style="color: #ff9f43; background: rgba(255,159,67,0.2); padding: 8px 15px; border-radius: 5px;">⭐ Próximas Clases</a>
+            <a href="#tienda" style="color: #ff9f43; background: rgba(255,159,67,0.2); padding: 8px 15px; border-radius: 5px;">🛍️ Tienda</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#donaciones" style="color: #ff9f43; background: rgba(255,159,67,0.2); padding: 8px 15px; border-radius: 5px;">💖 Donaciones</a>
+        </div>
+    </nav>
+
     <!-- 1. INICIO -->
     <header id="inicio" style="background: #4a69bd; padding: 60px 20px; text-align: center; color: white;">
         <h1 style="font-size: 2.5rem; margin: 0 0 15px 0;">Bienvenido a Club Colibrí</h1>
         <p style="font-size: 1.2rem; margin-bottom: 25px;">Un espacio para el arte, la cultura y el aprendizaje comunitario</p>
         <div style="max-width: 500px; margin: 0 auto;">
             <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/FKYXHc3zGsk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/FKYXHc3zGsk" allowfullscreen></iframe>
             </div>
             <p style="font-size: 0.9rem; color: #f1f2f6; margin-top: 5px;">Video Introducción</p>
         </div>
     </header>
 
     <!-- 2. QUIÉNES SOMOS -->
-    <section id="quienes-somos" style="padding: 40px 20px; max-width: 800px; margin: 0 auto;">
+    <section id="quienes-somos" style="padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center;">
         <h2>¿Quiénes somos?</h2>
-        <p style="text-align: center; margin-bottom: 25px;">Club Colibrí es un centro cultural inclusivo dedicado a promover talleres artísticos, resguardar la memoria histórica a través de nuestro museo digital y ofrecer un espacio de encuentro.</p>
+        <p style="margin-bottom: 25px; font-size: 1.1rem; color: #555;">Club Colibrí es un centro cultural inclusivo dedicado a promover talleres artísticos, resguardar la memoria histórica a través de nuestro museo digital y ofrecer un espacio de encuentro.</p>
         <div style="max-width: 500px; margin: 0 auto;">
             <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/2t0vamvmHyc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/2t0vamvmHyc" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
     <!-- 3. PRESENTACIÓN -->
-    <section id="presentacion" style="padding: 40px 20px; background-color: #f1f2f6;">
+    <section id="presentacion" style="padding: 60px 20px; background-color: #f1f2f6; text-align: center;">
         <h2>Presentación del Club</h2>
         <div style="max-width: 600px; margin: 0 auto;">
             <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/a0eZ9W9HoSk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/a0eZ9W9HoSk" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- MUSEO DIGITAL -->
-    <section id="museo" style="padding: 40px 20px; background-color: #fff;">
+    <!-- 4. MUSEO DIGITAL -->
+    <section id="museo" style="padding: 60px 20px; background-color: #fff; text-align: center;">
         <h2>Museo Digital</h2>
-        <p style="text-align: center; margin-bottom: 20px;">Recorrido por piezas y relieves pre-hispánicos modelados artesanalmente.</p>
+        <p style="margin-bottom: 20px; font-size: 1.1rem; color: #555;">Recorrido por piezas y relieves pre-hispánicos modelados artesanalmente.</p>
         <div class="gallery">
-<div class="gallery-item">
-    <img src="carita_sonriente.jpg" alt="Carita Sonriente">
-    <p>Carita Sonriente</p>
-</div>
-<div class="gallery-item">
-    <img src="guardiana_maya.jpg" alt="Guardiana Maya">
-    <p>Guardiana Maya</p>
-</div>
-<div class="gallery-item">
-    <img src="museo_calen.jpg" alt="Calendario Maya/Azteca">
-    <p>Calendario</p>
-</div>
-<div class="gallery-item">
-    <img src="mayacarachico.jpg" alt="Maya Chico">
-    <p>Relieve Maya</p>
-</div>
-<div class="gallery-item">
-    <img src="mediano_rey.jpg" alt="Rey Mediano">
-    <p>Rey Mediano</p>
-</div>
-<div class="gallery-item">
-    <img src="inflablecatrina.jpg" alt="Catrina Inflable">
-    <p>Catrina Inflable</p>
-</div>
-<div class="gallery-item">
-    <img src="expoc_biblioteca.jpg" alt="Exposición en Biblioteca">
-    <p>Exposición en Biblioteca</p>
-</div>
-<div class="gallery-item">
-    <img src="kitsbien.jpg" alt="Kits Educativos">
-    <p>Kits Educativos</p>
-</div>
-<div class="gallery-item">
-    <img src="mascara_papel.jpg" alt="Máscara de Papel">
-    <p>Máscara de Papel</p>
-</div>
-<div class="gallery-item">
-    <img src="mayasentado_chico.jpg" alt="Relieve Maya Sentado">
-    <p>Relieve Maya Sentado</p>
-</div>
-<div class="gallery-item">
-    <img src="mayas_chicos.jpg" alt="Relieves Mayas">
-    <p>Relieves Mayas</p>
-</div>
-<div class="gallery-item">
-    <img src="perfilindio_americano.jpg" alt="Perfil Indio Americano">
-    <p>Perfil Indio Americano</p>
-</div>
+            <div class="gallery-item"><img src="carita_sonriente.jpg" alt="Carita Sonriente"><p>Carita Sonriente</p></div>
+            <div class="gallery-item"><img src="guardiana_maya.jpg" alt="Guardiana Maya"><p>Guardiana Maya</p></div>
+            <div class="gallery-item"><img src="museo_calen.jpg" alt="Calendario Maya/Azteca"><p>Calendario</p></div>
+            <div class="gallery-item"><img src="mayacarachico.jpg" alt="Maya Chico"><p>Relieve Maya</p></div>
+            <div class="gallery-item"><img src="mediano_rey.jpg" alt="Rey Mediano"><p>Rey Mediano</p></div>
+            <div class="gallery-item"><img src="inflablecatrina.jpg" alt="Catrina Inflable"><p>Catrina Inflable</p></div>
+            <div class="gallery-item"><img src="expoc_biblioteca.jpg" alt="Exposición en Biblioteca"><p>Exposición en Biblioteca</p></div>
+            <div class="gallery-item"><img src="kitsbien.jpg" alt="Kits Educativos"><p>Kits Educativos</p></div>
+            <div class="gallery-item"><img src="mascara_papel.jpg" alt="Máscara de Papel"><p>Máscara de Papel</p></div>
+            <div class="gallery-item"><img src="mayasentado_chico.jpg" alt="Relieve Maya Sentado"><p>Relieve Maya Sentado</p></div>
+            <div class="gallery-item"><img src="mayas_chicos.jpg" alt="Relieves Mayas"><p>Relieves Mayas</p></div>
+            <div class="gallery-item"><img src="perfilindio_americano.jpg" alt="Perfil Indio Americano"><p>Perfil Indio Americano</p></div>
+        </div>
+    </section>
 
-   <!-- CLASES -->
-<section id="clases" style="padding: 40px 20px; background-color: #f9f9f9;">
-    <h2>Nuestras Clases</h2>
-    <p style="text-align:center; margin-bottom: 30px;">Explora la colección de talleres interactivos y cursos disponibles en nuestra plataforma.</p>
-    
-    <div class="video-grid">
-        <div class="video-card">
-            <h3>Sacerdotisa Maya</h3>
-            <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/MWzyOuAJlY8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
+    <!-- 5. CLASES -->
+    <section id="clases" style="padding: 60px 20px; background-color: #f9f9f9; text-align: center;">
+        <h2>Nuestras Clases</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">Explora la colección de talleres interactivos y cursos disponibles en nuestra plataforma.</p>
         
-        <div class="video-card">
-            <h3>Noble Mayapieza 04M</h3>
-            <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/zGrMe45XaDI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-        
-        <div class="video-card">
-            <h3>Vídeo Indio Americano</h3>
-            <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/pzmE3b3XUuU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-        
-        <div class="video-card">
-            <h3>Gobernante Maya</h3>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/PZ6fZGvwK-Q" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <!-- Video de Historia Biológica (Ampliado y Centrado) -->
-        <div style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
+        <div class="video-grid">
             <div class="video-card">
-                <h3>Historia Biológica</h3>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/-KY236gVIpU" frameborder="0" allowfullscreen></iframe>
+                <h3>Sacerdotisa Maya</h3>
+                <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/MWzyOuAJlY8" allowfullscreen></iframe></div>
+            </div>
+            <div class="video-card">
+                <h3>Noble Mayapieza 04M</h3>
+                <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/zGrMe45XaDI" allowfullscreen></iframe></div>
+            </div>
+            <div class="video-card">
+                <h3>Vídeo Indio Americano</h3>
+                <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/pzmE3b3XUuU" allowfullscreen></iframe></div>
+            </div>
+            <div class="video-card">
+                <h3>Gobernante Maya</h3>
+                <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/PZ6fZGvwK-Q" allowfullscreen></iframe></div>
+            </div>
+            <div style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
+                <div class="video-card">
+                    <h3>Historia Biológica</h3>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/-KY236gVIpU" allowfullscreen></iframe></div>
                 </div>
             </div>
         </div>
+    </section>
 
-<!-- PRÓXIMAS CLASES -->
-<section id="proximas-clases" style="padding: 60px 20px; text-align: center; background-color: #fff;">
-    <h2 style="margin-bottom: 10px; font-size: 2rem;">Próximas Clases</h2>
-    <p style="color: #666; font-style: italic; margin-bottom: 30px; font-size: 1.1rem;">¡Pronto anunciaremos nuevos talleres y sorpresas culturales!</p>
-    
-    <!-- Video de Calaveritas Mexicanas (Grande y Centrado) -->
-    <div style="max-width: 800px; margin: 0 auto; width: 100%;">
-        <div class="video-card" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-            <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.3rem;">Calaveritas Mexicanas</h3>
-            <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/n1uCBS2gKmA" frameborder="0" allowfullscreen></iframe>
+    <!-- 6. PRÓXIMAS CLASES -->
+    <section id="proximas-clases" style="padding: 60px 20px; text-align: center; background-color: #fff;">
+        <h2>Próximas Clases</h2>
+        <p style="color: #666; font-style: italic; margin-bottom: 30px; font-size: 1.2rem;">¡Pronto anunciaremos nuevos talleres y sorpresas culturales!</p>
+        
+        <div style="max-width: 800px; margin: 0 auto; width: 100%;">
+            <div class="video-card" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                <h3>Calaveritas Mexicanas</h3>
+                <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/n1uCBS2gKmA" allowfullscreen></iframe></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- TIENDA -->
-<section id="tienda" style="padding: 60px 20px; text-align: center; background-color: #f1f2f6;">
-    <div style="max-width: 1000px; margin: 0 auto;">
-        <h2 style="font-size: 2rem; margin-bottom: 10px;">Tienda del Club</h2>
-        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">Kits educativos, moldes y materiales artesanales disponibles.</p>
-        <div class="gallery" style="justify-content: center;">
-            <div class="gallery-item"><img src="kits1.jpg" alt="Kit Educativo"><p>Kit Educativo</p></div>
-            <div class="gallery-item"><img src="cera_Ameriind.jpg" alt="Cera Indio Americano"><p>Molde Indio Amer.</p></div>
-            <div class="gallery-item"><img src="cera_Arb.jpg" alt="Cera Árbol"><p>Relieve Árbol</p></div>
-            <div class="gallery-item"><img src="cera_azte.jpg" alt="Cera Azteca"><p>Relieve Azteca</p></div>
-            <div class="gallery-item"><img src="cera_calLuna.jpg" alt="Cera Calendario Luna"><p>Calendario Luna</p></div>
-            <div class="gallery-item"><img src="cera_cmaya.jpg" alt="Cera Cultura Maya"><p>Cultura Maya</p></div>
-            <div class="gallery-item"><img src="cera_coyo.jpg" alt="Cera Coyolxauhqui"><p>Coyolxauhqui</p></div>
-            <div class="gallery-item"><img src="cera_mayitsent.jpg" alt="Cera Mayitsent"><p>Mayitsent</p></div>
-            <div class="gallery-item"><img src="cera_rey.jpg" alt="Cera Rey"><p>Relieve Rey</p></div>
-            <div class="gallery-item"><img src="cera_son.jpg" alt="Cerámica Sonriente"><p>Cerámica Sonriente</p></div>
+    <!-- 7. TIENDA -->
+    <section id="tienda" style="padding: 60px 20px; text-align: center; background-color: #f1f2f6;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Tienda del Club</h2>
+            <p style="margin-bottom: 30px; font-size: 1.2rem; color: #555;">Kits educativos, moldes y materiales artesanales disponibles.</p>
+            
+            <div class="gallery" style="justify-content: center;">
+                <div class="gallery-item"><img src="kits1.jpg" alt="Kit Educativo"><p>Kit Educativo</p></div>
+                <div class="gallery-item"><img src="cera_Ameriind.jpg" alt="Cera Indio Americano"><p>Molde Indio Amer.</p></div>
+                <div class="gallery-item"><img src="cera_Arb.jpg" alt="Cera Árbol"><p>Relieve Árbol</p></div>
+                <div class="gallery-item"><img src="cera_azte.jpg" alt="Cera Azteca"><p>Relieve Azteca</p></div>
+                <div class="gallery-item"><img src="cera_calLuna.jpg" alt="Cera Calendario Luna"><p>Calendario Luna</p></div>
+                <div class="gallery-item"><img src="cera_cmaya.jpg" alt="Cera Cultura Maya"><p>Cultura Maya</p></div>
+                <div class="gallery-item"><img src="cera_coyo.jpg" alt="Cera Coyolxauhqui"><p>Coyolxauhqui</p></div>
+                <div class="gallery-item"><img src="cera_mayitsent.jpg" alt="Cera Mayitsent"><p>Mayitsent</p></div>
+                <div class="gallery-item"><img src="cera_rey.jpg" alt="Cera Rey"><p>Relieve Rey</p></div>
+                <div class="gallery-item"><img src="cera_son.jpg" alt="Cerámica Sonriente"><p>Cerámica Sonriente</p></div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CONTACTO -->
-<section id="contacto" style="padding: 60px 20px; text-align: center; background-color: #fff;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="font-size: 2rem; margin-bottom: 15px;">Contacto</h2>
-        <p style="font-size: 1.1rem; color: #555; line-height: 1.6;">¿Tienes dudas o deseas adquirir nuestros kits? Escríbenos y con gusto te atenderemos.</p>
-    </div>
-</section>
+    <!-- 8. CONTACTO -->
+    <section id="contacto" style="padding: 60px 20px; text-align: center; background-color: #fff;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2>Contacto</h2>
+            <p style="font-size: 1.2rem; color: #555; line-height: 1.6; margin-bottom: 25px;">¿Tienes dudas o deseas adquirir nuestros kits? Escríbenos y con gusto te atenderemos.</p>
+            <a href="mailto:contacto@clubcolibri.com" style="display: inline-block; background-color: #2f3640; color: white; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 30px; font-size: 1.1rem;">Enviar un Correo</a>
+        </div>
+    </section>
 
-<!-- DONACIONES -->
-<section id="donaciones" style="padding: 60px 20px; text-align: center; background-color: #f9f9f9;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="font-size: 2rem; margin-bottom: 15px;">Apoya Nuestro Proyecto</h2>
-        <p style="font-size: 1.1rem; color: #555; line-height: 1.6; margin-bottom: 25px;">Tu contribución nos ayuda a llevar talleres e historia a más comunidades.</p>
-        <a href="#" class="btn-donar">Hacer una Donación</a>
-    </div>
-</section>
+    <!-- 9. DONACIONES -->
+    <section id="donaciones" style="padding: 60px 20px; text-align: center; background-color: #f9f9f9;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2>Apoya Nuestro Proyecto</h2>
+            <p style="font-size: 1.2rem; color: #555; line-height: 1.6; margin-bottom: 25px;">Tu contribución nos ayuda a llevar talleres e historia a más comunidades.</p>
+            <a href="#" class="btn-donar">Hacer una Donación</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Club Colibrí. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
