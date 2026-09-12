@@ -103,12 +103,39 @@
 </head>
 <body>
 
-   <!-- BARRA LATERAL -->
-<aside class="sidebar">
-  <!-- Logo directo sobre los enlaces -->
-<div class="sidebar-video">
-  <iframe src="https://www.youtube-nocookie.com/embed/kjSksgmTd8U?autoplay=1&mute=1&loop=1&playlist=kjSksgmTd8U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>  
+/* Contenedor circular centrado */
+.sidebar-logo-container {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%; /* Forma circular */
+  overflow: hidden;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* Resplandor dorado opcional */
+}
+
+/* Video de fondo ajustado */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Logo perfectamente centrado encima */
+.logo-overlay {
+  position: relative;
+  z-index: 2;
+  width: 75%; /* Ajusta el tamaño del logo respecto al círculo */
+  height: auto;
+  display: block;
+}
   <nav class="nav-links">
     <a href="#inicio">Inicio</a>
     <a href="#quienes-somos">¿Quiénes somos?</a>
