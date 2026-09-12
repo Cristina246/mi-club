@@ -16,7 +16,7 @@
       color: #333;
     }
 
-    /* BARRA LATERAL (SIDEBAR) */
+    /* BARRA LATERAL (IZQUIERDA) */
     .sidebar {
       position: fixed;
       top: 0;
@@ -33,40 +33,15 @@
       overflow-y: auto;
     }
 
-    /* CONTENEDOR CIRCULAR DEL LOGO SOBRE EL VIDEO */
-    .sidebar-logo-container {
-      position: relative;
+    /* LOGO CLÁSICO EN BARRA LATERAL */
+    .sidebar .logo {
       width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-      flex-shrink: 0;
-    }
-
-    .bg-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-
-    .logo-overlay {
-      position: relative;
-      z-index: 2;
-      width: 80%;
       height: auto;
-      display: block;
+      margin-bottom: 20px;
+      border-radius: 50%;
     }
 
-    /* NAVEGACIÓN EN LA BARRA LATERAL */
+    /* ENLACES DE LA BARRA LATERAL */
     .nav-links {
       width: 100%;
       display: flex;
@@ -89,10 +64,10 @@
       color: #d4af37;
     }
 
-    /* CONTENIDO PRINCIPAL (ALINEADO A LA DERECHA DE LA BARRA) */
+    /* CONTENIDO PRINCIPAL (DERECHA) */
     .main-content {
       margin-left: 230px;
-      padding: 30px;
+      padding: 40px;
       min-height: 100vh;
     }
 
@@ -101,88 +76,28 @@
       text-align: center;
     }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      padding: 20px 0;
-    }
-
-    .gallery-item {
-      text-align: center;
-      background: #fff;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 160px;
-    }
-
-    .gallery img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    .gallery-item p {
-      font-size: 0.85rem;
-      margin: 8px 0 0 0;
-      color: #333;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 0;
-    }
-
-    .video-card {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background: #000;
-      border-radius: 8px;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    /* CONTENEDOR GRANDE PARA EL VIDEO "INICIO" A LA DERECHA */
+    .hero-video-container {
       width: 100%;
-      height: 100%;
+      max-width: 900px;
+      margin: 20px auto 40px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      background-color: #000;
+    }
+
+    .hero-video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    hr {
       border: 0;
-    }
-
-    .btn-donar {
-      display: inline-block;
-      background-color: #ff9f43;
-      color: white;
-      padding: 15px 35px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-      font-size: 1.2rem;
-      margin-top: 15px;
-    }
-
-    .btn-donar:hover {
-      background-color: #ee5253;
+      height: 1px;
+      background: #ccc;
+      margin: 40px 0;
     }
 
     footer {
@@ -197,14 +112,9 @@
 </head>
 <body>
 
-  <!-- BARRA LATERAL CON LOGO Y MENÚ -->
+  <!-- BARRA LATERAL IZQUIERDA CON LOGO E ENLACES -->
   <aside class="sidebar">
-    <div class="sidebar-logo-container">
-      <video autoplay loop muted playsinline class="bg-video">
-        <source src="inicio.mp4" type="video/mp4">
-      </video>
-      <img src="https://lh3.googleusercontent.com/d/1buB2mzW0j_BemVKk9G2RHD9cuDLQBhrY" alt="Logo Club Colibrí" class="logo-overlay">
-    </div>
+    <img src="https://lh3.googleusercontent.com/d/1buB2mzW0j_BemVKk9G2RHD9cuDLQBhrY" alt="Logo Club Colibrí" class="logo">
 
     <nav class="nav-links">
       <a href="#inicio">Inicio</a>
@@ -219,11 +129,21 @@
     </nav>
   </aside>
 
-  <!-- CONTENIDO PRINCIPAL -->
+  <!-- CONTENIDO PRINCIPAL DERECHO -->
   <main class="main-content">
+    
+    <!-- SECCIÓN INICIO CON EL VIDEO GRANDE -->
     <section id="inicio">
       <h1>Bienvenido a Club Colibrí</h1>
       <p style="text-align: center;">Un espacio para el arte, la cultura y el aprendizaje comunitario.</p>
+      
+      <!-- VIDEO INICIO.MP4 GRANDE -->
+      <div class="hero-video-container">
+        <video autoplay loop muted playsinline controls>
+          <source src="inicio.mp4" type="video/mp4">
+          Tu navegador no soporta el formato de video.
+        </video>
+      </div>
     </section>
 
     <hr>
@@ -253,6 +173,7 @@
       <h2>Tienda del Club</h2>
       <p style="text-align: center;">Kits educativos, moldes y materiales artesanales disponibles.</p>
     </section>
+
   </main>
 
   <footer>
