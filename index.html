@@ -16,7 +16,7 @@
       color: #333;
     }
 
-    /* BARRA LATERAL (IZQUIERDA) CON ENLACES Y LOGO */
+    /* BARRA LATERAL (IZQUIERDA) */
     .sidebar {
       position: fixed;
       top: 0;
@@ -33,6 +33,7 @@
       overflow-y: auto;
     }
 
+    /* LOGO EN BARRA LATERAL */
     .sidebar .logo {
       width: 160px;
       height: auto;
@@ -40,6 +41,7 @@
       border-radius: 50%;
     }
 
+    /* ENLACES DEL MENÚ */
     .nav-links {
       width: 100%;
       display: flex;
@@ -74,7 +76,7 @@
       text-align: center;
     }
 
-    /* CONTENEDOR DE VIDEO DE INICIO GRANDE */
+    /* CONTENEDOR DE VIDEO DE INICIO */
     .hero-video-container {
       width: 100%;
       max-width: 900px;
@@ -91,27 +93,7 @@
       display: block;
     }
 
-    /* REPRODUCTORES DE YOUTUBE EMBEBIDOS */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background: #000;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
+    /* REPRODUCTORES DE VIDEO Y REJILLAS */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -130,7 +112,13 @@
       justify-content: space-between;
     }
 
-    /* GALERÍA DE IMÁGENES */
+    .video-card video {
+      width: 100%;
+      border-radius: 6px;
+      background: #000;
+    }
+
+    /* GALERÍA DE IMÁGENES Y PIEZAS DEL MUSEO */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -145,7 +133,7 @@
       padding: 10px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 160px;
+      width: 170px;
     }
 
     .gallery img {
@@ -153,6 +141,13 @@
       height: 140px;
       object-fit: cover;
       border-radius: 6px;
+    }
+
+    .gallery-item p {
+      font-size: 0.85rem;
+      margin: 8px 0 0 0;
+      color: #333;
+      font-weight: bold;
     }
 
     /* BOTÓN DE DONACIONES */
@@ -191,7 +186,7 @@
 </head>
 <body>
 
-  <!-- BARRA LATERAL IZQUIERDA CON LOGO E ENLACES -->
+  <!-- BARRA LATERAL IZQUIERDA -->
   <aside class="sidebar">
     <img src="https://lh3.googleusercontent.com/d/1buB2mzW0j_BemVKk9G2RHD9cuDLQBhrY" alt="Logo Club Colibrí" class="logo">
 
@@ -211,7 +206,7 @@
   <!-- CONTENIDO PRINCIPAL DERECHO -->
   <main class="main-content">
     
-    <!-- INICIO -->
+    <!-- SECCIÓN INICIO -->
     <section id="inicio">
       <h1>Bienvenido a Club Colibrí</h1>
       <p style="text-align: center;">Un espacio para el arte, la cultura y el aprendizaje comunitario.</p>
@@ -219,7 +214,6 @@
       <div class="hero-video-container">
         <video autoplay loop muted playsinline controls>
           <source src="inicio.mp4" type="video/mp4">
-          Tu navegador no soporta el formato de video.
         </video>
       </div>
     </section>
@@ -229,7 +223,13 @@
     <!-- ¿QUIÉNES SOMOS? -->
     <section id="quienes-somos">
       <h2>¿Quiénes somos?</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto;">Somos un club cultural inclusivo dedicado a promover talleres artísticos, resguardar la memoria histórica a través de nuestro museo digital y ofrecer un espacio de encuentro.</p>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 20px auto;">Somos un club cultural inclusivo dedicado a promover talleres artísticos, resguardar la memoria histórica a través de nuestro museo digital y ofrecer un espacio de encuentro comunitario.</p>
+      
+      <div class="hero-video-container" style="max-width: 700px;">
+        <video controls>
+          <source src="quienes_somos_video.mp4" type="video/mp4">
+        </video>
+      </div>
     </section>
 
     <hr>
@@ -239,29 +239,68 @@
       <h2>Presentación</h2>
       <div class="video-grid">
         <div class="video-card">
-          <h3>Video de Presentación</h3>
-          <div class="video-container">
-            <iframe src="https://www.youtube-nocookie.com/embed/kjSksgmTd8U" allowfullscreen></iframe>
-          </div>
+          <h3>Video de Presentación del Club</h3>
+          <video controls>
+            <source src="video_clubcolibri (1).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>Entrada y Talleres</h3>
+          <video controls>
+            <source src="Entrada (1).mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>
 
     <hr>
 
-    <!-- MUSEO DIGITAL -->
+    <!-- MUSEO DIGITAL Y VIDEOS DE PIEZAS -->
     <section id="museo">
       <h2>Museo Digital</h2>
       <p style="text-align: center;">Recorrido por piezas y relieves prehispánicos modelados artesanalmente.</p>
+      
+      <div class="video-grid">
+        <div class="video-card">
+          <h3>Rey Pakal el Grande</h3>
+          <video controls>
+            <source src="Vídeo Rey Pakal el Grande (1) (1).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>Pakal I</h3>
+          <video controls>
+            <source src="Vídeo Pakal 1 (1) (1).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>El Cargador del Tiempo</h3>
+          <video controls>
+            <source src="Vídeo El cargador del tiempo (2) (1).mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
       <div class="gallery">
         <div class="gallery-item">
-          <p>Pakal el Grande</p>
+          <img src="cera_rey.jpg" alt="Rey Pakal">
+          <p>Rey Pakal</p>
         </div>
         <div class="gallery-item">
+          <img src="cera_coyo.jpg" alt="Coyolxauhqui">
           <p>Coyolxauhqui</p>
         </div>
         <div class="gallery-item">
+          <img src="cera_mayitsent.jpg" alt="Mayahuel">
           <p>Mayahuel</p>
+        </div>
+        <div class="gallery-item">
+          <img src="cera_calLuna.jpg" alt="Calendario Luna">
+          <p>Calendario Luna</p>
+        </div>
+        <div class="gallery-item">
+          <img src="cera_azte.jpg" alt="Relieve Azteca">
+          <p>Relieve Azteca</p>
         </div>
       </div>
     </section>
@@ -272,6 +311,20 @@
     <section id="clases">
       <h2>Nuestras Clases</h2>
       <p style="text-align: center;">Explora la colección de talleres interactivos y cursos disponibles en nuestra plataforma.</p>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="inst1.png" alt="Instrucción 1">
+          <p>Paso 1: Modelado</p>
+        </div>
+        <div class="gallery-item">
+          <img src="inst2.jpg" alt="Instrucción 2">
+          <p>Paso 2: Pintura Base</p>
+        </div>
+        <div class="gallery-item">
+          <img src="inst3.jpg" alt="Instrucción 3">
+          <p>Paso 3: Pátina y Dorado</p>
+        </div>
+      </div>
     </section>
 
     <hr>
@@ -288,6 +341,16 @@
     <section id="tienda">
       <h2>Tienda del Club</h2>
       <p style="text-align: center;">Kits educativos, moldes de yeso y materiales artesanales disponibles.</p>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="kits1.jpg" alt="Kit de Arte">
+          <p>Kit de Cerámica</p>
+        </div>
+        <div class="gallery-item">
+          <img src="kitsbien.jpg" alt="Kit Completo">
+          <p>Kit Completo Colibrí</p>
+        </div>
+      </div>
     </section>
 
     <hr>
