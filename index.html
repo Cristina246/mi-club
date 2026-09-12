@@ -1,380 +1,76 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club Colibrí</title>
-  <style>
-    /* ESTILOS GENERALES */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-    }
+<!-- SECCIÓN: PRESENTACIÓN -->
+<section id="presentacion" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Presentación</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h3 class="text-primary text-center mb-3">El Dilema del Migrante</h3>
+        <p class="lead text-center mb-4">
+          Un espacio de reflexión sobre la identidad, la cultura y las raíces que nos acompañan en el proceso de emigrar.
+        </p>
+        
+        <div class="row g-4 mt-2">
+          <!-- Video 1: Presentación del Club -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/kjSksgmTd8U" title="Video de Presentación del Club" allowfullscreen></iframe>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Club Colibrí: Arte e Identidad</h5>
+              </div>
+            </div>
+          </div>
 
-    /* BARRA LATERAL (IZQUIERDA) */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 230px;
-      height: 100vh;
-      background-color: #1a1a1a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-      z-index: 1000;
-      overflow-y: auto;
-    }
+          <!-- Video 2: Dilema del Migrante -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/kjSksgmTd8U" title="Dilema del Migrante" allowfullscreen></iframe>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Dilema del Migrante</h5>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    /* LOGO EN BARRA LATERAL */
-    .sidebar .logo {
-      width: 160px;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 50%;
-    }
+      </div>
+    </div>
+  </div>
+</section>
 
-    /* ENLACES DEL MENÚ */
-    .nav-links {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .nav-links a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      padding: 12px 20px;
-      text-align: left;
-      border-bottom: 1px solid #2a2a2a;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .nav-links a:hover {
-      background: #333333;
-      color: #d4af37;
-    }
-
-    /* CONTENIDO PRINCIPAL (DERECHA) */
-    .main-content {
-      margin-left: 230px;
-      padding: 40px;
-      min-height: 100vh;
-    }
-
-    h1, h2, h3 {
-      color: #1a1a1a;
-      text-align: center;
-    }
-
-    /* CONTENEDOR DE VIDEO DE INICIO */
-    .hero-video-container {
-      width: 100%;
-      max-width: 900px;
-      margin: 20px auto 40px auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      background-color: #000;
-    }
-
-    .hero-video-container video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* REPRODUCTORES DE VIDEO Y REJILLAS */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 20px auto;
-    }
-
-    .video-card {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .video-card video {
-      width: 100%;
-      border-radius: 6px;
-      background: #000;
-    }
-
-    /* GALERÍA DE IMÁGENES Y PIEZAS DEL MUSEO */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      padding: 20px 0;
-    }
-
-    .gallery-item {
-      text-align: center;
-      background: #fff;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 170px;
-    }
-
-    .gallery img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    .gallery-item p {
-      font-size: 0.85rem;
-      margin: 8px 0 0 0;
-      color: #333;
-      font-weight: bold;
-    }
-
-    /* BOTÓN DE DONACIONES */
-    .btn-donar {
-      display: inline-block;
-      background-color: #ff9f43;
-      color: white;
-      padding: 15px 35px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-      font-size: 1.2rem;
-      margin-top: 15px;
-    }
-
-    .btn-donar:hover {
-      background-color: #ee5253;
-    }
-
-    hr {
-      border: 0;
-      height: 1px;
-      background: #ccc;
-      margin: 40px 0;
-    }
-
-    footer {
-      margin-left: 230px;
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 15px 0;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- BARRA LATERAL IZQUIERDA -->
-  <aside class="sidebar">
-    <img src="https://lh3.googleusercontent.com/d/1buB2mzW0j_BemVKk9G2RHD9cuDLQBhrY" alt="Logo Club Colibrí" class="logo">
-
-    <nav class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#quienes-somos">¿Quiénes somos?</a>
-      <a href="#presentacion">Presentación</a>
-      <a href="#museo">Museo Digital</a>
-      <a href="#clases">Clases</a>
-      <a href="#proximas-clases">Próximas Clases</a>
-      <a href="#tienda">Tienda</a>
-      <a href="#contacto">Contacto</a>
-      <a href="#donaciones">Donaciones</a>
-    </nav>
-  </aside>
-
-  <!-- CONTENIDO PRINCIPAL DERECHO -->
-  <main class="main-content">
+<!-- SECCIÓN: CLASES -->
+<section id="clases" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Clases y Talleres</h2>
     
-    <!-- SECCIÓN INICIO -->
-    <section id="inicio">
-      <h1>Bienvenido a Club Colibrí</h1>
-      <p style="text-align: center;">Un espacio para el arte, la cultura y el aprendizaje comunitario.</p>
-      
-      <div class="hero-video-container">
-        <video autoplay loop muted playsinline controls>
-          <source src="inicio.mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
-
-    <hr>
-
-    <!-- ¿QUIÉNES SOMOS? -->
-    <section id="quienes-somos">
-      <h2>¿Quiénes somos?</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto 20px auto;">Somos un club cultural inclusivo dedicado a promover talleres artísticos, resguardar la memoria histórica a través de nuestro museo digital y ofrecer un espacio de encuentro comunitario.</p>
-      
-      <div class="hero-video-container" style="max-width: 700px;">
-        <video controls>
-          <source src="quienes_somos_video.mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
-
-    <hr>
-
-    <!-- PRESENTACIÓN -->
-    <section id="presentacion">
-      <h2>Presentación</h2>
-      <div class="video-grid">
-        <div class="video-card">
-          <h3>Video de Presentación del Club</h3>
-          <video controls>
-            <source src="video_clubcolibri (1).mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="video-card">
-          <h3>Entrada y Talleres</h3>
-          <video controls>
-            <source src="Entrada (1).mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </section>
-
-    <hr>
-
-    <!-- MUSEO DIGITAL Y VIDEOS DE PIEZAS -->
-    <section id="museo">
-      <h2>Museo Digital</h2>
-      <p style="text-align: center;">Recorrido por piezas y relieves prehispánicos modelados artesanalmente.</p>
-      
-      <div class="video-grid">
-        <div class="video-card">
-          <h3>Rey Pakal el Grande</h3>
-          <video controls>
-            <source src="Vídeo Rey Pakal el Grande (1) (1).mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="video-card">
-          <h3>Pakal I</h3>
-          <video controls>
-            <source src="Vídeo Pakal 1 (1) (1).mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="video-card">
-          <h3>El Cargador del Tiempo</h3>
-          <video controls>
-            <source src="Vídeo El cargador del tiempo (2) (1).mp4" type="video/mp4">
-          </video>
+    <div class="row g-4">
+      <!-- Clase 1 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/kjSksgmTd8U" title="Clase de Técnica de Pátina" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Técnica de Pátina en Cerámica Fría</h5>
+            <p class="card-text">Paso a paso de la aplicación de pintura y acabados metálicos sobre relieve prehispánico.</p>
+          </div>
         </div>
       </div>
 
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="cera_rey.jpg" alt="Rey Pakal">
-          <p>Rey Pakal</p>
-        </div>
-        <div class="gallery-item">
-          <img src="cera_coyo.jpg" alt="Coyolxauhqui">
-          <p>Coyolxauhqui</p>
-        </div>
-        <div class="gallery-item">
-          <img src="cera_mayitsent.jpg" alt="Mayahuel">
-          <p>Mayahuel</p>
-        </div>
-        <div class="gallery-item">
-          <img src="cera_calLuna.jpg" alt="Calendario Luna">
-          <p>Calendario Luna</p>
-        </div>
-        <div class="gallery-item">
-          <img src="cera_azte.jpg" alt="Relieve Azteca">
-          <p>Relieve Azteca</p>
+      <!-- Clase 2 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/kjSksgmTd8U" title="Elaboración de Piezas Prehispánicas" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Elaboración de Piezas Prehispánicas</h5>
+            <p class="card-text">Uso de moldes de alto relieve para creación de arte ancestral.</p>
+          </div>
         </div>
       </div>
-    </section>
-
-    <hr>
-
-    <!-- CLASES -->
-    <section id="clases">
-      <h2>Nuestras Clases</h2>
-      <p style="text-align: center;">Explora la colección de talleres interactivos y cursos disponibles en nuestra plataforma.</p>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="inst1.png" alt="Instrucción 1">
-          <p>Paso 1: Modelado</p>
-        </div>
-        <div class="gallery-item">
-          <img src="inst2.jpg" alt="Instrucción 2">
-          <p>Paso 2: Pintura Base</p>
-        </div>
-        <div class="gallery-item">
-          <img src="inst3.jpg" alt="Instrucción 3">
-          <p>Paso 3: Pátina y Dorado</p>
-        </div>
-      </div>
-    </section>
-
-    <hr>
-
-    <!-- PRÓXIMAS CLASES -->
-    <section id="proximas-clases">
-      <h2>Próximas Clases</h2>
-      <p style="text-align: center;">Mantente al tanto de nuestros próximos eventos y talleres presenciales/virtuales.</p>
-    </section>
-
-    <hr>
-
-    <!-- TIENDA -->
-    <section id="tienda">
-      <h2>Tienda del Club</h2>
-      <p style="text-align: center;">Kits educativos, moldes de yeso y materiales artesanales disponibles.</p>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="kits1.jpg" alt="Kit de Arte">
-          <p>Kit de Cerámica</p>
-        </div>
-        <div class="gallery-item">
-          <img src="kitsbien.jpg" alt="Kit Completo">
-          <p>Kit Completo Colibrí</p>
-        </div>
-      </div>
-    </section>
-
-    <hr>
-
-    <!-- CONTACTO -->
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p style="text-align: center;">¿Tienes alguna pregunta o deseas colaborar? Escríbenos directamente.</p>
-    </section>
-
-    <hr>
-
-    <!-- DONACIONES -->
-    <section id="donaciones" style="text-align: center;">
-      <h2>Donaciones</h2>
-      <p>Tu apoyo nos ayuda a seguir compartiendo arte y talleres en la comunidad.</p>
-      <a href="#" class="btn-donar">Apoyar al Club</a>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Club Colibrí. Todos los derechos reservados.</p>
-  </footer>
-
-</body>
-</html>
+    </div>
+  </div>
+</section>
