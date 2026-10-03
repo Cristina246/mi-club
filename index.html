@@ -164,88 +164,93 @@
   <!-- BARRA LATERAL -->
   <aside class="sidebar">
     <!-- Logo -->
-    <img src="https://lh3.googleusercontent.com/d/1buB2mzW0j_BemVKk9G2RHD9cuDLQBhrY" alt="Logo Club Colibrí" class="logo">
-
-    <!-- BOTÓN DE CAMBIO DE IDIOMA -->
+    <img src="sello.png" alt="Logo Club Colibrí" style="max-width: 150px; height: auto;">    <!-- BOTÓN DE CAMBIO DE IDIOMA -->
     <div style="margin: 15px 0; text-align: center;">
       <button id="btn-lang" onclick="cambiarIdioma()" style="background: #d4af37; color: #111; border: none; padding: 8px 16px; font-weight: bold; border-radius: 20px; cursor: pointer; font-size: 0.9rem;">
         English 🇺🇸
       </button>
     </div>
 
-    <!-- NAVEGACIÓN -->
-    <nav class="nav-links">
-      <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
-      <a href="#quienes-somos" data-es="¿Quiénes somos?" data-en="About Us">¿Quiénes somos?</a>
-      <a href="#presentacion" data-es="Presentación" data-en="Presentation">Presentación</a>
-      <a href="#museo" data-es="Museo Digital" data-en="Digital Museum">Museo Digital</a>
-      <a href="#misiones" data-es="Misiones" data-en="Mision">Misiones</a>
-      <a href="#proximas-Misiones" data-es="Próximas Misiones" data-en="Upcoming Misiones">Próximas Misiones</a>
-      <a href="#tienda" data-es="Tienda" data-en="Store">Tienda</a>
-      <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-      <a href="#apoyos" data-es="apoyo" data-en="Apoyo">Apoyo</a>
-    </nav>
-  </aside>
+   <!-- 1. NAVEGACIÓN COMPLETA -->
+<nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px; padding: 10px; background-color: #1a1a1a;">
+  <a href="#inicio" data-es="Inicio" data-en="Home" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">Inicio</a>
+  <a href="#quienes-somos" data-es="¿Quiénes somos?" data-en="About Us" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">¿Quiénes somos?</a>
+  <a href="#presentacion" data-es="Presentación" data-en="Presentation" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">Presentación</a>
+  <a href="#museo" data-es="Museo Digital" data-en="Digital Museum" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">Museo Digital</a>
+  <a href="#Misiones" data-es="Misiones" data-en="Missions" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">Misiones</a>
+  <a href="#vivencias" data-es="Vivencias" data-en="Experiences" style="color: #d4af37; text-decoration: none; padding: 5px 8px; font-size: 0.85rem; font-weight: bold;">Vivencias</a>
+  <a href="#proximas" data-es="Próximas Misiones" data-en="Upcoming Missions" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">Próximas Misiones</a>
+  <a href="#tienda" data-es="Tienda" data-en="Store" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">Tienda</a>
+  <a href="#contacto" data-es="Contacto" data-en="Contact" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">Contacto</a>
+  <a href="#apoyo" data-es="Apoyo" data-en="Support" style="color: #fff; text-decoration: none; padding: 5px 8px; font-size: 0.85rem;">Apoyo</a>
+</nav>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <div class="main-content">
+<!-- 2. SECCIÓN VIVENCIAS INTERACTIVA -->
+<section id="vivencias" style="padding: 50px 20px; background-color: #fdfaf6; text-align: center;">
+  <div style="max-width: 850px; margin: 0 auto;">
+    <h2 data-es="Vivencias del Club" data-en="Club Experiences" style="color: #1a1a1a; font-size: 2rem; margin-bottom: 10px;">
+      Vivencias del Club
+    </h2>
+    <p data-es="Un espacio comunitario para compartir historias, reflexiones y testimonios sobre nuestros talleres y piezas." 
+       data-en="A community space to share stories, reflections, and testimonials about our workshops and pieces." 
+       style="color: #555; font-size: 1.05rem; margin-bottom: 30px;">
+      Un espacio comunitario para compartir historias, reflexiones y testimonios sobre nuestros talleres y piezas.
+    </p>
 
-    <!-- 1. INICIO -->
-    <header id="inicio" style="background: #4a69bd; padding: 60px 20px; text-align: center; color: white;">
-      <h1 data-es="Bienvenido a Club Colibrí" data-en="Welcome to Club Colibrí" style="font-size: 2.5rem; margin: 0 0 15px 0;">Bienvenido a Club Colibrí</h1>
-      <p data-es="Un espacio para el arte, la cultura y el aprendizaje comunitario" data-en="A space for art, culture, and community learning" style="font-size: 1.2rem; margin-bottom: 25px;">Un espacio para el arte, la cultura y el aprendizaje comunitario</p>
-      <div style="max-width: 500px; margin: 0 auto;">
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/FKYXHc3zGsk?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
-        </div>
-        <p data-es="Video Introducción" data-en="Introduction Video" style="font-size: 0.9rem; color: #f1f2f6; margin-top: 5px;">Video Introducción</p>
-      </div>
-    </header>
+    <!-- FORMULARIO INTERACTIVO DE VIVENCIAS -->
+    <div style="background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: left; max-width: 600px; margin: 0 auto;">
+      <h3 data-es="Comparte tu Vivencia" data-en="Share Your Experience" style="color: #d4af37; margin-top: 0; text-align: center;">
+        Comparte tu Vivencia
+      </h3>
+      <form action="mailto:clubcolibri.2018@gmail.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 15px;">
+        <label style="font-weight: bold; color: #333;" data-es="Nombre o Familia:" data-en="Name or Family:">Nombre o Familia:</label>
+        <input type="text" name="Nombre" required placeholder="Ej. Familia Mendoza" style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
 
-    <!-- 2. QUIÉNES SOMOS -->
-    <section id="quienes-somos" style="padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center;">
-      <h2 data-es="¿Quiénes somos?" data-en="About Us">¿Quiénes somos?</h2>
-      <p data-es="Somos un espacio virtual, interactivo e inclusivo de encuentro. A través del arte y tu inteligencia creativa, la educacion, cultura, impulsamos la integración comunitaria, la convivencia familiar y la reconexión personal con tu inteligencia emosional ." data-en="We are an inclusive cultural club dedicated to promoting artistic workshops, preserving historical memory through our digital museum, and offering a community gathering space." style="margin-bottom: 25px; font-size: 1.1rem; color: #555;">Somos un club cultural inclusivo dedicado a promover talleres artísticos, resguardar la memoria histórica a través de nuestro museo digital y ofrecer un espacio de encuentro.</p>
-      <div style="max-width: 500px; margin: 0 auto;">
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/2t0vamvmHyc?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
+        <label style="font-weight: bold; color: #333;" data-es="Tu Historia o Mensaje:" data-en="Your Story or Message:">Tu Historia o Mensaje:</label>
+        <textarea name="Vivencia" rows="4" required placeholder="Cuéntanos cómo fue tu experiencia..." style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;"></textarea>
 
-<!-- 3. PRESENTACIÓN -->
-<section id="presentacion" style="padding: 60px 20px; background-color: #f1f2f6; text-align: center;">
-  <h2 data-es="Presentación del Club" data-en="Club Presentation">Presentación del Club</h2>
-  
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
-    
-    <!-- Vídeo 1: Entrada (Presentación) -->
-    <div style="background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-      <div class="video-container">
-        <iframe src="https://www.youtube-nocookie.com/embed/a0eZ9W9HoSk?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
-      </div>
-      <p data-es="Presentación General" data-en="General Presentation" style="font-size: 0.95rem; color: #333; margin-top: 10px; font-weight: bold;">
-        Presentación General
-      </p>
+        <button type="submit" data-es="Enviar Vivencia" data-en="Submit Experience" style="background-color: #d4af37; color: #fff; border: none; padding: 12px; border-radius: 25px; font-weight: bold; font-size: 1rem; cursor: pointer;">
+          Enviar Vivencia
+        </button>
+      </form>
     </div>
-
-    <!-- Vídeo 2: Tecnología y Emoción 1 -->
-<div style="background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <div class="video-container">
-    <iframe src="https://www.youtube-nocookie.com/embed/jqS8hOGPBTw?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
-  </div>
-  <p data-es="Tecnología y Emoción 1" data-en="Technology and Emotion 1" style="font-size: 0.95rem; color: #333; margin-top: 10px; font-weight: bold; margin-bottom: 2px;">
-    Tecnología y Emoción 1
-  </p>
-  <!-- Subtítulo complementario visible en inglés y español -->
-  <p style="font-size: 0.8rem; color: #666; margin: 0; font-style: italic;">
-    (Technology and Emotion 1)
-  </p>
-</div>
-    
   </div>
 </section>
-    <!-- 4. MUSEO DIGITAL -->
+
+<!-- 3. SECCIÓN APOYO INTERACTIVA -->
+<section id="apoyo" style="padding: 50px 20px; background-color: #1a1a1a; color: #ffffff; text-align: center;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h2 data-es="Apoya Nuestro Proyecto" data-en="Support Our Project" style="color: #d4af37; font-size: 2rem; margin-bottom: 15px;">
+      Apoya Nuestro Proyecto
+    </h2>
+    <p data-es="Tu contribución nos permite llevar talleres culturales, kits educativos y materiales artísticos a más familias y comunidades." 
+       data-en="Your contribution helps us bring cultural workshops, educational kits, and artistic materials to more families and communities." 
+       style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; color: #ddd;">
+      Tu contribución nos permite llevar talleres culturales, kits educativos y materiales artísticos a más familias y comunidades.
+    </p>
+
+    <!-- BOTONES INTERACTIVOS DE CONTRIBUCIÓN -->
+    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;">
+      <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$10 USD</a>
+      <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$25 USD</a>
+      <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$50 USD</a>
+    </div>
+
+    <a href="https://paypal.me/clubcolibri" target="_blank" data-es="Hacer una Contribución" data-en="Make a Donation" style="display: inline-block; background-color: #d4af37; color: #1a1a1a; padding: 12px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; font-size: 1rem;">
+      Hacer una Contribución
+    </a>
+  </div>
+</section>
+
+<!-- 4. PIE DE PÁGINA (FOOTER) -->
+<footer>
+  <p data-es="© 2026 Club Colibrí. Todos los derechos reservados." data-en="© 2026 Club Colibrí. All rights reserved.">
+    &copy; 2026 Club Colibrí. Todos los derechos reservados.
+  </p>
+</footer>
+
+    <!-- 5 MUSEO DIGITAL-->
+    . MUSEO DIGITAL -->
     <section id="museo" style="padding: 60px 20px; background-color: #fff;">
       <h2 data-es="Museo Digital" data-en="Digital Museum">Museo Digital</h2>
       <p data-es="Recorrido por piezas y relieves pre-hispánicos modelados artesanalmente." data-en="A journey through handcrafted pre-Hispanic reliefs and artworks." style="text-align: center; margin-bottom: 20px; font-size: 1.1rem; color: #555;">Recorrido por piezas y relieves pre-hispánicos modelados artesanalmente.</p>
@@ -265,7 +270,7 @@
       </div>
     </section>
 
-    <!-- 5. Misiones -->
+    <!-- 6. Misiones -->
     <section id="Misiones" style="padding: 60px 20px; background-color: #f9f9f9;">
       <h2 data-es="Nuestras Misiones" data-en="Our Classes">Nuestras Misiones</h2>
       <p data-es="Explora la colección de Misiones. Interactivos niveles disponibles en nuestra plataforma." data-en="Explore the collection of interactive workshops and courses available on our platform." style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #555;">Explora la colección de Misiones interactivos y cursos disponibles en nuestra plataforma.</p>
@@ -393,7 +398,7 @@
       </div>
     </section>
 
-    <!-- 6. PRÓXIMAS MISIONES -->
+    <!-- 7. PRÓXIMAS MISIONES -->
     <section id="proximas-misiones" style="padding: 60px 20px; text-align: center; background-color: #fff;">
       <h2 data-es="Próximas Misiones" data-en="Upcoming Misiones">Próximas Misiones</h2>
       <p data-es="¡Pronto anunciaremos nuevos talleres y sorpresas culturales!" data-en="We will soon announce new workshops and cultural surprises!" style="color: #666; font-style: italic; margin-bottom: 30px; font-size: 1.2rem;">¡Pronto anunciaremos nuevos talleres y sorpresas culturales!</p>
@@ -409,7 +414,7 @@
       </div>
     </section>
 
-    <!-- 7. TIENDA -->
+    <!-- 8. TIENDA -->
     <section id="tienda" style="padding: 60px 20px; text-align: center; background-color: #f1f2f6;">
       <div style="max-width: 1000px; margin: 0 auto;">
         <h2 data-es="Tienda del Club" data-en="Club Store">Tienda del Club</h2>
@@ -438,45 +443,60 @@
       </div>
     </section>
 
-    <!-- 9. Apoyo -->
-    <section id="apoyo" style="padding: 60px 20px; text-align: center; background-color: #f9f9f9;">
-      <div style="max-width: 800px; margin: 0 auto;">
-        <h2 data-es="Tus compras de arte nos ayuda a llevar las misiones a la puerta la puerta de tu casa" data-en="Support Our Project">Apoya Nuestro Proyecto</h2>
-        <p data-es="Tu compras de arte nos ayuda a llevar las misiones educativas a más familias y comunidades." data-en="Your contribution helps us bring educational workshops to more families and communities." style="font-size: 1.2rem; color: #555; line-height: 1.6; margin-bottom: 25px;">Tu contribución nos ayuda a llevar talleres educativos a más familias y comunidades.</p>
-        <a href="#" class="btn-donar" data-es="Hacer una Donación" data-en="Make a Donation">Hacer una Apoyo</a>
-      </div>
-    </section>
+    <!-- 9. APOYO INTERACTIVO -->
+<section id="apoyo" style="padding: 60px 20px; text-align: center; background-color: #1a1a1a; color: #ffffff;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h2 data-es="Apoya Nuestro Proyecto" data-en="Support Our Project" style="color: #d4af37; font-size: 2rem; margin-bottom: 15px;">
+      Apoya Nuestro Proyecto
+    </h2>
+    <p data-es="Tus compras de arte y contribuciones nos ayudan a llevar las misiones educativas a más familias y comunidades." 
+       data-en="Your art purchases and contributions help us bring educational missions to more families and communities." 
+       style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; color: #ddd;">
+      Tus compras de arte y contribuciones nos ayudan a llevar las misiones educativas a más familias y comunidades.
+    </p>
 
-    <footer>
-      <p data-es="© 2026 Club Colibrí. Todos los derechos reservados." data-en="© 2026 Club Colibrí. All rights reserved.">&copy; 2026 Club Colibrí. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Botones interactivos de aporte -->
+    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;">
+      <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$10 USD</a>
+      <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$25 USD</a>
+      <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$50 USD</a>
+    </div>
 
+    <a href="https://paypal.me/clubcolibri" target="_blank" data-es="Hacer un Apoyo" data-en="Make a Contribution" style="display: inline-block; background-color: #d4af37; color: #1a1a1a; padding: 12px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; font-size: 1rem;">
+      Hacer un Apoyo
+    </a>
   </div>
+</section>
 
-  <!-- SCRIPT DE TRADUCCIÓN EN JAVASCRIPT -->
-  <script>
-    let idiomaActual = 'es';
+<!-- PIE DE PÁGINA (FOOTER) -->
+<footer>
+  <p data-es="© 2026 Club Colibrí. Todos los derechos reservados." data-en="© 2026 Club Colibrí. All rights reserved.">
+    &copy; 2026 Club Colibrí. Todos los derechos reservados.
+  </p>
+</footer>
 
-    function cambiarIdioma() {
-      idiomaActual = (idiomaActual === 'es') ? 'en' : 'es';
+</div>
 
-      const btn = document.getElementById('btn-lang');
-      if (idiomaActual === 'es') {
-        btn.innerText = 'English 🇺🇸';
-      } else {
-        btn.innerText = 'Español 🇲🇽';
-      }
-
-      const elementos = document.querySelectorAll('[data-es]');
-      
-      elementos.forEach(el => {
-        const textoTraducido = el.getAttribute(`data-${idiomaActual}`);
-        if (textoTraducido) {
-          el.innerText = textoTraducido;
-        }
-      });
+<!-- SCRIPT DE TRADUCCIÓN EN JAVASCRIPT -->
+<script>
+  let idiomaActual = 'es';
+  function cambiarIdioma() {
+    idiomaActual = (idiomaActual === 'es') ? 'en' : 'es';
+    const btn = document.getElementById('btn-lang');
+    if (idiomaActual === 'es') {
+      btn.innerText = 'English 🇺🇸';
+    } else {
+      btn.innerText = 'Español 🇲🇽';
     }
-  </script>
+    const elementos = document.querySelectorAll('[data-es]');
+    elementos.forEach(el => {
+      const textoTraducido = el.getAttribute(`data-${idiomaActual}`);
+      if (textoTraducido) {
+        el.innerText = textoTraducido;
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
