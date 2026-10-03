@@ -5,246 +5,470 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Club Colibrí</title>
   <style>
-    body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f5f6fa; scroll-behavior: smooth; display: flex; }
-    
-    /* BARRA LATERAL CON LOGO Y NAVEGACIÓN */
-    .sidebar { width: 230px; background: #111111; color: white; position: fixed; height: 100vh; display: flex; flex-direction: column; align-items: center; padding-top: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.2); overflow-y: auto; }
-    .sidebar img.logo { width: 140px; height: auto; margin-bottom: 15px; mix-blend-mode: multiply; }
-    .sidebar h2 { font-size: 1.3rem; margin-bottom: 15px; color: #d4af37; }
-    
-    /* MENÚ DE LIGAS EN LA BARRA LATERAL */
-    .nav-links { display: flex; flex-direction: column; width: 100%; }
-    .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.9rem; padding: 12px 18px; text-align: left; border-bottom: 1px solid #222; transition: background 0.3s; }
-    .nav-links a:hover { background: #222222; color: #d4af37; }
-    
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f6fa;
+      scroll-behavior: smooth;
+      display: flex;
+    }
+    /* BARRA LATERAL CON LOGO */
+    .sidebar {
+      width: 230px;
+      background: #111111;
+      color: white;
+      position: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      overflow-y: auto;
+    }
+    .sidebar img.logo {
+      width: 140px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .sidebar h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #d4af37; /* Acento dorado */
+    }
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s;
+    }
+    .nav-links a:hover {
+      background: #333333;
+      color: #d4af37;
+    }
     /* CONTENIDO PRINCIPAL A LA DERECHA */
-    .main-content { margin-left: 230px; width: calc(100% - 230px); }
-    h2 { color: #1a1a1a; margin-bottom: 20px; text-align: center; font-size: 2.2rem; }
-    
-    /* GALERÍA DEL MUSEO DIGITAL */
-    .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 20px; }
-    .gallery-item { text-align: center; background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 160px; }
-    .gallery img { width: 140px; height: 140px; object-fit: cover; border-radius: 6px; }
-    .gallery-item p { font-size: 0.85rem; margin: 8px 0 0 0; color: #333; }
-    
-    /* CONTENEDOR DE VIDEOS */
-    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; margin-bottom: 15px; }
-    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 20px; }
-    .video-card { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; }
-    .video-card h3 { margin-top: 0; font-size: 1.2rem; color: #333; text-align: center; min-height: 40px; }
-    
-    footer { background: #111; color: #fff; text-align: center; padding: 20px 0; font-size: 0.9rem; }
+    .main-content {
+      margin-left: 230px;
+      width: calc(100% - 230px);
+    }
+    h2 {
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 2.2rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .gallery-item {
+      text-align: center;
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 160px;
+    }
+    .gallery img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .gallery-item p {
+      font-size: 0.85rem;
+      margin: 8px 0 0 0;
+      color: #333;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .video-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .video-card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #333;
+      text-align: center;
+      min-height: 40px;
+    }
+    .btn-donar {
+      display: inline-block;
+      background-color: #ff9f43;
+      color: white;
+      padding: 15px 35px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+    .btn-donar:hover {
+      background-color: #ee5253;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
 
   <!-- BARRA LATERAL -->
   <aside class="sidebar">
-    <!-- LOGO CON TRASPARENCIA MEJORADA -->
-    <img src="sello.png" alt="Logo Club Colibrí" class="logo" style="mix-blend-mode: multiply;">
-    
+    <!-- Logo -->
+    <img src="https://lh3.googleusercontent.com/d/1buB2mzW0j_BemVKk9G2RHD9cuDLQBhrY" alt="Logo Club Colibrí" class="logo">
+
     <!-- BOTÓN DE CAMBIO DE IDIOMA -->
-    <div style="margin: 10px 0; text-align: center;">
-      <button id="btn-lang" onclick="cambiarIdioma()" style="background: #d4af37; color: #111; border: none; padding: 8px 16px; font-weight: bold; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">
+    <div style="margin: 15px 0; text-align: center;">
+      <button id="btn-lang" onclick="cambiarIdioma()" style="background: #d4af37; color: #111; border: none; padding: 8px 16px; font-weight: bold; border-radius: 20px; cursor: pointer; font-size: 0.9rem;">
         English 🇺🇸
       </button>
     </div>
 
-    <!-- MENÚ DE NAVEGACIÓN (SECCIONES 1 A 11) -->
+    <!-- NAVEGACIÓN -->
     <nav class="nav-links">
-      <a href="#inicio" data-es="1. Inicio" data-en="1. Home">1. Inicio</a>
-      <a href="#quienes-somos" data-es="2. ¿Quiénes somos?" data-en="2. About Us">2. ¿Quiénes somos?</a>
-      <a href="#presentacion" data-es="3. Presentación" data-en="3. Presentation">3. Presentación</a>
-      <a href="#tecnologia-emocion" data-es="4. Tecnología y Emoción" data-en="4. Technology & Emotion">4. Tecnología y Emoción</a>
-      <a href="#museo" data-es="5. Museo Digital" data-en="5. Digital Museum" style="color: #d4af37; font-weight: bold;">5. Museo Digital</a>
-      <a href="#misiones" data-es="6. Misiones" data-en="6. Missions">6. Misiones</a>
-      <a href="#vivencias" data-es="7. Vivencias" data-en="7. Experiences">7. Vivencias</a>
-      <a href="#proximas" data-es="8. Próximas Misiones" data-en="8. Upcoming Missions">8. Próximas Misiones</a>
-      <a href="#tienda" data-es="9. Tienda" data-en="9. Store">9. Tienda</a>
-      <a href="#contacto" data-es="10. Contacto" data-en="10. Contact">10. Contacto</a>
-      <a href="#apoyo" data-es="11. Apoyo" data-en="11. Support">11. Apoyo</a>
+      <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="#quienes-somos" data-es="¿Quiénes somos?" data-en="About Us">¿Quiénes somos?</a>
+      <a href="#presentacion" data-es="Presentación" data-en="Presentation">Presentación</a>
+      <a href="#museo" data-es="Museo Digital" data-en="Digital Museum">Museo Digital</a>
+      <a href="#misiones" data-es="Misiones" data-en="Mision">Misiones</a>
+      <a href="#proximas-Misiones" data-es="Próximas Misiones" data-en="Upcoming Misiones">Próximas Misiones</a>
+      <a href="#tienda" data-es="Tienda" data-en="Store">Tienda</a>
+      <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+      <a href="#apoyos" data-es="apoyo" data-en="Apoyo">Apoyo</a>
     </nav>
   </aside>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="main-content">
+  <div class="main-content">
 
     <!-- 1. INICIO -->
-    <section id="inicio" style="padding: 50px 20px; background-color: #ffffff; text-align: center;">
-      <h2 data-es="Bienvenido a Club Colibrí" data-en="Welcome to Club Colibri">Bienvenido a Club Colibrí</h2>
-      <div style="max-width: 800px; margin: 0 auto;">
-        <video controls style="width: 100%; border-radius: 8px;">
-          <source src="Entrada (1).mp4" type="video/mp4">
-          Tu navegador no soporta el formato de video.
-        </video>
+    <header id="inicio" style="background: #4a69bd; padding: 60px 20px; text-align: center; color: white;">
+      <h1 data-es="Bienvenido a Club Colibrí" data-en="Welcome to Club Colibrí" style="font-size: 2.5rem; margin: 0 0 15px 0;">Bienvenido a Club Colibrí</h1>
+      <p data-es="Un espacio para el arte, la cultura y el aprendizaje comunitario" data-en="A space for art, culture, and community learning" style="font-size: 1.2rem; margin-bottom: 25px;">Un espacio para el arte, la cultura y el aprendizaje comunitario</p>
+      <div style="max-width: 500px; margin: 0 auto;">
+        <div class="video-container">
+          <iframe src="https://www.youtube-nocookie.com/embed/FKYXHc3zGsk?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
+        </div>
+        <p data-es="Video Introducción" data-en="Introduction Video" style="font-size: 0.9rem; color: #f1f2f6; margin-top: 5px;">Video Introducción</p>
+      </div>
+    </header>
+
+    <!-- 2. QUIÉNES SOMOS -->
+    <section id="quienes-somos" style="padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center;">
+      <h2 data-es="¿Quiénes somos?" data-en="About Us">¿Quiénes somos?</h2>
+      <p data-es="Somos un espacio virtual, interactivo e inclusivo de encuentro. A través del arte y tu inteligencia creativa, la educacion, cultura, impulsamos la integración comunitaria, la convivencia familiar y la reconexión personal con tu inteligencia emosional ." data-en="We are an inclusive cultural club dedicated to promoting artistic workshops, preserving historical memory through our digital museum, and offering a community gathering space." style="margin-bottom: 25px; font-size: 1.1rem; color: #555;">Somos un club cultural inclusivo dedicado a promover talleres artísticos, resguardar la memoria histórica a través de nuestro museo digital y ofrecer un espacio de encuentro.</p>
+      <div style="max-width: 500px; margin: 0 auto;">
+        <div class="video-container">
+          <iframe src="https://www.youtube-nocookie.com/embed/2t0vamvmHyc?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
+        </div>
       </div>
     </section>
 
-    <!-- 2. ¿QUIÉNES SOMOS? -->
-    <section id="quienes-somos" style="padding: 50px 20px; background-color: #fdfaf6; text-align: center;">
-      <h2 data-es="¿Quiénes Somos?" data-en="About Us">¿Quiénes Somos?</h2>
-      <div style="max-width: 800px; margin: 0 auto;">
-        <video controls style="width: 100%; border-radius: 8px;">
-          <source src="QuieneS (2) (1).mp4" type="video/mp4">
-        </video>
+<!-- 3. PRESENTACIÓN -->
+<section id="presentacion" style="padding: 60px 20px; background-color: #f1f2f6; text-align: center;">
+  <h2 data-es="Presentación del Club" data-en="Club Presentation">Presentación del Club</h2>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+    
+    <!-- Vídeo 1: Entrada (Presentación) -->
+    <div style="background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/a0eZ9W9HoSk?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
       </div>
-    </section>
-
-    <!-- 3. PRESENTACIÓN -->
-    <section id="presentacion" style="padding: 50px 20px; background-color: #ffffff; text-align: center;">
-      <h2 data-es="Presentación" data-en="Presentation">Presentación</h2>
-      <div style="max-width: 800px; margin: 0 auto;">
-        <video controls style="width: 100%; border-radius: 8px;">
-          <source src="video_clubcolibri (1).mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
-
-    <!-- 4. TECNOLOGÍA Y EMOCIÓN -->
-    <section id="tecnologia-emocion" style="padding: 50px 20px; background-color: #fdfaf6; text-align: center;">
-      <h2 data-es="Tecnología y Emoción" data-en="Technology and Emotion">Tecnología y Emoción</h2>
-      <p data-es="Un espacio de encuentro que combina arte tradicional y reconexión emocional." data-en="A meeting space combining traditional art and emotional reconnection.">
-        Un espacio de encuentro que combina arte tradicional y reconexión emocional.
+      <p data-es="Presentación General" data-en="General Presentation" style="font-size: 0.95rem; color: #333; margin-top: 10px; font-weight: bold;">
+        Presentación General
       </p>
-    </section>
+    </div>
 
-    <!-- 5. MUSEO DIGITAL -->
-    <section id="museo" style="padding: 50px 20px; background-color: #ffffff;">
+    <!-- Vídeo 2: Tecnología y Emoción 1 -->
+<div style="background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <div class="video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/jqS8hOGPBTw?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
+  </div>
+  <p data-es="Tecnología y Emoción 1" data-en="Technology and Emotion 1" style="font-size: 0.95rem; color: #333; margin-top: 10px; font-weight: bold; margin-bottom: 2px;">
+    Tecnología y Emoción 1
+  </p>
+  <!-- Subtítulo complementario visible en inglés y español -->
+  <p style="font-size: 0.8rem; color: #666; margin: 0; font-style: italic;">
+    (Technology and Emotion 1)
+  </p>
+</div>
+    
+  </div>
+</section>
+    <!-- 4. MUSEO DIGITAL -->
+    <section id="museo" style="padding: 60px 20px; background-color: #fff;">
       <h2 data-es="Museo Digital" data-en="Digital Museum">Museo Digital</h2>
-      <p data-es="Recorrido por piezas y relieves prehispánicos modelados artesanalmente." data-en="A journey through handcrafted pre-Hispanic reliefs and artworks." style="text-align: center; color: #555;">
-        Recorrido por piezas y relieves prehispánicos modelados artesanalmente.
-      </p>
+      <p data-es="Recorrido por piezas y relieves pre-hispánicos modelados artesanalmente." data-en="A journey through handcrafted pre-Hispanic reliefs and artworks." style="text-align: center; margin-bottom: 20px; font-size: 1.1rem; color: #555;">Recorrido por piezas y relieves pre-hispánicos modelados artesanalmente.</p>
       <div class="gallery">
         <div class="gallery-item"><img src="carita_sonriente.jpg" alt="Carita Sonriente"><p data-es="Carita Sonriente" data-en="Smiling Face">Carita Sonriente</p></div>
         <div class="gallery-item"><img src="guardiana_maya.jpg" alt="Guardiana Maya"><p data-es="Guardiana Maya" data-en="Mayan Guardian">Guardiana Maya</p></div>
-        <div class="gallery-item"><img src="museo_calen.jpg" alt="Calendario"><p data-es="Calendario" data-en="Calendar">Calendario</p></div>
-        <div class="gallery-item"><img src="mayacarachico.jpg" alt="Relieve Maya"><p data-es="Relieve Maya" data-en="Mayan Relief">Relieve Maya</p></div>
+        <div class="gallery-item"><img src="museo_calen.jpg" alt="Calendario Maya/Azteca"><p data-es="Calendario" data-en="Calendar">Calendario</p></div>
+        <div class="gallery-item"><img src="mayacarachico.jpg" alt="Maya Chico"><p data-es="Relieve Maya" data-en="Mayan Relief">Relieve Maya</p></div>
         <div class="gallery-item"><img src="mediano_rey.jpg" alt="Rey Mediano"><p data-es="Rey Mediano" data-en="Medium King">Rey Mediano</p></div>
         <div class="gallery-item"><img src="inflablecatrina.jpg" alt="Catrina Inflable"><p data-es="Catrina Inflable" data-en="Inflatable Catrina">Catrina Inflable</p></div>
-        <div class="gallery-item"><img src="expoc_biblioteca.jpg" alt="Exposición"><p data-es="Exposición" data-en="Exhibition">Exposición</p></div>
+        <div class="gallery-item"><img src="expoc_biblioteca.jpg" alt="Exposición en Biblioteca"><p data-es="Exposición" data-en="Exhibition">Exposición</p></div>
         <div class="gallery-item"><img src="kitsbien.jpg" alt="Kits Educativos"><p data-es="Kits Educativos" data-en="Educational Kits">Kits Educativos</p></div>
         <div class="gallery-item"><img src="mascara_papel.jpg" alt="Máscara de Papel"><p data-es="Máscara de Papel" data-en="Paper Mask">Máscara de Papel</p></div>
         <div class="gallery-item"><img src="mayasentado_chico.jpg" alt="Relieve Maya Sentado"><p data-es="Relieve Maya" data-en="Mayan Relief">Relieve Maya</p></div>
         <div class="gallery-item"><img src="mayas_chicos.jpg" alt="Relieves Mayas"><p data-es="Relieves Mayas" data-en="Mayan Reliefs">Relieves Mayas</p></div>
-        <div class="gallery-item"><img src="perfilindio_americano.jpg" alt="Indio Americano"><p data-es="Indio Americano" data-en="Native American">Indio Americano</p></div>
+        <div class="gallery-item"><img src="perfilindio_americano.jpg" alt="Perfil Indio Americano"><p data-es="Indio Americano" data-en="Native American">Indio Americano</p></div>
       </div>
     </section>
 
-    <!-- 6. MISIONES -->
-    <section id="misiones" style="padding: 50px 20px; background-color: #f9f9f9;">
-      <h2 data-es="Nuestras Misiones" data-en="Our Missions">Nuestras Misiones</h2>
-      <p data-es="Explora la colección de Misiones interactivas y cursos disponibles en nuestra plataforma." data-en="Explore the collection of interactive missions and courses available on our platform." style="text-align: center; color: #555;">
-        Explora la colección de Misiones interactivas y cursos disponibles en nuestra plataforma.
-      </p>
+    <!-- 5. Misiones -->
+    <section id="Misiones" style="padding: 60px 20px; background-color: #f9f9f9;">
+      <h2 data-es="Nuestras Misiones" data-en="Our Classes">Nuestras Misiones</h2>
+      <p data-es="Explora la colección de Misiones. Interactivos niveles disponibles en nuestra plataforma." data-en="Explore the collection of interactive workshops and courses available on our platform." style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #555;">Explora la colección de Misiones interactivos y cursos disponibles en nuestra plataforma.</p>
+      <!-- Contenedor del video de YouTube -->
+<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe 
+    src="https://www.youtube.com/embed/BpD664attjI" 
+    title="Ruta Sensorial y Pedagógica" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;">
+  </iframe>
+</div>
+      <h3 style="margin-top: 25px; text-align: center; color: #d4af37;">PRIMERA MISIÓN</h3>
       
-      <!-- VIDEOS DE YOUTUBE INTERACTIVOS -->
-      <div class="video-container" style="max-width: 800px; margin: 20px auto;">
-        <iframe src="https://www.youtube.com/embed/BpD664attjI" title="Ruta Sensorial y Pedagógica" allowfullscreen></iframe>
-      </div>
-
-      <div style="background: #1a1a1a; color: #ffffff; text-align: center; border-radius: 8px; padding: 25px 15px; margin-top: 30px;">
-        <h3 data-es="Videotutoriales Recientes" data-en="Recent Video Tutorials" style="color: #d4af37;">Videotutoriales Recientes</h3>
-        <div class="video-grid">
-          <div style="background: #222; padding: 10px; border-radius: 8px;">
-            <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/nNQ9SkPnB_c" allowfullscreen></iframe></div>
+      <div style="background: #1a1a1a; color: #ffffff; text-align: center; border-radius: 8px; padding: 25px 15px; margin-bottom: 30px;">
+        <h3 data-es="Videotutoriales Recientes" data-en="Recent Video Tutorials" style="font-size: 1.8rem; margin-bottom: 15px; color: #ff9f43;">Videotutoriales Recientes</h3>
+        <p data-es="Aprende sobre el proceso artesanal y el legado pre-hispánico paso a paso." data-en="Learn about the handcrafted process and pre-Hispanic legacy step by step." style="margin-bottom: 25px; font-size: 1.05rem;">Aprende sobre el proceso artesanal y el legado pre-hispánico paso a paso.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+          <div style="background: #222; padding: 12px; border-radius: 8px;">
+            <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/nNQ9SkPnB_c?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
           </div>
-          <div style="background: #222; padding: 10px; border-radius: 8px;">
-            <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/ZatXSkgObXU" allowfullscreen></iframe></div>
+          <div style="background: #222; padding: 12px; border-radius: 8px;">
+            <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/ZatXSkgObXU?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
           </div>
-          <div style="background: #222; padding: 10px; border-radius: 8px;">
-            <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/ZeNbY8yWT9o" allowfullscreen></iframe></div>
+          <div style="background: #222; padding: 12px; border-radius: 8px;">
+            <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/ZeNbY8yWT9o?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
+          </div>
+          <div style="background: #222; padding: 12px; border-radius: 8px;">
+            <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/qLGJobG_atc?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
+          </div>
+          <div style="background: #222; padding: 12px; border-radius: 8px;">
+            <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/K-4oG6QhUws?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- 7. VIVENCIAS -->
-    <section id="vivencias" style="padding: 50px 20px; background-color: #fdfaf6; text-align: center;">
-      <div style="max-width: 850px; margin: 0 auto;">
-        <h2 data-es="Vivencias del Club" data-en="Club Experiences">Vivencias del Club</h2>
-        <p data-es="Un espacio comunitario para compartir historias, reflexiones y testimonios sobre nuestros talleres y piezas." data-en="A community space to share stories, reflections, and testimonials about our workshops and pieces." style="color: #555; margin-bottom: 30px;">
-          Un espacio comunitario para compartir historias, reflexiones y testimonios sobre nuestros talleres y piezas.
+      <div class="video-grid">
+        <div class="video-card">
+          <h3 data-es="Sacerdotisa Maya" data-en="Mayan Priestess">Sacerdotisa Maya</h3>
+          <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/MWzyOuAJlY8?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
+        </div>
+        <div class="video-card">
+          <h3 data-es="Noble Maya" data-en="Mayan Noble">Noble Maya</h3>
+          <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/zGrMe45XaDI?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
+        </div>
+        <div class="video-card">
+          <h3 data-es="Vídeo Indio Americano" data-en="Native American Video">Vídeo Indio Americano</h3>
+          <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/pzmE3b3XUuU?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
+        </div>
+        <div class="video-card">
+          <h3 data-es="Gobernante Maya" data-en="Mayan Ruler">Gobernante Maya</h3>
+          <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/PZ6fZGvwK-Q?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
+        </div>
+        
+      <!-- Título Separador: Me reconozco -->
+      <div style="grid-column: 1 / -1; text-align: center; margin: 40px 0 30px 0;">
+        <h2 data-es="Me reconozco" data-en="I recognize myself" style="color: #1a1a1a; font-size: 2.2rem; margin-bottom: 15px;">Me reconozco</h2>
+        
+        <p style="font-size: 1.1rem; color: #555; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+          <strong data-es="Dinámica pedagógica:" data-en="Pedagogical dynamic:">Dinámica pedagógica:</strong> 
+          <span data-es="Toma las 4 clases de artesanías. Cada una te llevará a la conexión de historias, completando tu espejo conceptual denominado 'Me Reconozco'." data-en="Take the 4 craft classes. Each one will lead you to the connection of stories, completing your conceptual mirror called 'I Recognize Myself'.">
+            Toma las 4 clases de artesanías. Cada una te llevará a la conexión de historias, completando tu espejo conceptual denominado "Me Reconozco".
+          </span>
         </p>
+      </div>
+        <h3>PRIMERA MISIÓN-NIVEL 1</h3>
+     <div class="video-card">
+        <!-- 1. Historia Biológica  -->
+        <h3 data-es="Historia Biológica" data-en="Biological History">Historia Biológica</h3>
+        <div class="video-container">
+          <iframe src="https://www.youtube-nocookie.com/embed/-KY236gVIpU?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe>
+        </div>
+        <p data-es="Reconociendo que nuestra diversidad biológica está bellamente ligada: de forma universal e igualitaria." data-en="Recognizing that our biological diversity is beautifully linked: universally and equally." style="font-size: 0.9rem; color: #555; text-align: center; margin-top: 15px; font-style: italic; line-height: 1.4;">
+          Reconociendo que nuestra diversidad biológica está bellamente ligada: de forma universal e igualitaria.
+        </p>
+      </div>
+        <!-- 2. Historia Cultural -->
+      <div class="video-card">
+        <h3 data-es="Historia Cultural" data-en="Cultural History">Historia Cultural</h3>
+        <div class="video-container" style="background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+          <!-- Cuando tengas el video, reemplaza este texto por tu iframe de YouTube -->
+          <span data-es="¡Video próximamente!" data-en="Video coming soon!" style="color: #666; font-weight: bold; font-style: italic;">¡Video próximamente!</span>
+        </div>
+        <p data-es="Conectamos con el legado de las naciones originarias de Norteamérica (Native Americans) y las civilizaciones prehispánicas para valorar el patrimonio de la tierra que habitamos." data-en="We connect with the legacy of the original nations of North America (Native Americans) and pre-Hispanic civilizations to value the heritage of the land we inhabit." style="font-size: 0.9rem; color: #555; text-align: center; margin-top: 15px; font-style: italic; line-height: 1.4;">
+          Conectamos con el legado de las naciones originarias de Norteamérica (Native Americans) y las civilizaciones prehispánicas para valorar el patrimonio de la tierra que habitamos.
+        </p>
+      </div>
 
-        <div style="background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: left; max-width: 600px; margin: 0 auto;">
-          <h3 data-es="Comparte tu Vivencia" data-en="Share Your Experience" style="color: #d4af37; text-align: center;">Comparte tu Vivencia</h3>
-          <form action="mailto:clubcolibri.2018@gmail.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 15px;">
-            <label style="font-weight: bold; color: #333;" data-es="Nombre o Familia:" data-en="Name or Family:">Nombre o Familia:</label>
-            <input type="text" name="Nombre" required placeholder="Ej. Familia Mendoza" style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+      <!-- 3. Historia Familiar -->
+      <div class="video-card">
+        <h3 data-es="Historia Familiar" data-en="Family History">Historia Familiar</h3>
+        <div class="video-container" style="background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+          <!-- Cuando tengas el video, reemplaza este texto por tu iframe de YouTube -->
+          <span data-es="¡Video próximamente!" data-en="Video coming soon!" style="color: #666; font-weight: bold; font-style: italic;">¡Video próximamente!</span>
+        </div>
+        <p data-es="Fomentamos el diálogo en el hogar y preservamos las hermosas raíces que nos transmiten nuestros padres y abuelos." data-en="We foster dialogue at home and preserve the beautiful roots transmitted by our parents and grandparents." style="font-size: 0.9rem; color: #555; text-align: center; margin-top: 15px; font-style: italic; line-height: 1.4;">
+          Fomentamos el diálogo en el hogar y preservamos las hermosas raíces que nos transmiten nuestros padres y abuelos.
+        </p>
+      </div>
 
-            <label style="font-weight: bold; color: #333;" data-es="Tu Historia o Mensaje:" data-en="Your Story or Message:">Tu Historia o Mensaje:</label>
-            <textarea name="Vivencia" rows="4" required placeholder="Cuéntanos cómo fue tu experiencia..." style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;"></textarea>
+      <!-- 4. Historia Personal -->
+      <div class="video-card">
+        <h3 data-es="Historia Personal" data-en="Personal History">Historia Personal</h3>
+        <div class="video-container" style="background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+          <!-- Cuando tengas el video, reemplaza este texto por tu iframe de YouTube -->
+          <span data-es="¡Video próximamente!" data-en="Video coming soon!" style="color: #666; font-weight: bold; font-style: italic;">¡Video próximamente!</span>
+        </div>
+        <p data-es="Comprendemos el legado de nuestros antepasados, conectando con nuestras propias emociones y rompiendo paradigmas para ser una mejor versión y dejar una huella local." data-en="We understand the legacy of our ancestors, connecting with our own emotions and breaking paradigms to be a better version and leave a local mark." style="font-size: 0.9rem; color: #555; text-align: center; margin-top: 15px; font-style: italic; line-height: 1.4;">
+          Comprendemos el legado de nuestros antepasados, conectando con nuestras propias emociones y rompiendo paradigmas para ser una mejor versión y dejar una huella local.
+        </p>
+      </div>
 
-            <button type="submit" data-es="Enviar Vivencia" data-en="Submit Experience" style="background-color: #d4af37; color: #fff; border: none; padding: 12px; border-radius: 25px; font-weight: bold; cursor: pointer;">
-              Enviar Vivencia
-            </button>
-          </form>
+      <!-- Actividad Me Reconozco -->
+      <div class="video-card">
+        <h3 data-es="Actividad: Me Reconozco" data-en="Activity: I Recognize Myself">Actividad: Me Reconozco</h3>
+        <div class="video-container" style="background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+          <!-- Cuando tengas el video, reemplaza este texto por tu iframe de YouTube -->
+          <span data-es="¡Video próximamente!" data-en="Video coming soon!" style="color: #666; font-weight: bold; font-style: italic;">¡Video próximamente!</span>
+        </div>
+        <p data-es="Un espacio de introspección para abrazar nuestra identidad, reconocer nuestros orígenes y celebrar quiénes somos." data-en="A space for introspection to embrace our identity, recognize our origins, and celebrate who we are." style="font-size: 0.9rem; color: #555; text-align: center; margin-top: 15px; font-style: italic; line-height: 1.4;">
+          Un espacio de introspección para abrazar nuestra identidad, reconocer nuestros orígenes y celebrar quiénes somos.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. PRÓXIMAS MISIONES -->
+    <section id="proximas-misiones" style="padding: 60px 20px; text-align: center; background-color: #fff;">
+      <h2 data-es="Próximas Misiones" data-en="Upcoming Misiones">Próximas Misiones</h2>
+      <p data-es="¡Pronto anunciaremos nuevos talleres y sorpresas culturales!" data-en="We will soon announce new workshops and cultural surprises!" style="color: #666; font-style: italic; margin-bottom: 30px; font-size: 1.2rem;">¡Pronto anunciaremos nuevos talleres y sorpresas culturales!</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; width: 100%;">
+        <div class="video-card" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <h3 data-es="Calaveritas Mexicanas" data-en="Mexican Calaveritas">Calaveritas Mexicanas</h3>
+          <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/n1uCBS2gKmA?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
+        </div>
+        <div class="video-card" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <h3 data-es="Vídeo Clase Día de Muertos" data-en="Day of the Dead Class Video">Vídeo Clase Día de Muertos</h3>
+          <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/5e4nv1j_fQo?cc_load_policy=1&hl=en&cc_lang_pref=en" allowfullscreen></iframe></div>
         </div>
       </div>
     </section>
 
-    <!-- 8. PRÓXIMAS MISIONES -->
-    <section id="proximas" style="padding: 50px 20px; background-color: #ffffff; text-align: center;">
-      <h2 data-es="Próximas Misiones" data-en="Upcoming Missions">Próximas Misiones</h2>
-      <p data-es="Mantente al tanto de nuestros próximos talleres comunitarios y eventos culturales." data-en="Stay tuned for our upcoming community workshops and cultural events.">
-        Mantente al tanto de nuestros próximos talleres comunitarios y eventos culturales.
-      </p>
+    <!-- 7. TIENDA -->
+    <section id="tienda" style="padding: 60px 20px; text-align: center; background-color: #f1f2f6;">
+      <div style="max-width: 1000px; margin: 0 auto;">
+        <h2 data-es="Tienda del Club" data-en="Club Store">Tienda del Club</h2>
+        <p data-es="Kits educativos, moldes y materiales artesanales disponibles." data-en="Educational kits, molds, and handcrafted materials available." style="margin-bottom: 30px; font-size: 1.2rem; color: #555;">Kits educativos, moldes y materiales artesanales disponibles.</p>
+        <div class="gallery">
+          <div class="gallery-item"><img src="kits1.jpg" alt="Kit Educativo"><p data-es="Kit Educativo" data-en="Educational Kit">Kit Educativo</p></div>
+          <div class="gallery-item"><img src="cera_Ameriind.jpg" alt="Cera Indio Americano"><p data-es="Molde Indio Amer." data-en="Native Amer. Mold">Molde Indio Amer.</p></div>
+          <div class="gallery-item"><img src="cera_Arb.jpg" alt="Cera Árbol"><p data-es="Relieve Árbol" data-en="Tree Relief">Relieve Árbol</p></div>
+          <div class="gallery-item"><img src="cera_azte.jpg" alt="Cera Azteca"><p data-es="Relieve Azteca" data-en="Aztec Relief">Relieve Azteca</p></div>
+          <div class="gallery-item"><img src="cera_calLuna.jpg" alt="Calendario Luna"><p data-es="Calendario Luna" data-en="Moon Calendar">Calendario Luna</p></div>
+          <div class="gallery-item"><img src="cera_cmaya.jpg" alt="Cultura Maya"><p data-es="Cultura Maya" data-en="Mayan Culture">Cultura Maya</p></div>
+          <div class="gallery-item"><img src="cera_coyo.jpg" alt="Coyolxauhqui"><p data-es="Coyolxauhqui" data-en="Coyolxauhqui">Coyolxauhqui</p></div>
+          <div class="gallery-item"><img src="cera_mayitsent.jpg" alt="Mayitsent"><p data-es="Mayitsent" data-en="Mayitsent">Mayitsent</p></div>
+          <div class="gallery-item"><img src="cera_rey.jpg" alt="Relieve Rey"><p data-es="Relieve Rey" data-en="King Relief">Relieve Rey</p></div>
+          <div class="gallery-item"><img src="cera_son.jpg" alt="Cerámica Sonriente"><p data-es="Cerámica Sonriente" data-en="Smiling Ceramic">Cerámica Sonriente</p></div>
+        </div>
+      </div>
     </section>
 
-    <!-- 9. TIENDA -->
-    <section id="tienda" style="padding: 50px 20px; background-color: #fdfaf6; text-align: center;">
-      <h2 data-es="Tienda Arte y Kits" data-en="Art & Kits Store">Tienda Arte y Kits</h2>
-      <p data-es="Adquiere nuestros kits educativos de moldeado y réplicas artesanales." data-en="Purchase our educational molding kits and handcrafted replicas.">
-        Adquiere nuestros kits educativos de moldeado y réplicas artesanales.
-      </p>
-    </section>
-
-    <!-- 10. CONTACTO -->
-    <section id="contacto" style="padding: 50px 20px; background-color: #ffffff; text-align: center;">
-      <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
-      <p data-es="¿Tienes alguna duda o quieres llevar un taller a tu comunidad? Escríbenos a clubcolibri.2018@gmail.com" data-en="Have questions or want to bring a workshop to your community? Email us at clubcolibri.2018@gmail.com">
-        ¿Tienes alguna duda o quieres llevar un taller a tu comunidad? Escríbenos a <strong>clubcolibri.2018@gmail.com</strong>
-      </p>
-    </section>
-
-    <!-- 11. APOYO -->
-    <section id="apoyo" style="padding: 50px 20px; background-color: #1a1a1a; color: #ffffff; text-align: center;">
+    <!-- 8. CONTACTO -->
+    <section id="contacto" style="padding: 60px 20px; text-align: center; background-color: #fff;">
       <div style="max-width: 800px; margin: 0 auto;">
-        <h2 data-es="Apoya Nuestro Proyecto" data-en="Support Our Project" style="color: #d4af37;">Apoya Nuestro Proyecto</h2>
-        <p data-es="Tu contribución nos permite llevar talleres culturales, kits educativos y materiales artísticos a más familias y comunidades." data-en="Your contribution helps us bring cultural workshops, educational kits, and artistic materials to more families and communities." style="color: #ddd;">
-          Tu contribución nos permite llevar talleres culturales, kits educativos y materiales artísticos a más familias y comunidades.
-        </p>
-
-        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 25px 0;">
-          <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$10 USD</a>
-          <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$25 USD</a>
-          <a href="https://paypal.me/clubcolibri" target="_blank" style="background: transparent; border: 2px solid #d4af37; color: #d4af37; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold;">$50 USD</a>
-        </div>
-
-        <a href="https://paypal.me/clubcolibri" target="_blank" data-es="Hacer una Contribución" data-en="Make a Donation" style="display: inline-block; background-color: #d4af37; color: #1a1a1a; padding: 12px 30px; border-radius: 30px; font-weight: bold; text-decoration: none;">
-          Hacer una Contribución
-        </a>
+        <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+        <p data-es="¿Tienes dudas o deseas adquirir nuestros kits educativos y piezas artesanales? Escríbenos." data-en="Do you have questions or want to purchase our educational kits and handcrafted pieces? Write to us." style="font-size: 1.2rem; color: #555; line-height: 1.6; margin-bottom: 25px;">¿Tienes dudas o deseas adquirir nuestros kits educativos y piezas artesanales? Escríbenos.</p>
+        <a href="#" data-es="Enviar Correo" data-en="Send Email" style="display: inline-block; background-color: #2f3640; color: white; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 30px; font-size: 1.1rem;">Enviar Correo</a>
       </div>
     </section>
 
-    <!-- PIE DE PÁGINA (FOOTER) -->
+    <!-- 9. Apoyo -->
+    <section id="apoyo" style="padding: 60px 20px; text-align: center; background-color: #f9f9f9;">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 data-es="Tus compras de arte nos ayuda a llevar las misiones a la puerta la puerta de tu casa" data-en="Support Our Project">Apoya Nuestro Proyecto</h2>
+        <p data-es="Tu compras de arte nos ayuda a llevar las misiones educativas a más familias y comunidades." data-en="Your contribution helps us bring educational workshops to more families and communities." style="font-size: 1.2rem; color: #555; line-height: 1.6; margin-bottom: 25px;">Tu contribución nos ayuda a llevar talleres educativos a más familias y comunidades.</p>
+        <a href="#" class="btn-donar" data-es="Hacer una Donación" data-en="Make a Donation">Hacer una Apoyo</a>
+      </div>
+    </section>
+
     <footer>
-      <p data-es="© 2026 Club Colibrí. Todos los derechos reservados." data-en="© 2026 Club Colibrí. All rights reserved.">
-        &copy; 2026 Club Colibrí. Todos los derechos reservados.
-      </p>
+      <p data-es="© 2026 Club Colibrí. Todos los derechos reservados." data-en="© 2026 Club Colibrí. All rights reserved.">&copy; 2026 Club Colibrí. Todos los derechos reservados.</p>
     </footer>
 
-  </main>
+  </div>
 
-  <!-- JAVASCRIPT DE TRADUCCIÓN -->
+  <!-- SCRIPT DE TRADUCCIÓN EN JAVASCRIPT -->
   <script>
     let idiomaActual = 'es';
+
     function cambiarIdioma() {
       idiomaActual = (idiomaActual === 'es') ? 'en' : 'es';
+
       const btn = document.getElementById('btn-lang');
-      btn.innerText = (idiomaActual === 'es') ? 'English 🇺🇸' : 'Español 🇲🇽';
+      if (idiomaActual === 'es') {
+        btn.innerText = 'English 🇺🇸';
+      } else {
+        btn.innerText = 'Español 🇲🇽';
+      }
+
       const elementos = document.querySelectorAll('[data-es]');
+      
       elementos.forEach(el => {
         const textoTraducido = el.getAttribute(`data-${idiomaActual}`);
         if (textoTraducido) {
@@ -253,7 +477,6 @@
       });
     }
   </script>
+
 </body>
 </html>
-
-
