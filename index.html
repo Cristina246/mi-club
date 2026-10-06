@@ -514,16 +514,13 @@
 
   </div>
 
-  <!-- SCRIPT DE TRADUCCIÓN EN JAVASCRIPT -->
-  <script>
+<!-- SCRIPT DE TRADUCCIÓN EN JAVASCRIPT -->
+<script>
   let idiomaActual = 'es';
-
   function cambiarIdioma() {
     idiomaActual = idiomaActual === 'es' ? 'en' : 'es';
-    
     const btn = document.getElementById('btn-idioma');
     btn.textContent = idiomaActual === 'es' ? 'English 🇺🇸' : 'Español 🇲🇽';
-
     document.querySelectorAll('[data-es]').forEach(elem => {
       const texto = elem.getAttribute(`data-${idiomaActual}`);
       if (texto) {
