@@ -162,66 +162,32 @@
 <body>
 
  <style>
-  /* BARRA LATERAL CON LOGO */
-  .sidebar {
-    width: 230px;
-    background: #111111;
-    color: white;
-    position: fixed;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 15px; /* Reducido para ganar espacio superior */
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-    overflow-y: auto;
-  }
 
-  /* Reducción de tamaño del logo */
-  .sidebar img.logo {
-    width: 105px; /* Reducido de 140px para que encaje todo */
-    height: auto;
-    margin-bottom: 10px;
-  }
+   <!-- BARRA LATERAL CON LOGO Y NAVEGACIÓN -->
+<aside class="sidebar">
+  <!-- Logo -->
+  <img src="lg-removebg-preview.jpg" alt="Logo Club Colibrí" class="logo">
+  
+  <!-- Botón de Cambio de Idioma -->
+  <button id="btn-idioma" onclick="cambiarIdioma()" style="background: #d4af37; color: #111; border: none; padding: 6px 14px; font-weight: bold; border-radius: 20px; cursor: pointer; margin-bottom: 12px; font-size: 0.85rem; transition: 0.3s;">
+    English 🇺🇸
+  </button>
 
-  /* Ajuste de enlaces del menú */
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem; /* Ajustado ligeramente de 1.05rem */
-    padding: 10px 18px; /* Reducido el relleno de 15px a 10px para compactar la lista */
-    text-align: left;
-    border-bottom: 1px solid #222;
-    transition: background 0.3s;
-  }
-
-  .nav-links a:hover {
-    background: #333333;
-    color: #d4af37;
-  }
-</style>
-    <!-- NAVEGACIÓN -->
-<nav class="nav-links">
-  <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
-  <a href="#quienes-somos" data-es="¿Quiénes somos?" data-en="About Us">¿Quiénes somos?</a>
-  <a href="#presentacion" data-es="Presentación" data-en="Presentation">Presentación</a>
-  <a href="#museo" data-es="Museo Digital" data-en="Digital Museum">Museo Digital</a>
-  <a href="#misiones" data-es="Misiones" data-en="Mision">Misiones</a>
-  <a href="#proximas-Misiones" data-es="Próximas Misiones" data-en="Upcoming Misiones">Próximas Misiones</a>
-  <a href="#vivencia" data-es="Vivencia" data-en="Experience">Vivencia</a>
-  <a href="#tienda" data-es="Tienda" data-en="Store">Tienda</a>
-  <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-  <a href="#apoyos" data-es="apoyo" data-en="Apoyo">Apoyo</a>
-</nav>
-  </aside>
-
+  <!-- Menú de Navegación -->
+  <nav class="nav-links">
+    <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
+    <a href="#quienes-somos" data-es="¿Quiénes somos?" data-en="About Us">¿Quiénes somos?</a>
+    <a href="#presentacion" data-es="Presentación" data-en="Presentation">Presentación</a>
+    <a href="#museo" data-es="Museo Digital" data-en="Digital Museum">Museo Digital</a>
+    <a href="#misiones" data-es="Misiones" data-en="Missions">Misiones</a>
+    <a href="#proximas-Misiones" data-es="Próximas Misiones" data-en="Upcoming Missions">Próximas Misiones</a>
+    <a href="#vivencia" data-es="Vivencia" data-en="Experience">Vivencia</a>
+    <a href="#tienda" data-es="Tienda" data-en="Store">Tienda</a>
+    <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+    <a href="#apoyos" data-es="Apoyo" data-en="Support">Apoyo</a>
+  </nav>
+</aside>
+   
   <!-- CONTENIDO PRINCIPAL -->
   <div class="main-content">
 
@@ -550,28 +516,22 @@
 
   <!-- SCRIPT DE TRADUCCIÓN EN JAVASCRIPT -->
   <script>
-    let idiomaActual = 'es';
+  let idiomaActual = 'es';
 
-    function cambiarIdioma() {
-      idiomaActual = (idiomaActual === 'es') ? 'en' : 'es';
+  function cambiarIdioma() {
+    idiomaActual = idiomaActual === 'es' ? 'en' : 'es';
+    
+    const btn = document.getElementById('btn-idioma');
+    btn.textContent = idiomaActual === 'es' ? 'English 🇺🇸' : 'Español 🇲🇽';
 
-      const btn = document.getElementById('btn-lang');
-      if (idiomaActual === 'es') {
-        btn.innerText = 'English 🇺🇸';
-      } else {
-        btn.innerText = 'Español 🇲🇽';
+    document.querySelectorAll('[data-es]').forEach(elem => {
+      const texto = elem.getAttribute(`data-${idiomaActual}`);
+      if (texto) {
+        elem.textContent = texto;
       }
-
-      const elementos = document.querySelectorAll('[data-es]');
-      
-      elementos.forEach(el => {
-        const textoTraducido = el.getAttribute(`data-${idiomaActual}`);
-        if (textoTraducido) {
-          el.innerText = textoTraducido;
-        }
-      });
-    }
-  </script>
+    });
+  }
+</script>
 
 </body>
 </html>
