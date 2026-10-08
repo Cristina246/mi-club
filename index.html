@@ -15,49 +15,58 @@
       display: flex;
     }
     /* BARRA LATERAL CON LOGO */
-    .sidebar {
+  /* BARRA LATERAL AJUSTADA */
+.sidebar {
   width: 230px;
   background: #111111;
   color: white;
-  position: fixed; /* Mantiene la barra fija mientras se hace scroll en la página */
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100vh; /* Ocupa todo el alto de la pantalla */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-  z-index: 1000; /* Asegura que la barra quede por encima del resto del contenido */
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-/* El logo y el botón van fijos arriba, el menú de navegación lleva el scroll si es muy largo */
+/* LOGO MÁS COMPACTO PARA DAR ESPACIO AL MENÚ */
+.sidebar .logo {
+  width: 100px; /* Reducido de 140px a 100px para ganar espacio vertical */
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* CONTENEDOR DEL MENÚ CON SCROLL POR SI LA PANTALLA ES MUY PEQUEÑA */
 .nav-links {
   display: flex;
   flex-direction: column;
   width: 100%;
-  overflow-y: auto; /* Permite scroll solo en el menú si la pantalla es muy corta */
+  overflow-y: auto; /* Si la pantalla es muy bajita, permite deslizar solo los links */
   flex-grow: 1;
 }
-    .nav-links {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-    .nav-links a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.05rem;
-      padding: 15px 20px;
-      text-align: left;
-      border-bottom: 1px solid #333;
-      transition: background 0.3s;
-    }
-    .nav-links a:hover {
-      background: #333333;
-      color: #d4af37;
-    }
+
+/* ENLACES MÁS COMPACTOS */
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem; /* Reducido ligeramente de 1.05rem a 0.9rem */
+  padding: 8px 18px;  /* Reducido de 15px a 8px para que quepan los 10 enlaces */
+  text-align: left;
+  border-bottom: 1px solid #222;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background: #333333;
+  color: #d4af37;
+}    }
     /* CONTENIDO PRINCIPAL A LA DERECHA */
     .main-content {
       margin-left: 230px;
